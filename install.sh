@@ -33,7 +33,7 @@ deploy() {
 }
 
 initalize() {
-    # deinとzplugのインストール。
+    # zplugのインストール。
     
     echo ""
     echo "      _         _     __  _  _ "
@@ -56,13 +56,6 @@ initalize() {
     fi
 
     chsh -s `which zsh`
-    
-    # dein
-    mkdir -p ~/.cache/dein
-    cd ~/.cache/dein
-    curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
-    sh ./installer.sh ~/.cache/dein
-
 
     # 作業ディレクトリを戻す
     cd ~/dotfiles
