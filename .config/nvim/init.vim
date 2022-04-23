@@ -67,71 +67,102 @@ let g:NERDTreeLimitedSyntax = 1
 
 set modifiable
 set write
-"dein Scripts-----------------------------
-if &compatible
-    set nocompatible               " Be iMproved
-endif
 
-" Required:
-set runtimepath+=$HOME/.cache/dein/./repos/github.com/Shougo/dein.vim
+"// PLUGIN SETTINGS
+call plug#begin('~/.config/nvim/plugged')
 
-" Required:
-if dein#load_state($HOME . '/.cache/dein/.')
-    call dein#begin($HOME . '/.cache/dein/.')
+Plug 'itchyny/lightline.vim'
 
-    " Let dein manage dein
-    " Required:
-    call dein#add($HOME . '/.cache/dein/./repos/github.com/Shougo/dein.vim')
+Plug 'ryanoasis/vim-devicons'
+Plug 'scrooloose/nerdtree'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
-    " Add or remove your plugins here like this:
-    "call dein#add('Shougo/unite.vim')
-    "call dein#add('Shougo/neosnippet.vim')
-    "call dein#add('Shougo/neosnippet-snippets')
-    call dein#add('itchyny/lightline.vim')
+Plug 'davidhalter/jedi-vim'
+Plug 'nvie/vim-flake8'
+Plug 'psf/black', { 'rev': 'ce14fa8b497bae2b50ec48b3bd7022573a59cdb1' }
 
-    call dein#add('ryanoasis/vim-devicons')
-    call dein#add('scrooloose/nerdtree')
-    call dein#add('tiagofumo/vim-nerdtree-syntax-highlight')
-    
-    call dein#add('davidhalter/jedi-vim')
-    call dein#add('nvie/vim-flake8')
-    call dein#add('psf/black', { 'rev': 'ce14fa8b497bae2b50ec48b3bd7022573a59cdb1' })
+Plug 'mattn/emmet-vim'
 
-    call dein#add('mattn/emmet-vim')
+Plug 'skanehira/preview-markdown.vim'
+Plug 'MichaelMure/mdr'
 
-    call dein#add('skanehira/preview-markdown.vim')
-    call dein#add('MichaelMure/mdr')
+Plug 'rhysd/vim-clang-format'
 
-    call dein#add('rhysd/vim-clang-format')
-    "call dein#add('kana/vim-operator-user')
-    "call dein#add('justmao945/vim-clang')
-
-    call dein#add('w0rp/ale')
+Plug 'w0rp/ale'
 
 
-    call dein#add('posva/vim-vue')
+Plug 'posva/vim-vue'
 
-    call dein#add('tomasr/molokai')
-    if !has('nvim')
-        call dein#add('roxma/nvim-yarp')
-        call dein#add('roxma/vim-hug-neovim-rpc')
-    endif
+Plug 'tomasr/molokai'
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
 
-    " Required:
-    call dein#end()
-    call dein#save_state()
-endif
-
-" Required:
-filetype plugin indent on
-syntax enable
-
-" If you want to install not installed plugins on startup.
-if dein#check_install()
-    call dein#install()
-endif
-
-"End dein Scripts-------------------------
+call plug#end()
+""dein Scripts-----------------------------
+"if &compatible
+"    set nocompatible               " Be iMproved
+"endif
+"
+"" Required:
+"set runtimepath+=$HOME/.cache/dein/./repos/github.com/Shougo/dein.vim
+"
+"" Required:
+"if dein#load_state($HOME . '/.cache/dein/.')
+"    call dein#begin($HOME . '/.cache/dein/.')
+"
+"    " Let dein manage dein
+"    " Required:
+"    call dein#add($HOME . '/.cache/dein/./repos/github.com/Shougo/dein.vim')
+"
+"    " Add or remove your plugins here like this:
+"    "call dein#add('Shougo/unite.vim')
+"    "call dein#add('Shougo/neosnippet.vim')
+"    "call dein#add('Shougo/neosnippet-snippets')
+"    call dein#add('itchyny/lightline.vim')
+"
+"    call dein#add('ryanoasis/vim-devicons')
+"    call dein#add('scrooloose/nerdtree')
+"    call dein#add('tiagofumo/vim-nerdtree-syntax-highlight')
+"    
+"    call dein#add('davidhalter/jedi-vim')
+"    call dein#add('nvie/vim-flake8')
+"    call dein#add('psf/black', { 'rev': 'ce14fa8b497bae2b50ec48b3bd7022573a59cdb1' })
+"
+"    call dein#add('mattn/emmet-vim')
+"
+"    call dein#add('skanehira/preview-markdown.vim')
+"    call dein#add('MichaelMure/mdr')
+"
+"    call dein#add('rhysd/vim-clang-format')
+"    "call dein#add('kana/vim-operator-user')
+"    "call dein#add('justmao945/vim-clang')
+"
+"    call dein#add('w0rp/ale')
+"
+"
+"    call dein#add('posva/vim-vue')
+"
+"    call dein#add('tomasr/molokai')
+"    if !has('nvim')
+"        call dein#add('roxma/nvim-yarp')
+"        call dein#add('roxma/vim-hug-neovim-rpc')
+"    endif
+"
+"    " Required:
+"    call dein#end()
+"    call dein#save_state()
+"endif
+"
+"" Required:
+"filetype plugin indent on
+"syntax enable
+"
+"" If you want to install not installed plugins on startup.
+"if dein#check_install()
+"    call dein#install()
+"endif
+"
+""End dein Scripts-------------------------
 
 set laststatus=2
 

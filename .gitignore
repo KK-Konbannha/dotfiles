@@ -1,11 +1,8 @@
 
 /.zplug/
 /.git/
-/.emacs.d/*
-!/.emacs.d/init.el
 /.config/ranger/plugin/
-/.config/qtile/__pycache__/
-/.config/mps-youtube/cache_py*
+/.config/nvim/plugged/
 
 *~
 *.swp
