@@ -1,0 +1,22 @@
+session_name: konbanha
+root: ~/home/katsu
+
+windows:
+- window_name: main
+  layout: 5e28,194x56,0,0[194x18,0,0,2,194x37,0,19,3]
+  panes:
+    - shell_command:
+      - fcitx
+      - cd ~/Download/mps
+      - mpsyt
+    - gotop
+- window_name: work
+  focus: true
+  layout: 2e14,194x56,0,0[194x18,0,0{83x18,0,0,0,110x18,84,0,2},194x37,0,19,1]
+  panes:
+    -
+    - 
+    -
+- window_name: memo
+  panes: 
+    - vim ~/Doc/memo.md
