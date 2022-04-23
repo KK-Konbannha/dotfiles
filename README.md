@@ -22,4 +22,11 @@ done
 
 sudo apt remove vim
 sudo npm install -g yarn
+
+cd ~
+git clone https://github.com/KK-Konbannha/dotfiles.git
+
+cd dotfiles
+chmod 777 install.sh
+./install.sh -i
 ```
