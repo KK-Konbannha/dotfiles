@@ -48,6 +48,7 @@ initalize() {
     mkdir -p ~/.config
     mkdir -p ~/.Trash
     mkdir -p ~/tmp
+    mkdir -p ~/dev
     mkdir -p ~/Downloads
 
     # zplug
