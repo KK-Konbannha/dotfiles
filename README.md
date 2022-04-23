@@ -13,6 +13,9 @@ PRE_REQUISITES=(
     npm
     ranger
     locales-all
+    ghc
+    cabal-install
+    haskell-stack
 )
 
 
