@@ -12,6 +12,7 @@ PRE_REQUISITES=(
     nodejs
     npm
     ranger
+    locales-all
 )
 
 
