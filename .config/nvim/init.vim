@@ -1,4 +1,4 @@
-" 行番号ひょうじ　
+" 行番号ひょうじ
 set number
 
 " クリップボードとの連携on
@@ -34,15 +34,6 @@ let mapleader = "\<Space>"
 " 入力モード中に素早くjjと入力した場合はESCとみなす
 inoremap jj <Esc>
 
-" <Space>v で1行選択(\n含まず)
-noremap <Leader>v 0v$h
-
-" <Space>y で改行なしで1行コピー（\n を含まずに yy）
-noremap <Leader>y 0v$hy
-
-" 最初にヤンクした文字列を繰り返しペースト
-vnoremap <Leader>p "0p
-
 " <Space>i でコードをインデント整形
 map <Leader>i gg=<S-g><C-o><C-o>zz
 
@@ -68,29 +59,36 @@ set write
 "// PLUGIN SETTINGS ---------------------------------------------------
 call plug#begin('~/.config/nvim/plugged')
 
+" ステータスバー
 Plug 'itchyny/lightline.vim'
 
+" nerdtree関連
 Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdtree'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
-Plug 'davidhalter/jedi-vim'
-Plug 'nvie/vim-flake8'
-Plug 'psf/black', { 'rev': 'ce14fa8b497bae2b50ec48b3bd7022573a59cdb1' }
+" coc nvim
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+" python関連
+"Plug 'davidhalter/jedi-vim'
+"Plug 'nvie/vim-flake8'
+"Plug 'psf/black', { 'rev': 'ce14fa8b497bae2b50ec48b3bd7022573a59cdb1' }
+
+" emmet(html, cssなど)
 Plug 'mattn/emmet-vim'
 
+" markdown
 Plug 'skanehira/preview-markdown.vim'
 Plug 'MichaelMure/mdr'
 
-Plug 'rhysd/vim-clang-format'
+" c
+" Plug 'rhysd/vim-clang-format'
 
-Plug 'w0rp/ale'
-
-
-Plug 'posva/vim-vue'
-
+" color scheme
 Plug 'tomasr/molokai'
+
+" わからん…
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
 
@@ -99,15 +97,15 @@ call plug#end()
 
 set laststatus=2
 
-autocmd bufwritepre *.py execute ':Black'
-let g:black_linelength = 79
+"autocmd bufwritepre *.py execute ':Black'
+"let g:black_linelength = 79
 
-" pythonにてflake8をvim上及び保存時に使用
-autocmd BufWritePost *.py call Flake8() " 保存時自動でflask8実行
-let g:flake8_quickfix_location="topleft" " Quickfixの位置
-let g:flake8_quickfix_height=7 " Quickfixの高さ
-let g:flake8_show_in_gutter=1  " 左端にシンボルを表示
-let g:flake8_show_in_file=1  " ファイル内にマークを表示
+"" pythonにてflake8をvim上及び保存時に使用
+"autocmd BufWritePost *.py call Flake8() " 保存時自動でflask8実行
+"let g:flake8_quickfix_location="topleft" " Quickfixの位置
+"let g:flake8_quickfix_height=7 " Quickfixの高さ
+"let g:flake8_show_in_gutter=1  " 左端にシンボルを表示
+"let g:flake8_show_in_file=1  " ファイル内にマークを表示
 
 " nerdtreeにアイコンを表示する
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
