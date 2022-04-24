@@ -13,6 +13,11 @@ PRE_REQUISITES=(
     npm
     ranger
     locales-all
+    libgmp3-dev
+    libicu-dev
+    libncurses-dev
+    libgmp-dev
+    zlib1g-dev
 )
 
 
