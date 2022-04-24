@@ -55,6 +55,7 @@ export PIPENV_VENV_IN_PROJECT=1
 # rangerでデフォルトのrc.confを読み込むかどうか
 export RANGER_LOAD_DEFAULT_RC=FALSE
 
+export PATH=$PATH:$HOME/.local/bin
 # ==============================================================================
 # 
 # プラグイン読み込み
