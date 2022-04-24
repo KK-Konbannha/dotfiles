@@ -114,6 +114,18 @@ let g:webdevicons_enable_nerdtree = 1
 " emmetの設定
 let g:user_emmet_leader_key='<c-y>'
 
+" coc-extesions
+let g:coc_global_extensions = [
+  \ 'coc-json',
+  \ 'coc-html',
+  \ 'coc-css',
+  \ 'coc-tsserver',
+  \ 'coc-prettier',
+  \ 'coc-eslint',
+  \ 'coc-jedi',
+  \ ]
+
+
 " 見た目-----------------------------------------------------------------
 " フォント
 set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ Complete\ 12

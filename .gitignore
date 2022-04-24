@@ -1,8 +1,8 @@
-
 /.zplug/
 /.git/
 /.config/ranger/plugin/
 /.config/nvim/plugged/
+/.config/coc/extensions/node_modules/
 
 *~
 *.swp
