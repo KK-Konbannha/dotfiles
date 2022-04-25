@@ -128,12 +128,13 @@ alias rng='ranger'
 # rc.conf(ranger)の設定簡略化用エイリアス
 alias rngconf='vim ~/dotfiles/.config/ranger/rc.conf'
 
-# エイリアス
+# 基本コマンドのエイリアス
 alias ls='ls --color=auto'
 alias la='ls -la'
 alias apep='autopep8 --in-place --aggressive --aggressive'
 #alias xmind='~/xmind/xmind.sh &'
 alias e='emacs'
+alias g='git'
 
 if [ $SHLVL = 1 ]; then
     alias t="tmuxp load ~/.tmuxp/config.yaml"
