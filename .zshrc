@@ -140,6 +140,13 @@ if [ $SHLVL = 1 ]; then
     alias t="tmuxp load ~/.tmuxp/config.yaml"
 fi
 
+# windowsのchromeとdeepl(chromeから)にエイリアスでアクセスする
+
+if [ ! -e "/mnt/c/'Program Files'/Google/Chrome/Application" ]; then
+    alias c="/mnt/c/'Program Files'/Google/Chrome/Application/chrome.exe"
+    alias deepl="/mnt/c/'Program Files'/Google/Chrome/Application/chrome.exe https://www.deepl.com/ja/translator"
+fi
+
 # ブランチ名を色付きで表示させるメソッド
 function rprompt-git-current-branch {
   local branch_name st branch_status
