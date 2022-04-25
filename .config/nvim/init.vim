@@ -62,6 +62,9 @@ call plug#begin('~/.config/nvim/plugged')
 " ステータスバー
 Plug 'itchyny/lightline.vim'
 
+" deno
+Plug 'vim-denops/denops.vim'
+
 " nerdtree関連
 Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdtree'
@@ -81,6 +84,7 @@ Plug 'mattn/emmet-vim'
 " markdown
 Plug 'skanehira/preview-markdown.vim'
 Plug 'MichaelMure/mdr'
+Plug 'tani/glance-vim'
 
 " c
 " Plug 'rhysd/vim-clang-format'
