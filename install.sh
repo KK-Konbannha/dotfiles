@@ -127,16 +127,23 @@ initialize() {
     do
         yes | sudo apt install $p
     done
+    echo $(tput setaf 2)Installing apps complete!. ✔︎$(tput sgr0)
 
     # nvimのインストール
+    cd "${HOME}/Downloads"
     curl -OL "https://github.com/neovim/neovim/releases/download/v0.7.0/nvim-linux64.deb"
+    sudo apt install ./nvim-linux64.deb
     sudo update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 60
     sudo update-alternatives --config vi
     sudo update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 60
     sudo update-alternatives --config vim
     sudo update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60
     sudo update-alternatives --config editor
+    cd ${HOME}
 
+    # node & npm
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+    nvm install node
 
     # yarn
     sudo npm install -g yarn
@@ -144,13 +151,13 @@ initialize() {
     # deno
     curl -fsSL https://deno.land/x/install/install.sh | sh
 
+    # ghcup
+    curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
+
     # zplug
     if [[ ! -d ${DOT_DIRECTORY}/.zplug ]];then
         git clone https://github.com/zplug/zplug ~/dotfiles/.zplug
     fi
-
-    # ghcup
-    curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
 
     # シェルをzshにする
     [ ${SHELL} != "/bin/zsh"  ] && chsh -s /bin/zsh
