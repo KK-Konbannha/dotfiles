@@ -141,13 +141,11 @@ initialize() {
     sudo update-alternatives --config editor
     cd ${HOME}
 
-    # node & npm
+    # nvm
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-    chmod 777 "${HOME}/.nvm/nvm.sh"
-    "${HOME}/.nvm/nvm.sh" install node
 
     # yarn
-    sudo npm install -g yarn
+    # sudo npm install -g yarn
 
     # deno
     curl -fsSL https://deno.land/x/install/install.sh | sh
