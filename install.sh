@@ -4,6 +4,7 @@ set -eu
 
 DOT_DIRECTORY="${HOME}/dotfiles"
 REMOTE_URL="git@github.com:KK-Konbannha/dotfiles.git"
+OVERWRITE=false
 
 # 使い方
 usage() {
