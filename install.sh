@@ -6,7 +6,6 @@ cd ${HOME}
 
 DOT_DIRECTORY="${HOME}/dotfiles"
 REMOTE_URL="git@github.com:KK-Konbannha/dotfiles.git"
-OVERWRITE=""
 
 # 使い方
 usage() {
@@ -24,12 +23,9 @@ EOF
 exit 1
 }
 
-# オプション -fは上書き、-hはヘルプ表示
+# オプション -hはヘルプ表示
 while getopts fh opt; do
     case ${opt} in
-        f)
-            OVERWRITE=true
-            ;;
         h)
             usage
             ;;
@@ -37,8 +33,8 @@ while getopts fh opt; do
 done
 shift $((OPTIND - 1))
 
-# 上書き可or存在しない場合にdotfiles作成
-if [ ${OVERWRITE} ] || [ ! -d ${DOT_DIRECTORY} ]; then
+# 存在しない場合にdotfiles作成
+if [ ! -d ${DOT_DIRECTORY} ]; then
     echo "Downloading dotfiles..."
     rm -rf ${DOT_DIRECTORY}
     git clone ${REMOTE_URL}
@@ -48,6 +44,9 @@ fi
 
 link_files() {
     # dotfiles以下のファイルのリンクをホームに作成する。
+
+    # 作業ディレクトリを変更
+    cd ${DOT_DIRECTORY}
 
     echo ""
     echo -E "      _               _ "
@@ -75,9 +74,15 @@ link_files() {
         fi
     done
     echo $(tput setaf 2)Deploying dotfiles complete!. ✔︎$(tput sgr0)
+
+    # 作業ディレクトリを戻す
+    cd ${HOME}
 }
 
 initalize() {
+    # 作業ディレクトリを変更
+    cd ${HOME}
+
     echo ""
     echo "      _         _     __  _  _ "
     echo "     | |       | |   / _|(_)| | "
@@ -92,14 +97,14 @@ initalize() {
     sudo apt update && sudo apt upgrade
 
     # 必要ディレクトリ作成
-    rm -rf ~/.config
-    rm -rf ~/.Trash
-    rm -rf ~/tmp
-    mkdir -p ~/.config
-    mkdir -p ~/.Trash
-    mkdir -p ~/tmp
-    mkdir -p ~/dev
-    mkdir -p ~/Downloads
+    rm -rf "${HOME}/.config"
+    rm -rf "${HOME}/.Trash"
+    rm -rf "${HOME}/tmp"
+    mkdir -p "${HOME}/.config"
+    mkdir -p "${HOME}/.Trash"
+    mkdir -p "${HOME}/tmp"
+    mkdir -p "${HOME}/dev"
+    mkdir -p "${HOME}/Downloads "
 
     # vimの削除
     sudo apt remove vim && sudo apt autoremove
@@ -151,10 +156,11 @@ initalize() {
     [ ${SHELL} != "/bin/zsh"  ] && chsh -s /bin/zsh
     echo "$(tput setaf 2)Initialize complete!. ✔︎$(tput sgr0)"
 
-    # 作業ディレクトリを戻す
-    cd ${DOT_DIRECTORY}
-
     link_files
+
+    # 作業ディレクトリを戻す
+    cd ${HOME}
+
 }
 
 
