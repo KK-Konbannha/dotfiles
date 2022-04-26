@@ -115,6 +115,7 @@ initialize() {
         zsh
         tmuxp
         ranger
+        unzip
         locales-all
         libgmp-dev
         libgmp3-dev
