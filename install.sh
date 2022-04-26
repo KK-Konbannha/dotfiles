@@ -2,6 +2,8 @@
 # ubuntu(wsl2)用のインストール方法
 set -eu
 
+cd ${HOME}
+
 DOT_DIRECTORY="${HOME}/dotfiles"
 REMOTE_URL="git@github.com:KK-Konbannha/dotfiles.git"
 OVERWRITE=""
