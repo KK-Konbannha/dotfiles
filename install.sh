@@ -79,7 +79,7 @@ link_files() {
     cd ${HOME}
 }
 
-initalize() {
+initialize() {
     # 作業ディレクトリを変更
     cd ${HOME}
 
