@@ -4,7 +4,7 @@ set -eu
 
 DOT_DIRECTORY="${HOME}/dotfiles"
 REMOTE_URL="git@github.com:KK-Konbannha/dotfiles.git"
-OVERWRITE=false
+OVERWRITE=""
 
 # 使い方
 usage() {
@@ -23,7 +23,7 @@ exit 1
 }
 
 # オプション -fは上書き、-hはヘルプ表示
-while getopts :f:h opt; do
+while getopts fh opt; do
     case ${opt} in
         f)
             OVERWRITE=true
@@ -36,7 +36,7 @@ done
 shift $((OPTIND - 1))
 
 # 上書き可or存在しない場合にdotfiles作成
-if [ -n "${OVERWRITE}" -o ! -d ${DOT_DIRECTORY} ]; then
+if [ ${OVERWRITE} ] || [ ! -d ${DOT_DIRECTORY} ]; then
     echo "Downloading dotfiles..."
     rm -rf ${DOT_DIRECTORY}
     git clone ${REMOTE_URL}
@@ -90,6 +90,9 @@ initalize() {
     sudo apt update && sudo apt upgrade
 
     # 必要ディレクトリ作成
+    rm -rf ~/.config
+    rm -rf ~/.Trash
+    rm -rf ~/tmp
     mkdir -p ~/.config
     mkdir -p ~/.Trash
     mkdir -p ~/tmp
@@ -154,8 +157,11 @@ initalize() {
 
 
 # 引数によって場合分け
-command=$1
-[ $# -gt 0 ] && shift
+if [ $# = 0 ]; then
+    command=""
+else
+    command=$1
+fi
 
 # 引数がなければヘルプ
 case $command in
