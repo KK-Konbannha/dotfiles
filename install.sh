@@ -152,7 +152,7 @@ initialize() {
     curl -fsSL https://deno.land/x/install/install.sh | sh
 
     # ghcup
-    curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
+    # curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
 
     # zplug
     if [[ ! -d ${DOT_DIRECTORY}/.zplug ]];then
