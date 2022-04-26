@@ -104,7 +104,7 @@ initialize() {
     mkdir -p "${HOME}/.Trash"
     mkdir -p "${HOME}/tmp"
     mkdir -p "${HOME}/dev"
-    mkdir -p "${HOME}/Downloads "
+    mkdir -p "${HOME}/Downloads"
 
     # vimの削除
     sudo apt remove vim && sudo apt autoremove
