@@ -123,7 +123,7 @@ initalize() {
         zlib1g-dev
     )
 
-    for p in $PRE_REQUISITES
+    for p in ${PRE_REQUISITES[@]}
     do
         yes | sudo apt install $p
     done
