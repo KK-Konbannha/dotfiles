@@ -143,7 +143,7 @@ initialize() {
 
     # node & npm
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-    nvm install node
+    "${HOME}/.nvm/nvm.sh" install node
 
     # yarn
     sudo npm install -g yarn
