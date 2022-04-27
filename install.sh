@@ -142,6 +142,10 @@ initialize() {
     sudo update-alternatives --config editor
     cd ${HOME}
 
+    # vim-plug
+    curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
     # nvm
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 
