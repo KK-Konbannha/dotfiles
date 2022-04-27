@@ -141,19 +141,23 @@ initialize() {
     sudo update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60
     sudo update-alternatives --config editor
     cd ${HOME}
+    echo $(tput setaf 2)Installing nvim complete!. ✔︎$(tput sgr0)
 
     # vim-plug
     curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    echo $(tput setaf 2)Installing vim-plug complete!. ✔︎$(tput sgr0)
 
     # nvm
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+    echo $(tput setaf 2)Installing nvm complete!. ✔︎$(tput sgr0)
 
     # yarn
     # sudo npm install -g yarn
 
     # deno
     curl -fsSL https://deno.land/x/install/install.sh | sh
+    echo $(tput setaf 2)Installing deno complete!. ✔︎$(tput sgr0)
 
     # ghcup
     # curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
@@ -162,6 +166,7 @@ initialize() {
     if [[ ! -d ${DOT_DIRECTORY}/.zplug ]];then
         git clone https://github.com/zplug/zplug ~/dotfiles/.zplug
     fi
+    echo $(tput setaf 2)Installing zplug complete!. ✔︎$(tput sgr0)
 
     # シェルをzshにする
     [ ${SHELL} != "/bin/zsh"  ] && chsh -s /bin/zsh
