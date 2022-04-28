@@ -163,6 +163,7 @@ initialize() {
     node_path=`nvm which current | sed "s/\/node\$//"`
     echo $node_path
     export PATH="$PATH:$node_path"
+    echo $PATH
     sudo npm install -g yarn
     echo $(tput setaf 2)Installing yarn complete!. ✔︎$(tput sgr0)
 
