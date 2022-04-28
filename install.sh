@@ -157,7 +157,7 @@ initialize() {
 
     # npm
     nvm install node
-    echo $(tput setaf 2)Installing node & npm complete!. ✔︎$(tput sgr0)
+    echo "$(tput setaf 2)Installing node & npm complete!. ✔︎$(tput sgr0)"
 
     # yarn
     use_npm=`nvm which current | sed "s/node\$/npm/"`
