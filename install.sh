@@ -155,8 +155,10 @@ initialize() {
     [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
     echo $(tput setaf 2)Installing nvm complete!. ✔︎$(tput sgr0)
 
+
     # yarn
-    # sudo npm install -g yarn
+    sudo npm install -g yarn
+    echo $(tput setaf 2)Installing yarn complete!. ✔︎$(tput sgr0)
 
     # deno
     curl -fsSL https://deno.land/x/install/install.sh | sh
