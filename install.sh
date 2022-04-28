@@ -111,8 +111,10 @@ initialize() {
 
     # インストールするパッケージリスト
     PRE_REQUISITES=(
-        tree
         zsh
+        gcc
+        make
+        tree
         tmuxp
         ranger
         unzip
