@@ -160,9 +160,10 @@ initialize() {
     echo "$(tput setaf 2)Installing node & npm complete!. ✔︎$(tput sgr0)"
 
     # yarn
-    use_npm=`nvm which current | sed "s/node\$/npm/"`
-    echo $use_npm
-    sudo use_npm install -g yarn
+    node_path=`nvm which current | sed "s/\/node\$//"`
+    echo $node_path
+    export PATH="$PATH:$node_path"
+    sudo npm install -g yarn
     echo $(tput setaf 2)Installing yarn complete!. ✔︎$(tput sgr0)
 
     # deno
