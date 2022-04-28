@@ -169,7 +169,8 @@ initialize() {
     echo $(tput setaf 2)Installing deno complete!. ✔︎$(tput sgr0)
 
     # ghcup
-    # curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
+    curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
+    echo $(tput setaf 2)Installing ghcup complete!. ✔︎$(tput sgr0)
 
     # zplug
     if [[ ! -d ${DOT_DIRECTORY}/.zplug ]];then
