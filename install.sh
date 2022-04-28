@@ -157,10 +157,11 @@ initialize() {
 
     # npm
     nvm install node
-    echo $(tput setaf 2)Installing npm complete!. ✔︎$(tput sgr0)
+    echo $(tput setaf 2)Installing node & npm complete!. ✔︎$(tput sgr0)
 
     # yarn
-    sudo npm install -g yarn
+    use_npm=`nvm which current | sed "s/bin\/node/bin\/npm/"`
+    sudo use_npm install -g yarn
     echo $(tput setaf 2)Installing yarn complete!. ✔︎$(tput sgr0)
 
     # deno
