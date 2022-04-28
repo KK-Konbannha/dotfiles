@@ -161,7 +161,7 @@ initialize() {
 
     # yarn
     # node_path=`nvm which current | sed "s/\/node\$//"`
-    sudo npm install -g yarn
+    npm install -g yarn
     echo $(tput setaf 2)Installing yarn complete!. ✔︎$(tput sgr0)
 
     # deno
