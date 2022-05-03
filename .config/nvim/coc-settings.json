@@ -1,4 +1,5 @@
 {
+    "coc.preferences.jumpCommand":"daily",
     "jedi.jediSettings.autoImportModules": ["numpy", "pandas"],
     "jedi.executable.command": "jedi-language-server",
     "languageserver": {
