@@ -208,7 +208,9 @@ initialize() {
         sudo pacman -Syy archlinux-keyring
 
         # vimのアンインストール
-        sudo pacman -R vim
+        if has "vim"; then
+            sudo pacman -R vim
+        fi
 
         # yayのインストール
         sudo pacman -Syyuu --needed git base-devel
