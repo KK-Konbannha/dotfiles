@@ -194,6 +194,7 @@ initialize() {
         sudo update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60
         sudo update-alternatives --config editor
         echo $(tput setaf 2)Installing nvim complete!. ✔︎$(tput sgr0)
+
     elif [ ${dist} = "Arch" ]; then
         # pacmanのダウンロード元を設定
         sudo sed -i.dist \
@@ -254,11 +255,11 @@ initialize() {
 
         for p in ${PRE_REQUISITES_ARCH_PACMAN[@]}
         do
-            sudo pacman -S $p
+            yes | sudo pacman -S $p
         done
         for p in ${PRE_REQUISITES_ARCH_AUR[@]}
         do
-            sudo yay -S $p
+            yay -S $p
         done
 
         ln -s `which nvim` /usr/bin/vim
