@@ -255,6 +255,8 @@ initialize() {
             python-pip
             perl
             mplayer
+            openssh
+            jedi-language-server
         )
 
         PRE_REQUISITES_ARCH_AUR=(
