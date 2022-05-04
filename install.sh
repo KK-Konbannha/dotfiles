@@ -261,8 +261,7 @@ initialize() {
             yes | sudo yay -S $p
         done
 
-        ln -s (which nvim) /usr/bin/vim
-
+        ln -s `which nvim` /usr/bin/vim
         echo $(tput setaf 2)Installing apps complete!. ✔︎$(tput sgr0)
     else
         echo "error"
