@@ -23,6 +23,11 @@ EOF
 exit 1
 }
 
+# コマンドの有無確認
+has() {
+  type "$1" > /dev/null 2>&1
+}
+
 # ディストリビューションのチェック
 check_dist() {
     echo -n "Ubuntu or Arch? [U/A]: "
@@ -66,7 +71,17 @@ shift $((OPTIND - 1))
 if [ ! -d ${DOT_DIRECTORY} ]; then
     echo "Downloading dotfiles..."
     rm -rf ${DOT_DIRECTORY}
-    git clone ${REMOTE_URL}
+    if has "git"; then
+        git clone ${REMOTE_URL}
+    elif has "curl"; then
+        tarball="https://github.com/KK-Konbannha/dotfiles/archive/main.tar.gz"
+
+        curl -L "$tarball" | tar zxv
+
+        mv -f dotfiles-master $DOT_DIRECTORY
+    else
+        echo "git or curl required"
+    fi
 
     echo $(tput setaf 2)Downloading dotfiles complete!. ✔︎$(tput sgr0)
 fi
