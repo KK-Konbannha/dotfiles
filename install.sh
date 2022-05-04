@@ -78,7 +78,7 @@ if [ ! -d ${DOT_DIRECTORY} ]; then
 
         curl -L "$tarball" | tar zxv
 
-        mv -f dotfiles-master $DOT_DIRECTORY
+        mv -f dotfiles-main $DOT_DIRECTORY
     else
         echo "git or curl required"
     fi
