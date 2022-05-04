@@ -207,6 +207,9 @@ initialize() {
         sudo pacman-key --populate
         sudo pacman -Syy archlinux-keyring
 
+        # vimのアンインストール
+        sudo pacman -R vim
+
         # yayのインストール
         sudo pacman -Syyuu --needed git base-devel
         git clone https://aur.archlinux.org/yay.git
