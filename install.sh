@@ -212,8 +212,7 @@ initialize() {
 
         # yayのインストール
         sudo pacman -Syyuu --needed git base-devel
-        if has "yay"; then
-        else
+        if [ ! has "yay" ]; then
             git clone https://aur.archlinux.org/yay.git
             cd yay
             makepkg -si
