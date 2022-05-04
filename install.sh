@@ -5,7 +5,7 @@ set -eu
 cd ${HOME}
 
 DOT_DIRECTORY="${HOME}/dotfiles"
-REMOTE_URL="git@github.com:KK-Konbannha/dotfiles.git"
+REMOTE_URL="https://github.com/KK-Konbannha/dotfiles.git"
 
 # 使い方
 usage() {
