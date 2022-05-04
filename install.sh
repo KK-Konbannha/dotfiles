@@ -23,6 +23,35 @@ EOF
 exit 1
 }
 
+# ディストリビューションのチェック
+check_dist() {
+    echo -n "Ubuntu or Arch? [U/A]: "
+    read dist
+    case ${dist} in
+        [uU])
+            echo -n "Ubuntu? [Y/n]: "
+            read answer
+            if test ${answer} = "y" -o ${answer} = "Y"; then
+                dist="Ubuntu"
+            else
+                check_dist
+            fi
+            ;;
+        [aA])
+            echo -n "Arch? [Y/n]: "
+            read answer
+            if test ${answer} = "y" -o ${answer} = "Y"; then
+                dist="Arch"
+            else
+                check_dist
+            fi
+            ;;
+        *)
+            check_dist
+            ;;
+    esac
+}
+
 # オプション -hはヘルプ表示
 while getopts fh opt; do
     case ${opt} in
@@ -92,9 +121,8 @@ initialize() {
     echo "  \\__,_| \\___/  \\__||_|  |_||_| \\___||___/ "
     echo ""
     echo ""
-
-    # aptのアップデート
-    sudo apt update && sudo apt upgrade
+    echo ""
+    echo ""
 
     # 必要ディレクトリ作成
     rm -rf "${HOME}/.config"
@@ -106,48 +134,130 @@ initialize() {
     mkdir -p "${HOME}/dev"
     mkdir -p "${HOME}/Downloads"
 
-    # vimの削除
-    sudo apt remove vim && sudo apt autoremove
+    # ディストリビューションのチェック"
+    check_dist
 
-    # インストールするパッケージリスト
-    PRE_REQUISITES=(
-        zsh
-        gcc
-        make
-        tree
-        tmuxp
-        ranger
-        unzip
-        locales-all
-        libgmp-dev
-        libgmp3-dev
-        libicu-dev
-        libncurses-dev
-        zlib1g-dev
-    )
+    if [ ${dist} = "Ubuntu" ]; then
 
-    for p in ${PRE_REQUISITES[@]}
-    do
-        yes | sudo apt install $p
-    done
-    echo $(tput setaf 2)Installing apps complete!. ✔︎$(tput sgr0)
+        # aptのアップデート
+        sudo apt update && sudo apt upgrade
 
-    # nvimのインストール
-    cd "${HOME}/Downloads"
-    curl -OL "https://github.com/neovim/neovim/releases/download/v0.7.0/nvim-linux64.deb"
-    sudo apt install ./nvim-linux64.deb
-    sudo update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 60
-    sudo update-alternatives --config vi
-    sudo update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 60
-    sudo update-alternatives --config vim
-    sudo update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60
-    sudo update-alternatives --config editor
-    cd ${HOME}
-    echo $(tput setaf 2)Installing nvim complete!. ✔︎$(tput sgr0)
+        # vimの削除
+        sudo apt remove vim && sudo apt autoremove
+
+        # インストールするパッケージリスト
+        PRE_REQUISITES_UBUNTU=(
+            zsh
+            gcc
+            make
+            tree
+            tmuxp
+            ranger
+            unzip
+            locales-all
+            libgmp-dev
+            libgmp3-dev
+            libicu-dev
+            libncurses-dev
+            zlib1g-dev
+        )
+
+        for p in ${PRE_REQUISITES_UBUNTU[@]}
+        do
+            yes | sudo apt install $p
+        done
+        echo $(tput setaf 2)Installing apps complete!. ✔︎$(tput sgr0)
+
+        # nvimのインストール
+        cd "${HOME}/Downloads"
+        curl -OL "https://github.com/neovim/neovim/releases/download/v0.7.0/nvim-linux64.deb"
+        sudo apt install ./nvim-linux64.deb
+        sudo update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 60
+        sudo update-alternatives --config vi
+        sudo update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 60
+        sudo update-alternatives --config vim
+        sudo update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60
+        sudo update-alternatives --config editor
+        echo $(tput setaf 2)Installing nvim complete!. ✔︎$(tput sgr0)
+    elif [ ${dist} = "Arch" ]; then
+        # pacmanのダウンロード元を設定
+        sudo sed -i.dist \
+            -e 's/^Server/#Server/g' \
+            -e 's!#Server = \(https\?://.*\?\.jp\)!Server = \1!g' \
+            /etc/pacman.d/mirrorlist
+
+        # pacmanの更新
+        sudo pacman-key --init
+        sudo pacman-key --populate
+        sudo pacman -Syy archlinux-keyring
+
+        # yayのインストール
+        sudo pacman -Syyuu --needed git base-devel
+        git clone https://aur.archlinux.org/yay.git
+        cd yay
+        makepkg -si
+        cd ..
+        rm -rf yay
+
+        # enable systemd(by distrod)
+        curl -L -O "https://raw.githubusercontent.com/nullpo-head/wsl-distrod/main/install.sh"
+        chmod +x install.sh
+        sudo ./install.sh install
+        sudo /opt/distrod/bin/distrod enable
+
+        # xrdpのインストール
+        yay -S xrdp xorgxrdp
+        sudo sh -c "echo 'allowed_users=anybody' >/etc/X11/Xwrapper.config"
+        sudo systemctl enable xrdp
+        sudo systemctl enable xrdp-sesman
+
+        # インストールするパッケージリスト
+        PRE_REQUISITES_ARCH_PACMAN=(
+            zsh
+            neovim
+            gcc
+            make
+            tree
+            unzip
+            xorg-server
+            xorg-xev
+            xorg-xinit
+            tk
+            python3
+            python-pip
+            perl
+            mplayer
+        )
+
+        PRE_REQUISITES_ARCH_AUR=(
+            tmuxp
+            ranger
+            qtile
+            termite
+            mdr
+        )
+
+        for p in ${PRE_REQUISITES_ARCH_PACMAN[@]}
+        do
+            yes | sudo pacman -S $p
+        done
+        for p in ${PRE_REQUISITES_ARCH_AUR[@]}
+        do
+            yes | sudo yay -S $p
+        done
+
+        ln -s (which nvim) /usr/bin/vim
+
+        echo $(tput setaf 2)Installing apps complete!. ✔︎$(tput sgr0)
+    else
+        echo "error"
+        exit 1
+    fi
+        cd ${HOME}
 
     # vim-plug
     sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
     echo $(tput setaf 2)Installing vim-plug complete!. ✔︎$(tput sgr0)
 
     # nvm
