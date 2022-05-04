@@ -254,11 +254,11 @@ initialize() {
 
         for p in ${PRE_REQUISITES_ARCH_PACMAN[@]}
         do
-            yes | sudo pacman -S $p
+            sudo pacman -S $p
         done
         for p in ${PRE_REQUISITES_ARCH_AUR[@]}
         do
-            yes | sudo yay -S $p
+            sudo yay -S $p
         done
 
         ln -s `which nvim` /usr/bin/vim
