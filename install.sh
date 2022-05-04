@@ -262,14 +262,18 @@ initialize() {
 
         for p in ${PRE_REQUISITES_ARCH_PACMAN[@]}
         do
-            yes | sudo pacman -S $p
+            if [ ! has $p ]; then
+                yes | sudo pacman -S $p
+            fi
         done
         for p in ${PRE_REQUISITES_ARCH_AUR[@]}
         do
-            yay -S $p
+            if [ ! has $p ]; then
+                yay -S $p
+            fi
         done
 
-        ln -s `which nvim` /usr/bin/vim
+        sudo ln -s `which nvim` /usr/bin/vim
         echo $(tput setaf 2)Installing apps complete!. ✔︎$(tput sgr0)
     else
         echo "error"
