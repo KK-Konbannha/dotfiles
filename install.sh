@@ -196,6 +196,8 @@ initialize() {
         echo $(tput setaf 2)Installing nvim complete!. ✔︎$(tput sgr0)
 
     elif [ ${dist} = "Arch" ]; then
+        # locale設定
+        sudo sed -i -e 's/#ja_JP.UTF-8/ja_JP.UTF-8/' /etc/locale.gen && sudo locale-gen
         # pacmanのダウンロード元を設定
         sudo sed -i.dist \
             -e 's/^Server/#Server/g' \
