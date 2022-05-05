@@ -269,6 +269,7 @@ initialize() {
             ranger
             qtile
             mdr
+            ttf-ricty
         )
 
         for p in ${PRE_REQUISITES_ARCH_PACMAN[@]}
