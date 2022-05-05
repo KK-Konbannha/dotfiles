@@ -257,13 +257,13 @@ initialize() {
             mplayer
             openssh
             jedi-language-server
+            rxvt-unicode
         )
 
         PRE_REQUISITES_ARCH_AUR=(
             tmuxp
             ranger
             qtile
-            termite
             mdr
         )
 
