@@ -210,7 +210,7 @@ initialize() {
         sudo pacman -Syy archlinux-keyring
 
         # vimのアンインストール
-        if has "vim"; then
+        if has "vim" && ! has "nvim"; then
             sudo pacman -R vim
         fi
 
@@ -284,7 +284,7 @@ initialize() {
             fi
         done
 
-        sudo ln -s `which nvim` /usr/bin/vim
+        sudo ln -sf `which nvim` /usr/bin/vim
         echo $(tput setaf 2)Installing apps complete!. ✔︎$(tput sgr0)
     else
         echo "error"
