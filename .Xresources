@@ -5,7 +5,7 @@
 !!
 
 !URxvt.geometry:             96x32
-URxvt.scrollBar_right:      false
+URxvt.scrollBar:      false
 !URxvt.scrollBar_right:      true
 !URxvt.scrollBar_floating:   true
 !URxvt.scrollstyle:          plain
@@ -17,7 +17,7 @@ URxvt.saveLines:            3000
 URxvt.fading:               40
 
 !! Font list and Spacing
-URxvt.font:                 xft:Ricty Discord-10
+URxvt.font:                 xft:Ricty Discord-14
 URxvt.letterSpace:          -1
 !URxvt.lineSpace:            0
 
