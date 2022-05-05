@@ -214,11 +214,13 @@ initialize() {
 
         # yayのインストール
         sudo pacman -Syyuu --needed git base-devel
-        git clone https://aur.archlinux.org/yay.git
-        cd yay
-        makepkg -si
-        cd ..
-        rm -rf yay
+        if ! has "yay"; then
+            git clone https://aur.archlinux.org/yay.git
+            cd yay
+            makepkg -si
+            cd ..
+            rm -rf yay
+        fi
 
         # enable systemd(by distrod)
         curl -L -O "https://raw.githubusercontent.com/nullpo-head/wsl-distrod/main/install.sh"
@@ -267,13 +269,13 @@ initialize() {
 
         for p in ${PRE_REQUISITES_ARCH_PACMAN[@]}
         do
-            if [ ! has $p ]; then
+            if ! has $p; then
                 yes | sudo pacman -S $p
             fi
         done
         for p in ${PRE_REQUISITES_ARCH_AUR[@]}
         do
-            if [ ! has $p ]; then
+            if ! has $p; then
                 yay -S $p
             fi
         done
