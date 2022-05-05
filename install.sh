@@ -270,7 +270,7 @@ initialize() {
         for p in ${PRE_REQUISITES_ARCH_PACMAN[@]}
         do
             if ! has $p; then
-                yes | sudo pacman -S $p
+                sudo pacman -S $p
             fi
         done
         for p in ${PRE_REQUISITES_ARCH_AUR[@]}
