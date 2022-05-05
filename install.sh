@@ -216,6 +216,7 @@ initialize() {
 
         # yayのインストール
         sudo pacman -Syyuu --needed git base-devel
+        cd /tmp
         if ! has "yay"; then
             git clone https://aur.archlinux.org/yay.git
             cd yay
@@ -229,6 +230,7 @@ initialize() {
         chmod +x install.sh
         sudo ./install.sh install
         sudo /opt/distrod/bin/distrod enable
+        cd ${HOME}
 
         # xrdpのインストール
         yay -S xrdp xorgxrdp
