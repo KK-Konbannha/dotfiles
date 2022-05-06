@@ -270,7 +270,6 @@ initialize() {
             ranger
             qtile
             mdr
-            ttf-ricty
         )
 
         for p in ${PRE_REQUISITES_ARCH_PACMAN[@]}
@@ -292,7 +291,16 @@ initialize() {
         echo "error"
         exit 1
     fi
-        cd ${HOME}
+
+    cd ${HOME}
+
+    # font instalation
+    cd ${HOME}/Downloads
+    curl -LO https://github.com/yuru7/HackGen/releases/download/v2.6.3/HackGenNerd_v2.6.3.zip
+    unzip HackGenNerd_v2.6.3.zip
+    cp -r HackGenNerd_v2.6.3 ${HOME}/.local/share/fonts/
+    fc-cache -ve
+    cd ${HOME}
 
     # vim-plug
     sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \

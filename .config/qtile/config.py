@@ -117,8 +117,8 @@ layouts = [
 ]
 
 widget_defaults = dict(
-    font="Ricty",
-    fontsize=16,
+    font="HackGenNerd Console",
+    fontsize=26,
     padding=4,
 )
 extension_defaults = widget_defaults.copy()
@@ -143,7 +143,7 @@ screens = [
                 widget.Clock(format="%Y-%m-%d %a %I:%M %p"),
                 widget.QuickExit(),
             ],
-            28,
+            36,
             # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
             # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
         ),
@@ -194,3 +194,4 @@ wl_input_rules = None
 # We choose LG3D to maximize irony: it is a 3D non-reparenting WM written in
 # java that happens to be on java's whitelist.
 wmname = "LG3D"
+
