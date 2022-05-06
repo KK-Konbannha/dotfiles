@@ -196,6 +196,8 @@ initialize() {
         echo $(tput setaf 2)Installing nvim complete!. ✔︎$(tput sgr0)
 
     elif [ ${dist} = "Arch" ]; then
+        # locale設定
+        sudo sed -i -e 's/#ja_JP.UTF-8/ja_JP.UTF-8/' /etc/locale.gen && sudo locale-gen
         # pacmanのダウンロード元を設定
         sudo sed -i.dist \
             -e 's/^Server/#Server/g' \
@@ -208,23 +210,27 @@ initialize() {
         sudo pacman -Syy archlinux-keyring
 
         # vimのアンインストール
-        if has "vim"; then
+        if has "vim" && ! has "nvim"; then
             sudo pacman -R vim
         fi
 
         # yayのインストール
         sudo pacman -Syyuu --needed git base-devel
-        git clone https://aur.archlinux.org/yay.git
-        cd yay
-        makepkg -si
-        cd ..
-        rm -rf yay
+        cd /tmp
+        if ! has "yay"; then
+            git clone https://aur.archlinux.org/yay.git
+            cd yay
+            makepkg -si
+            cd ..
+            rm -rf yay
+        fi
 
         # enable systemd(by distrod)
         curl -L -O "https://raw.githubusercontent.com/nullpo-head/wsl-distrod/main/install.sh"
         chmod +x install.sh
         sudo ./install.sh install
         sudo /opt/distrod/bin/distrod enable
+        cd ${HOME}
 
         # xrdpのインストール
         yay -S xrdp xorgxrdp
@@ -255,30 +261,31 @@ initialize() {
             mplayer
             openssh
             jedi-language-server
+            rxvt-unicode
         )
 
         PRE_REQUISITES_ARCH_AUR=(
             tmuxp
             ranger
             qtile
-            termite
             mdr
+            ttf-ricty
         )
 
         for p in ${PRE_REQUISITES_ARCH_PACMAN[@]}
         do
-            if [ ! has $p ]; then
-                yes | sudo pacman -S $p
+            if ! has $p; then
+                sudo pacman -S $p
             fi
         done
         for p in ${PRE_REQUISITES_ARCH_AUR[@]}
         do
-            if [ ! has $p ]; then
+            if ! has $p; then
                 yay -S $p
             fi
         done
 
-        sudo ln -s `which nvim` /usr/bin/vim
+        sudo ln -sf `which nvim` /usr/bin/vim
         echo $(tput setaf 2)Installing apps complete!. ✔︎$(tput sgr0)
     else
         echo "error"
