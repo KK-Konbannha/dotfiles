@@ -1,3 +1,5 @@
 # dotfiles
 
-for Ubuntu(wsl2) and Arch Linux(wsl2)
+```bash
+bash -c "$(curl -L raw.github.com/KK-Konbannha/dotfiles/main/install.sh)" -s init
+```
