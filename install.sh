@@ -237,6 +237,7 @@ initialize() {
         sudo sh -c "echo 'allowed_users=anybody' >/etc/X11/Xwrapper.config"
         sudo systemctl enable xrdp
         sudo systemctl enable xrdp-sesman
+        sudo sed -i -e 's/FuseMountName=thinclient_drives/FuseMountName=.thinclient_drives/' /etc/xrdp/sesman.ini
 
         sudo cp /etc/xrdp/xrdp.ini /etc/xrdp/xrdp.ini.bak
         sudo sed -i 's/3389/3390/g' /etc/xrdp/xrdp.ini
