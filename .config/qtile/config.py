@@ -118,7 +118,7 @@ layouts = [
 
 widget_defaults = dict(
     font="HackGenNerd Console",
-    fontsize=26,
+    fontsize=22,
     padding=4,
 )
 extension_defaults = widget_defaults.copy()
@@ -143,7 +143,8 @@ screens = [
                 widget.Clock(format="%Y-%m-%d %a %I:%M %p"),
                 widget.QuickExit(),
             ],
-            36,
+            32,
+            margin=10,
             # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
             # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
         ),
