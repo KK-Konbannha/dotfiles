@@ -184,7 +184,7 @@ nmap <silent> gr <Plug>(coc-references)
 
 " 見た目---------------------------------------------------------------
 " フォント
-set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ Complete\ 12
+set guifont=HackGenNerd\ Console\ 12
 " デフォルトエンコード
 set encoding=UTF-8
 

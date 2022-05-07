@@ -5,21 +5,24 @@
 !!
 
 !URxvt.geometry:             96x32
-URxvt.scrollBar:      false
+URxvt.scrollBar:            false
 !URxvt.scrollBar_right:      true
 !URxvt.scrollBar_floating:   true
 !URxvt.scrollstyle:          plain
 URxvt.cursorBlink:          true
 URxvt.cursorUnderline:      true
 URxvt.pointerBlank:         true
-! URxvt.visualBell:           true
+! URxvt.visualBell:          true
 URxvt.saveLines:            3000
 URxvt.fading:               40
 
 !! Font list and Spacing
 URxvt.font:                 xft:HackGenNerd Console-18
+!                            xft:Symbola-18
 URxvt.letterSpace:          -1
 !URxvt.lineSpace:            0
+
+URxvt.internalBorder:       10
 
 ! ------------------------------------------------------------------------------
 ! --- generated with 4bit Terminal Color Scheme Designer -----------------------

@@ -147,6 +147,7 @@ initialize() {
     mkdir -p "${HOME}/.Trash"
     mkdir -p "${HOME}/tmp"
     mkdir -p "${HOME}/dev"
+    mkdir -p "${HOME}/Wallpapers"
     mkdir -p "${HOME}/Downloads"
 
     # ディストリビューションのチェック"
