@@ -263,7 +263,7 @@ initialize() {
             mplayer
             openssh
             jedi-language-server
-            rxvt-unicode
+            kitty
         )
 
         PRE_REQUISITES_ARCH_AUR=(
