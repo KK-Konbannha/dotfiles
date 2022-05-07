@@ -264,6 +264,7 @@ initialize() {
             openssh
             jedi-language-server
             kitty
+            w3m
         )
 
         PRE_REQUISITES_ARCH_AUR=(
