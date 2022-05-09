@@ -4,20 +4,20 @@
 
 Windowsのリモートデスクトップからwsl上のlinuxにアクセスすることで別pc、パーティション等にlinuxをクリーンインストールしたときと遜色ないデスクトップ環境を得ることが可能になっています。
 
-環境はWindows11を想定している。（筆者はhome edition）
+環境はWindows11を想定しています。（筆者はhome edition）
 
 
 ## 使用ソフトウェア概要
-OS: Arch Linux（リモートデスクトップを利用しないならUbuntuも）
-Window Manager: qtile
-terminal: kitty
-shell: zsh
+OS: Arch Linux（リモートデスクトップを利用しないならUbuntuも）  
+Window Manager: qtile  
+terminal: kitty  
+shell: zsh  
 editor: neovim
 
-これらに加えフォントはHackGen Nerdを使用、日本語入力にはfcitx5を使用、ファイルマネージャーとしてranger、筆者は使いこなせていないが一応tmuxの設定もあります。
-以前使用していたことからxresourcesにはurxvtの設定が残っています。
-また、使用プラグインの関係上npm、yarn、denoがインストールされるようになっています。
-その他、neovimのプラグイン管理にはvim-plug、zshのプラグイン管理にはzplugを使用しています。
+これらに加えフォントはHackGen Nerdを使用、日本語入力にはfcitx5を使用、ファイルマネージャーとしてranger、筆者は使いこなせていないが一応tmuxの設定もあります。  
+以前使用していたことからxresourcesにはurxvtの設定が残っています。  
+また、使用プラグインの関係上npm、yarn、denoがインストールされるようになっています。  
+その他、neovimのプラグイン管理にはvim-plug、zshのプラグイン管理にはzplugを使用しています。  
 ghcupもインストールされるがhaskellを使わないようであればアンインストールしても構いません。（インストールスクリプト中でインストールしないを選ぶとスクリプトが止まってしまうので注意）
 
 ## OS毎のインストール方法
@@ -29,7 +29,7 @@ wsl --install
 ```
 
 ### Ubuntu
-2. プロンプトに沿ってユーザー設定を進める
+2. ターミナルにてプロンプトに沿ってユーザー設定を進める
 
 3. dotfilesをgitを使ってダウンロード→実行
 ```bash:bash
@@ -37,3 +37,4 @@ bash -c "$(curl -L raw.github.com/KK-Konbannha/dotfiles/main/install.sh)" -s ini
 ```
 
 ### Arch Linux
+2. 
