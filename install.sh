@@ -265,6 +265,8 @@ initialize() {
             jedi-language-server
             kitty
             w3m
+            fcitx5-im
+            fcitx5-mozc
         )
 
         PRE_REQUISITES_ARCH_AUR=(
