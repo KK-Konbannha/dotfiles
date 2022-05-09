@@ -148,7 +148,7 @@ screens = [
             32,
             margin=[16, 16, 0, 16],
             border_width=[2, 0, 2, 0],  # Draw top and bottom borders
-            border_color=["ff8fff", "000000", "ff8fff", "000000"]  # Borders are magenta
+            border_color=["ff8fff", "000000", "ff8fff", "000000"],  # Borders are magenta
         ),
         wallpaper=selected_wallpaper_path,
         wallpaper_mode="fill",

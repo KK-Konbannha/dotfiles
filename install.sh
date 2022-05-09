@@ -17,7 +17,6 @@ Commands:
   deploy
   init
 Arguments:
-  -f $(tput setaf 1)** warning **$(tput sgr0) Overwrite dotfiles.
   -h Print help (this message)
 EOF
 exit 1
@@ -58,7 +57,7 @@ check_dist() {
 }
 
 # オプション -hはヘルプ表示
-while getopts fh opt; do
+while getopts h opt; do
     case ${opt} in
         h)
             usage
@@ -197,6 +196,9 @@ initialize() {
         echo $(tput setaf 2)Installing nvim complete!. ✔︎$(tput sgr0)
 
     elif [ ${dist} = "Arch" ]; then
+
+        mkdir -p "${HOME}/tmp/xorgxrdp-logs"
+
         # locale設定
         sudo sed -i -e 's/#ja_JP.UTF-8/ja_JP.UTF-8/' /etc/locale.gen && sudo locale-gen
         # pacmanのダウンロード元を設定
@@ -239,6 +241,7 @@ initialize() {
         sudo systemctl enable xrdp
         sudo systemctl enable xrdp-sesman
         sudo sed -i -e 's/FuseMountName=thinclient_drives/FuseMountName=.thinclient_drives/' /etc/xrdp/sesman.ini
+        sudo sed -i -e "s/=\.xorg/=tmp\/xorgxrdp-logs\/.xorg/" /etc/xrdp/sesman.ini
 
         sudo cp /etc/xrdp/xrdp.ini /etc/xrdp/xrdp.ini.bak
         sudo sed -i 's/3389/3390/g' /etc/xrdp/xrdp.ini
@@ -267,6 +270,8 @@ initialize() {
             w3m
             fcitx5-im
             fcitx5-mozc
+            neofetch
+            picom
         )
 
         PRE_REQUISITES_ARCH_AUR=(
@@ -288,6 +293,8 @@ initialize() {
                 yay -S $p
             fi
         done
+
+        pip install pillow
 
         sudo ln -sf `which nvim` /usr/bin/vim
         echo $(tput setaf 2)Installing apps complete!. ✔︎$(tput sgr0)
