@@ -49,7 +49,7 @@ echo "%wheel ALL=(ALL) ALL" > /etc/sudoers.d/wheel
 useradd -m -G wheel -s /bin/bash {username}
 passwd {username}
 exit
-Arch.exe config --dafault-user {username}
+Arch.exe config --default-user {username}
 ```
 上記をpowershellにて実行
 
