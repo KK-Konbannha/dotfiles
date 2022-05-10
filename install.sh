@@ -17,7 +17,6 @@ Commands:
   deploy
   init
 Arguments:
-  -f $(tput setaf 1)** warning **$(tput sgr0) Overwrite dotfiles.
   -h Print help (this message)
 EOF
 exit 1
@@ -58,7 +57,7 @@ check_dist() {
 }
 
 # オプション -hはヘルプ表示
-while getopts fh opt; do
+while getopts h opt; do
     case ${opt} in
         h)
             usage
@@ -147,6 +146,7 @@ initialize() {
     mkdir -p "${HOME}/.Trash"
     mkdir -p "${HOME}/tmp"
     mkdir -p "${HOME}/dev"
+    mkdir -p "${HOME}/Wallpapers"
     mkdir -p "${HOME}/Downloads"
 
     # ディストリビューションのチェック"
@@ -196,6 +196,9 @@ initialize() {
         echo $(tput setaf 2)Installing nvim complete!. ✔︎$(tput sgr0)
 
     elif [ ${dist} = "Arch" ]; then
+
+        mkdir -p "${HOME}/tmp/xorgxrdp-logs"
+
         # locale設定
         sudo sed -i -e 's/#ja_JP.UTF-8/ja_JP.UTF-8/' /etc/locale.gen && sudo locale-gen
         # pacmanのダウンロード元を設定
@@ -237,6 +240,8 @@ initialize() {
         sudo sh -c "echo 'allowed_users=anybody' >/etc/X11/Xwrapper.config"
         sudo systemctl enable xrdp
         sudo systemctl enable xrdp-sesman
+        sudo sed -i -e 's/FuseMountName=thinclient_drives/FuseMountName=.thinclient_drives/' /etc/xrdp/sesman.ini
+        sudo sed -i -e "s/=\.xorg/=tmp\/xorgxrdp-logs\/.xorg/" /etc/xrdp/sesman.ini
 
         sudo cp /etc/xrdp/xrdp.ini /etc/xrdp/xrdp.ini.bak
         sudo sed -i 's/3389/3390/g' /etc/xrdp/xrdp.ini
@@ -261,7 +266,12 @@ initialize() {
             mplayer
             openssh
             jedi-language-server
-            rxvt-unicode
+            kitty
+            w3m
+            fcitx5-im
+            fcitx5-mozc
+            neofetch
+            picom
         )
 
         PRE_REQUISITES_ARCH_AUR=(
@@ -269,7 +279,6 @@ initialize() {
             ranger
             qtile
             mdr
-            ttf-ricty
         )
 
         for p in ${PRE_REQUISITES_ARCH_PACMAN[@]}
@@ -285,13 +294,24 @@ initialize() {
             fi
         done
 
+        pip install pillow
+
         sudo ln -sf `which nvim` /usr/bin/vim
         echo $(tput setaf 2)Installing apps complete!. ✔︎$(tput sgr0)
     else
         echo "error"
         exit 1
     fi
-        cd ${HOME}
+
+    cd ${HOME}
+
+    # font instalation
+    cd ${HOME}/Downloads
+    curl -LO https://github.com/yuru7/HackGen/releases/download/v2.6.3/HackGenNerd_v2.6.3.zip
+    unzip HackGenNerd_v2.6.3.zip
+    cp -r HackGenNerd_v2.6.3 ${HOME}/.local/share/fonts/
+    fc-cache -vf
+    cd ${HOME}
 
     # vim-plug
     sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \

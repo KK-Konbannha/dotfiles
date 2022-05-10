@@ -5,44 +5,97 @@
 !!
 
 !URxvt.geometry:             96x32
-URxvt.scrollBar:      false
+URxvt.scrollBar:            false
 !URxvt.scrollBar_right:      true
 !URxvt.scrollBar_floating:   true
 !URxvt.scrollstyle:          plain
 URxvt.cursorBlink:          true
 URxvt.cursorUnderline:      true
 URxvt.pointerBlank:         true
-URxvt.visualBell:           true
+! URxvt.visualBell:          true
 URxvt.saveLines:            3000
 URxvt.fading:               40
 
 !! Font list and Spacing
-URxvt.font:                 xft:Ricty Discord-14
+URxvt.font:                 xft:HackGenNerd Console-18
+!                            xft:Symbola-18
 URxvt.letterSpace:          -1
 !URxvt.lineSpace:            0
 
-!! Color Scheme and Opacity - gruvbox-dark https://github.com/morhetz/gruvbox
-URxvt.depth:                32
-URxvt.color0:               [90]#282828
-URxvt.color1:               [90]#cc241d
-URxvt.color2:               [90]#98971a
-URxvt.color3:               [90]#d79921
-URxvt.color4:               [90]#458588
-URxvt.color5:               [90]#b16286
-URxvt.color6:               [90]#689d6a
-URxvt.color7:               [90]#a89984
-URxvt.color8:               [90]#928374
-URxvt.color9:               [90]#fb4934
-URxvt.color10:              [90]#b8bb26
-URxvt.color11:              [90]#fabd2f
-URxvt.color12:              [90]#83a598
-URxvt.color13:              [90]#d3869b
-URxvt.color14:              [90]#8ec07c
-URxvt.color15:              [90]#ebdbb2
-URxvt.foreground:           [90]#ebdbb2
-URxvt.background:           [90]#282828
-URxvt.colorIT:              [90]#8ec07c
-URxvt.colorBD:              [90]#d5c4a1
-URxvt.colorUL:              [90]#83a598
-URxvt.scrollColor:          [90]#504945
-!URxvt.troughColor:          [90]#3C3836
+URxvt.internalBorder:       10
+
+! ------------------------------------------------------------------------------
+! --- generated with 4bit Terminal Color Scheme Designer -----------------------
+! ------------------------------------------------------------------------------
+! --- http://ciembor.github.com/4bit -------------------------------------------
+! ------------------------------------------------------------------------------
+
+! --- special colors ---
+
+URxvt.background: #1c014a
+URxvt.foreground: #d9d9d9
+
+! --- standard colors ---
+
+! black
+URxvt.color0: #000000
+
+! bright_black
+URxvt.color8: #7e7e7e
+
+! red
+URxvt.color1: #e6413b
+
+! bright_red
+URxvt.color9: #ee7f7b
+
+! green
+URxvt.color2: #3be641
+
+! bright_green
+URxvt.color10: #7bee7f
+
+! yellow
+URxvt.color3: #e0e63b
+
+! bright_yellow
+URxvt.color11: #eaee7b
+
+! blue
+URxvt.color4: #413be6
+
+! bright_blue
+URxvt.color12: #7f7bee
+
+! magenta
+URxvt.color5: #e63be0
+
+! bright_magenta
+URxvt.color13: #ee7bea
+
+! cyan
+URxvt.color6: #3be0e6
+
+! bright_cyan
+URxvt.color14: #7beaee
+
+! white
+URxvt.color7: #d9d9d9
+
+! bright_white
+URxvt.color15: #fbfbfb
+
+! bold or italic
+URxvt.colorIT: #8ec07c
+URxvt.colorBD: #d5c4a1
+
+! underlined
+URxvt.colorUL: #fa8072
+URxvt.underlineColor: #fa8072
+
+! opacity
+URxvt.depth: 50
+
+! ------------------------------------------------------------------------------
+! --- end of terminal colors section -------------------------------------------
+! ------------------------------------------------------------------------------

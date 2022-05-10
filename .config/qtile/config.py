@@ -24,13 +24,18 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+import os
 from libqtile import bar, layout, widget
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
+from lib.get_wallpaper_path import get_wallpaper_path
+
 
 mod = "mod4"
 terminal = guess_terminal()
+wallpapers_dir_path = os.path.expanduser("~/Wallpapers")
+selected_wallpaper_path = get_wallpaper_path(wallpapers_dir_path)
 
 keys = [
     # A list of available commands that can be bound to keys can be found
@@ -100,14 +105,14 @@ for i in groups:
     )
 
 layouts = [
-    layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=4),
-    layout.Max(),
-    layout.Stack(num_stacks=2),
+    layout.MonadTall(border_focus="#57ffff", border_width=2, margin=16),
+    # layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=4),
+    # layout.Max(),
+    # layout.Stack(num_stacks=2),
     # Try more layouts by unleashing below layouts.
     # layout.Stack(num_stacks=2),
     # layout.Bsp(),
     # layout.Matrix(),
-    # layout.MonadTall(),
     # layout.MonadWide(),
     # layout.RatioTile(),
     # layout.Tile(),
@@ -117,9 +122,9 @@ layouts = [
 ]
 
 widget_defaults = dict(
-    font="sans",
-    fontsize=12,
-    padding=3,
+    font="HackGenNerd Console",
+    fontsize=20,
+    padding=4,
 )
 extension_defaults = widget_defaults.copy()
 
@@ -127,9 +132,9 @@ screens = [
     Screen(
         top=bar.Bar(
             [
-                widget.CurrentLayout(),
+                widget.TextBox("   "),
                 widget.GroupBox(),
-                widget.Prompt(),
+                widget.Prompt(prompt='  : '),
                 widget.WindowName(),
                 widget.Chord(
                     chords_colors={
@@ -137,16 +142,16 @@ screens = [
                     },
                     name_transform=lambda name: name.upper(),
                 ),
-                # widget.TextBox("default config", name="default"),
-                # widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
                 widget.Systray(),
                 widget.Clock(format="%Y-%m-%d %a %I:%M %p"),
-                widget.QuickExit(),
             ],
-            24,
-            # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
-            # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
+            32,
+            margin=[16, 16, 0, 16],
+            border_width=[2, 0, 2, 0],  # Draw top and bottom borders
+            border_color=["ff8fff", "000000", "ff8fff", "000000"],  # Borders are magenta
         ),
+        wallpaper=selected_wallpaper_path,
+        wallpaper_mode="fill",
     ),
 ]
 
@@ -194,3 +199,4 @@ wl_input_rules = None
 # We choose LG3D to maximize irony: it is a 3D non-reparenting WM written in
 # java that happens to be on java's whitelist.
 wmname = "LG3D"
+
