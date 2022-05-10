@@ -2,6 +2,7 @@
 /.git/
 /.config/ranger/plugin/
 /.config/qtile/__pycache__/
+/.config/qtile/lib/__pycache__/
 /.config/nvim/plugged/
 /.config/coc/extensions/node_modules/
 
