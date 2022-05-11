@@ -278,6 +278,8 @@ initialize() {
             ranger
             qtile
             mdr
+            google-chrome
+            python-pynvim
         )
 
         for p in ${PRE_REQUISITES_ARCH_PACMAN[@]}
@@ -303,6 +305,8 @@ initialize() {
     fi
 
     cd ${HOME}
+
+    pip install black, flake8
 
 
     # font instalation

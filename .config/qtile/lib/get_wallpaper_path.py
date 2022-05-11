@@ -12,10 +12,13 @@ def get_random_wallpaper_path(wallpapers_dir_path):
             return None
         selected_wallpaper_number = random.randint(1, number_of_wallpapers) - 1
         selected_wallpaper_name = wallpapers_list[selected_wallpaper_number]
-        selected_wallpaper_path = f"{wallpapers_dir_path}/{selected_wallpaper_name}"
+        selected_wallpaper_path = (
+            f"{wallpapers_dir_path}/{selected_wallpaper_name}"
+        )
         return selected_wallpaper_path
     else:
         return None
+
 
 def get_black_wallpaper_path():
     return os.path.expanduser("~/.config/qtile/wall/black.png")
