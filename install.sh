@@ -304,6 +304,7 @@ initialize() {
 
     cd ${HOME}
 
+
     # font instalation
     cd ${HOME}/Downloads
     curl -LO https://github.com/yuru7/HackGen/releases/download/v2.6.3/HackGenNerd_v2.6.3.zip
@@ -346,6 +347,10 @@ initialize() {
         git clone https://github.com/zplug/zplug ~/dotfiles/.zplug
     fi
     echo $(tput setaf 2)Installing zplug complete!. ✔︎$(tput sgr0)
+
+    # ranger plugins
+    git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger/plugins/ranger_devicons
+    echo $(tput setaf 2)Installing ranger plugins complete!. ✔︎$(tput sgr0)
 
     # シェルをzshにする
     [ ${SHELL} != "/bin/zsh"  ] && chsh -s /bin/zsh

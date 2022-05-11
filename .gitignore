@@ -1,6 +1,6 @@
 /.zplug/
 /.git/
-/.config/ranger/plugin/
+/.config/ranger/plugins/
 /.config/qtile/__pycache__/
 /.config/qtile/lib/__pycache__/
 /.config/nvim/plugged/
