@@ -32,66 +32,70 @@ URxvt.internalBorder:       10
 
 ! --- special colors ---
 
-URxvt.background: #1c014a
-URxvt.foreground: #d9d9d9
+! *.background: #1c014a
+*.background: rgba:0000/0000/0200/c800
+*.foreground: #d9d9d9
 
 ! --- standard colors ---
 
 ! black
-URxvt.color0: #000000
+*.color0: #000000
 
 ! bright_black
-URxvt.color8: #7e7e7e
+*.color8: #7e7e7e
 
 ! red
-URxvt.color1: #e6413b
+*.color1: #e6413b
 
 ! bright_red
-URxvt.color9: #ee7f7b
+*.color9: #ee7f7b
 
 ! green
-URxvt.color2: #3be641
+*.color2: #3be641
 
 ! bright_green
-URxvt.color10: #7bee7f
+*.color10: #7bee7f
 
 ! yellow
-URxvt.color3: #e0e63b
+*.color3: #e0e63b
 
 ! bright_yellow
-URxvt.color11: #eaee7b
+*.color11: #eaee7b
 
 ! blue
-URxvt.color4: #413be6
+*.color4: #413be6
 
 ! bright_blue
-URxvt.color12: #7f7bee
+*.color12: #7f7bee
 
 ! magenta
-URxvt.color5: #e63be0
+*.color5: #e63be0
 
 ! bright_magenta
-URxvt.color13: #ee7bea
+*.color13: #ee7bea
 
 ! cyan
-URxvt.color6: #3be0e6
+*.color6: #3be0e6
 
 ! bright_cyan
-URxvt.color14: #7beaee
+*.color14: #7beaee
 
 ! white
-URxvt.color7: #d9d9d9
+*.color7: #d9d9d9
 
 ! bright_white
-URxvt.color15: #fbfbfb
+*.color15: #fbfbfb
 
 ! bold or italic
-URxvt.colorIT: #8ec07c
-URxvt.colorBD: #d5c4a1
+*.colorIT: #8ec07c
+*.colorBD: #d5c4a1
 
 ! underlined
-URxvt.colorUL: #fa8072
-URxvt.underlineColor: #fa8072
+*.colorUL: #fa8072
+*.underlineColor: #fa8072
+
+URxvt*depth: 32
+
 
 ! ------------------------------------------------------------------------------
 ! --- end of terminal colors section -------------------------------------------
