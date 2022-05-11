@@ -110,19 +110,6 @@ for i in groups:
 
 layouts = [
     layout.MonadTall(border_focus="#57ffff", border_width=2, margin=16),
-    # layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=4), # noqa: E501
-    # layout.Max(),
-    # layout.Stack(num_stacks=2),
-    # Try more layouts by unleashing below layouts.
-    # layout.Stack(num_stacks=2),
-    # layout.Bsp(),
-    # layout.Matrix(),
-    # layout.MonadWide(),
-    # layout.RatioTile(),
-    # layout.Tile(),
-    # layout.TreeTab(),
-    # layout.VerticalTile(),
-    # layout.Zoomy(),
 ]
 
 widget_defaults = dict(
@@ -136,7 +123,7 @@ screens = [
     Screen(
         top=bar.Bar(
             [
-                widget.TextBox("   "),
+                widget.TextBox("    "),
                 widget.GroupBox(),
                 widget.Prompt(prompt="  : "),
                 widget.WindowName(),

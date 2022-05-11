@@ -100,7 +100,7 @@ call plug#end()
 
 set laststatus=2
 
-"autocmd bufwritepre *.py execute ':Black'
+autocmd bufwritepre *.py execute ':Black'
 let g:black_linelength = 79
 
 "" pythonにてflake8をvim上及び保存時に使用
