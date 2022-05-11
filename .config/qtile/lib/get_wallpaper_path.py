@@ -2,7 +2,7 @@ import os
 import random
 
 
-def get_wallpaper_path(wallpapers_dir_path):
+def get_random_wallpaper_path(wallpapers_dir_path):
     wallpapers_dir_exists = os.path.isdir(wallpapers_dir_path)
 
     if wallpapers_dir_exists:
@@ -16,3 +16,6 @@ def get_wallpaper_path(wallpapers_dir_path):
         return selected_wallpaper_path
     else:
         return None
+
+def get_black_wallpaper_path():
+    return os.path.expanduser("~/.config/qtile/wall/black.png")

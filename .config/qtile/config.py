@@ -29,13 +29,14 @@ from libqtile import bar, layout, widget
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
-from lib.get_wallpaper_path import get_wallpaper_path
+from lib.get_wallpaper_path import get_random_wallpaper_path, get_black_wallpaper_path
 
 
 mod = "mod4"
 terminal = guess_terminal()
 wallpapers_dir_path = os.path.expanduser("~/Wallpapers")
-selected_wallpaper_path = get_wallpaper_path(wallpapers_dir_path)
+selected_wallpaper_path = get_random_wallpaper_path(wallpapers_dir_path)
+black_wallpaper_path = get_black_wallpaper_path()
 
 keys = [
     # A list of available commands that can be bound to keys can be found
@@ -63,6 +64,8 @@ keys = [
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     # Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
+    Key([mod], "b", lazy.screen.set_wallpaper(black_wallpaper_path), desc="Change wallpaper to black"),
+    Key([mod, "shift"], "b", lazy.screen.set_wallpaper(selected_wallpaper_path), desc="Change wallpaper"),
 ]
 
 groups = [Group(i) for i in "zxc"]
