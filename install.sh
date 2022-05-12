@@ -116,7 +116,9 @@ link_files() {
             ln -snfv ${DOT_DIRECTORY}/${f} ${HOME}/${f}
         fi
     done
-    echo $(tput setaf 2)Deploying dotfiles complete!. ✔︎$(tput sgr0)
+    ln -snfv ${DOT_DIRECTORY}/bin ${HOME}/bin
+    echo $(tput setaf 2)Deploying complete!. ✔︎$(tput sgr0)
+
 
     # 作業ディレクトリを戻す
     cd ${HOME}
