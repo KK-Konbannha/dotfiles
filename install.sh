@@ -273,6 +273,7 @@ initialize() {
             fcitx5-mozc
             neofetch
             picom
+            firefox
         )
 
         PRE_REQUISITES_ARCH_AUR=(
@@ -282,6 +283,7 @@ initialize() {
             mdr
             google-chrome
             python-pynvim
+            rxvt-unicode-truecolor-wide-glyphs
         )
 
         for p in ${PRE_REQUISITES_ARCH_PACMAN[@]}
