@@ -1,7 +1,5 @@
-if [ -e "/usr/sbin/firefox" ]; then
-    /usr/sbin/cal && firefox https://calendar.google.com
-elif [ -e "usr/sbin/google-chrome-stable" ]; then
-    /usr/sbin/cal && google-chrome-stable https://calendar.google.com
-else
+if [ -t 1 ]; then
     /usr/sbin/cal
+else
+    exec /usr/sbin/firefox https://calendar.google.com
 fi
