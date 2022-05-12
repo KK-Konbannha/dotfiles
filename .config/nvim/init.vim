@@ -74,9 +74,8 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " python関連
-"Plug 'davidhalter/jedi-vim'
-"Plug 'nvie/vim-flake8'
-"Plug 'psf/black', { 'rev': 'ce14fa8b497bae2b50ec48b3bd7022573a59cdb1' }
+Plug 'nvie/vim-flake8'
+Plug 'psf/black'
 
 " emmet(html, cssなど)
 Plug 'mattn/emmet-vim'
@@ -101,15 +100,15 @@ call plug#end()
 
 set laststatus=2
 
-"autocmd bufwritepre *.py execute ':Black'
-"let g:black_linelength = 79
+autocmd bufwritepre *.py execute ':Black'
+let g:black_linelength = 79
 
 "" pythonにてflake8をvim上及び保存時に使用
-"autocmd BufWritePost *.py call Flake8() " 保存時自動でflask8実行
-"let g:flake8_quickfix_location="topleft" " Quickfixの位置
-"let g:flake8_quickfix_height=7 " Quickfixの高さ
-"let g:flake8_show_in_gutter=1  " 左端にシンボルを表示
-"let g:flake8_show_in_file=1  " ファイル内にマークを表示
+autocmd BufWritePost *.py call Flake8() " 保存時自動でflask8実行
+let g:flake8_quickfix_location="topleft" " Quickfixの位置
+let g:flake8_quickfix_height=7 " Quickfixの高さ
+let g:flake8_show_in_gutter=1  " 左端にシンボルを表示
+let g:flake8_show_in_file=1  " ファイル内にマークを表示
 
 " nerdtreeにアイコンを表示する
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1

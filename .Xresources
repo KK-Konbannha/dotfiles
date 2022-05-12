@@ -17,8 +17,8 @@ URxvt.saveLines:            3000
 URxvt.fading:               40
 
 !! Font list and Spacing
-URxvt.font:                 xft:HackGenNerd Console-18
-!                            xft:Symbola-18
+URxvt.font:                 xft:HackGenNerd Console-18,\
+                            xft:Symbola-18
 URxvt.letterSpace:          -1
 !URxvt.lineSpace:            0
 
