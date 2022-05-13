@@ -310,7 +310,7 @@ initialize() {
 
     cd ${HOME}
 
-    pip install black, flake8
+    pip install black flake8
 
 
     # font instalation

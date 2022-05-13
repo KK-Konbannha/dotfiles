@@ -1,5 +1,6 @@
+#! /bin/sh
 if [ -t 1 ]; then
     /usr/sbin/cal
 else
-    exec /usr/sbin/firefox https://calendar.google.com
+    exec /usr/lib/firefox/firefox "$@"
 fi
