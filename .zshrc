@@ -55,7 +55,7 @@ export PIPENV_VENV_IN_PROJECT=1
 # rangerでデフォルトのrc.confを読み込むかどうか
 export RANGER_LOAD_DEFAULT_RC=FALSE
 
-export PATH=$HOME/bin:$PATH
+export PATH=$HOME/bin:$HOME/.local/bin:$PATH
 # ==============================================================================
 # 
 # プラグイン読み込み
@@ -202,7 +202,10 @@ function ranger() {
 # ==============================================================================
 
 # 通常のプロンプトです。
-PROMPT="%F{050}%c %# %f%k"
+# PROMPT="%F{050}%c %# %f%k"
+# PROMPT="%F{050}%c   %f%k"
+PROMPT="%F{050}  %c
+  %f%k"
 # for や while 、複数行入力時等に表示されるプロンプトです。
 PROMPT2="> "
 # 右に表示するプロンプトです。
