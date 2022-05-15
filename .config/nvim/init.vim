@@ -88,6 +88,9 @@ Plug 'tani/glance-vim'
 " c
 " Plug 'rhysd/vim-clang-format'
 
+" sandwich
+Plug 'machakann/vim-sandwich'
+
 " color scheme
 Plug 'tomasr/molokai'
 
