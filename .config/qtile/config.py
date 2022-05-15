@@ -74,6 +74,7 @@ keys = [
         lazy.spawncmd(),
         desc="Spawn a command using a prompt widget",
     ),
+    Key([mod], "f", lazy.spawn("firefox"), desc="Launch firefox"),
     Key(
         [mod],
         "b",
@@ -113,7 +114,7 @@ layouts = [
 ]
 
 widget_defaults = dict(
-    font="HackGenNerd Console",
+    font="HackGenNerd With FFxiv Glyph",
     fontsize=20,
     padding=4,
 )
