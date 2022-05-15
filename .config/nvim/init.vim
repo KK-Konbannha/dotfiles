@@ -91,6 +91,9 @@ Plug 'tani/glance-vim'
 " color scheme
 Plug 'tomasr/molokai'
 
+" high light
+Plug 'nvim-treesitter/nvim-treesitter'
+
 " わからん…
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
@@ -116,6 +119,20 @@ let g:webdevicons_enable_nerdtree = 1
 
 " emmetの設定
 let g:user_emmet_leader_key='<c-y>'
+
+"" treesitter
+lua <<EOF
+require('nvim-treesitter.configs').setup {
+  ensure_installed = {
+    "javascript",
+    "typescript",
+    "tsx",
+  },
+  highlight = {
+    enable = true,
+  },
+}
+EOF
 
 " Coc------------------------------------------------------------------
 " coc-extesions
