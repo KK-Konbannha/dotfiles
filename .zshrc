@@ -198,15 +198,17 @@ function prompt-ranger-level() {
 # 
 # ==============================================================================
 
+# プロンプトで使う関数
+PROMPT_RNG='`prompt-ranger-level`'
+RPROMPT_GIT='`rprompt-git-current-branch`'
+
 # 通常のプロンプトです。
 # PROMPT="%F{050}%c %# %f%k"
-PROMPT_RNG='`prompt-ranger-level`'
 PROMPT="%F{050}  %c ${PROMPT_RNG}
   %f%k"
 # for や while 、複数行入力時等に表示されるプロンプトです。
 PROMPT2="> "
 # 右に表示するプロンプトです。
-RPROMPT_GIT='`rprompt-git-current-branch`'
 RPROMPT=${RPROMPT_GIT}"%F{050}  [%m]%f%k"
 
 # 右プロンプトまで入力が来たら消すようにします。
