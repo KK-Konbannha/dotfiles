@@ -62,44 +62,33 @@ export PATH=$HOME/bin:$HOME/.local/bin:$PATH
 # 
 # ==============================================================================
 
-# zplugが無ければgitからclone
-if [[ ! -d ~/dotfiles/.zplug ]];then
-    git clone https://github.com/zplug/zplug ~/dotfiles/.zplug
+### Added by Zinit's installer
+if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
+    print -P "%F{33}▓▒░ %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
+    command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
+    command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" && \
+        print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
+        print -P "%F{160}▓▒░  The clone has failed.%f%b"
 fi
 
-# zplugを使う
-source ~/.zplug/init.zsh
-
-# ここに使いたいプラグインを書いておく
-# zplug "ユーザー名/リポジトリ名", タグ
+source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+### End of Zinit's installer chunk
 
 # 入力途中に候補をうっすら表示
-zplug "zsh-users/zsh-autosuggestions"
+zinit light "zsh-users/zsh-autosuggestions"
 
 # fzf 本体（連携前提のパーツ）
-zplug "junegunn/fzf-bin", as:command, from:gh-r, rename-to:fzf
-zplug "junegunn/fzf", as:command, use:bin/fzf-tmux
+zinit light "junegunn/fzf-bin"
+zinit light "junegunn/fzf"
 
 
 # fzf でよく使う関数の詰め合わせ
-zplug "mollifier/anyframe"
+zinit light "mollifier/anyframe"
 
 # ディレクトリ移動を高速化（fzf であいまい検索）
-zplug "b4b4r07/enhancd", use:init.sh, as:plugin
-
-# 自分自身をプラグインとして管理
-zplug "zplug/zplug", hook-build:'zplug --self-manage'
-
-# インストールしてないプラグインはインストール
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
-fi
-
-# コマンドをリンクして、PATH に追加し、プラグインは読み込む
-zplug load
+zinit light "b4b4r07/enhancd"
 
 # ==============================================================================
 # 
@@ -319,3 +308,4 @@ export NVM_DIR="$HOME/.nvm"
 
 export DENO_INSTALL="$HOME/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
+

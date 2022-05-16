@@ -350,21 +350,18 @@ initialize() {
     curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
     echo $(tput setaf 2)Installing ghcup complete!. ✔︎$(tput sgr0)
 
-    # zplug
-    if [[ ! -d ${DOT_DIRECTORY}/.zplug ]];then
-        git clone https://github.com/zplug/zplug ~/dotfiles/.zplug
-    fi
-    echo $(tput setaf 2)Installing zplug complete!. ✔︎$(tput sgr0)
-
-    # ranger plugins
-    git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger/plugins/ranger_devicons
-    echo $(tput setaf 2)Installing ranger plugins complete!. ✔︎$(tput sgr0)
-
     # シェルをzshにする
     [ ${SHELL} != "/bin/zsh"  ] && chsh -s /bin/zsh
     echo "$(tput setaf 2)Initialize complete!. ✔︎$(tput sgr0)"
 
     link_files
+
+    cd ${HOME}
+
+    # ranger plugins
+    git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger/plugins/ranger_devicons
+    echo $(tput setaf 2)Installing ranger plugins complete!. ✔︎$(tput sgr0)
+
 
     # 作業ディレクトリを戻す
     cd ${HOME}
