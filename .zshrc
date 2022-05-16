@@ -193,8 +193,7 @@ function ranger() {
 # 通常のプロンプトです。
 # PROMPT="%F{050}%c %# %f%k"
 # PROMPT="%F{050}%c   %f%k"
-PROMPT="%F{050}  %c
-  %f%k"
+PROMPT="%F{050}  %c   %f%k"
 # for や while 、複数行入力時等に表示されるプロンプトです。
 PROMPT2="> "
 # 右に表示するプロンプトです。
