@@ -184,11 +184,11 @@ function ranger() {
     fi
 }
 
-function rprompt-ranger-level() {
+function prompt-ranger-level() {
     if [ -z "$RANGER_LEVEL" ]; then
         echo ""
     else
-        echo "%F{050}  %f"
+        echo " "
     fi
 }
 
@@ -200,15 +200,14 @@ function rprompt-ranger-level() {
 
 # 通常のプロンプトです。
 # PROMPT="%F{050}%c %# %f%k"
-# PROMPT="%F{050}%c   %f%k"
-PROMPT="%F{050}  %c 
+PROMPT_RNG='`prompt-ranger-level`'
+PROMPT="%F{050}  %c ${PROMPT_RNG}
   %f%k"
 # for や while 、複数行入力時等に表示されるプロンプトです。
 PROMPT2="> "
 # 右に表示するプロンプトです。
-RPROMPT_RNG='`rprompt-ranger-level`'
 RPROMPT_GIT='`rprompt-git-current-branch`'
-RPROMPT=${RPROMPT_RNG}${RPROMPT_GIT}"%F{050}  [%m]%f%k"
+RPROMPT=${RPROMPT_GIT}"%F{050}  [%m]%f%k"
 
 # 右プロンプトまで入力が来たら消すようにします。
 setopt transient_rprompt
