@@ -81,7 +81,8 @@ Plug 'psf/black'
 Plug 'mattn/emmet-vim'
 
 " markdown
-Plug 'skanehira/preview-markdown.vim'
+" Plug 'skanehira/preview-markdown.vim'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 Plug 'MichaelMure/mdr'
 Plug 'tani/glance-vim'
 
@@ -103,6 +104,7 @@ Plug 'roxma/vim-hug-neovim-rpc'
 
 call plug#end()
 " ---------------------------------------------------------------------
+let g:mkdp_browser = '/usr/sbin/firefox'
 
 set laststatus=2
 
