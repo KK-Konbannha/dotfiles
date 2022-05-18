@@ -1,0 +1,18 @@
+#! /bin/zsh
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+npm_path="$(nvm which current | sed "s/\/node\$//")/npm"
+if [ $1 = "urxvt" ] || [ $1 = "python" ]; then
+    BROWSER=none
+else
+    unset BROWSER
+fi
+shift
+if [ $# -gt 0 ]; then
+    if [ $1 = "start" ]; then
+        set +m
+        exec $(sleep 5 && firefox http://localhost:3000) > /dev/null 2>&1 &
+    fi
+fi
+$npm_path "$@"

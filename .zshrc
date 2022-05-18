@@ -34,6 +34,9 @@ colors
 # デフォルトで使用するエディタを設定します。
 export EDITOR=vim
 
+# デフォルトで使用するブラウザを設定します。（nodeでの使用を確認）
+export BROWSER=none
+
 # 言語の設定を行います。
 export LANGUAGE=ja_JP.UTF-8
 export LC_ALL=ja_JP.UTF-8
@@ -129,6 +132,10 @@ if [ $SHLVL = 1 ]; then
     alias t="tmuxp load ~/.tmuxp/config.yaml"
 fi
 
+# npm startで起動するブラウザを制御したい
+term_emu_name="$(basename "/"$(ps -o cmd -f -p $(cat /proc/$(echo $$)/stat | cut -d \  -f 4) | tail -1 | sed 's/ .*$//'))"
+alias npm="start_npm $term_emu_name"
+
 # windowsのchromeとdeepl(chromeから)にエイリアスでアクセスする
 
 if [ ! -e "/mnt/c/'Program Files'/Google/Chrome/Application" ]; then
@@ -176,6 +183,7 @@ setopt prompt_subst
 bindkey "^N" down-line-or-history
 bindkey "^P" up-line-or-history
 
+# rangerの起動を制御したい
 function ranger() {
     if [ -z "$RANGER_LEVEL" ]; then
         /usr/bin/ranger "$@"
