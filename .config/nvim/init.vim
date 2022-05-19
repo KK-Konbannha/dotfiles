@@ -83,11 +83,11 @@ Plug 'mattn/emmet-vim'
 " markdown
 Plug 'kat0h/bufpreview.vim'
 
-" c
-" Plug 'rhysd/vim-clang-format'
-
 " sandwich
 Plug 'machakann/vim-sandwich'
+
+" skk
+Plug 'vim-skk/denops-skkeleton.vim'
 
 " color scheme
 Plug 'tomasr/molokai'
@@ -134,6 +134,15 @@ require('nvim-treesitter.configs').setup {
   },
 }
 EOF
+
+imap <C-j> <Plug>(skkeleton-toggle)
+cmap <C-j> <Plug>(skkeleton-toggle)
+
+call skkeleton#config({
+\'eggLikeNewline':v:true
+\})
+
+
 
 " Coc------------------------------------------------------------------
 " coc-extesions
