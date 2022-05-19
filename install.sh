@@ -270,7 +270,7 @@ initialize() {
             jedi-language-server
             w3m
             fcitx5-im
-            fcitx5-mozc
+            fcitx5-skk
             neofetch
             picom
             firefox
