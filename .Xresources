@@ -4,6 +4,8 @@
 !! rxvt-unicode (urxvt)
 !!
 
+Xcursor.theme:              Layan-border Cursors
+
 !URxvt.geometry:             96x32
 URxvt.scrollBar:            false
 !URxvt.scrollBar_right:      true
