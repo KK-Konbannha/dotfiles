@@ -65,9 +65,6 @@ Plug 'itchyny/lightline.vim'
 " deno
 Plug 'vim-denops/denops.vim'
 
-" ddc
-Plug 'Shougo/ddc.vim'
-
 " nerdtree関連
 Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdtree'
@@ -140,38 +137,6 @@ EOF
 
 imap <C-j> <Plug>(skkeleton-enable)
 cmap <C-j> <Plug>(skkeleton-enable)
-
-call ddc#custom#patch_global('sources', ['skkeleton'])
-call ddc#custom#patch_global('sourceOptions', #{
-  \   skkeleton: #{
-  \     matchers: ['skkeleton'],
-  \     minAutoCompleteLength: 1,
-  \   },
-  \ })
-call skkeleton#config(#{
-  \   eggLikeNewline: v:true,
-  \   globalJisyo: "~/.skk/SKK-JISYO.L",
-  \ })
-
-function s:enable_ddc() abort
-  let b:coc_suggest_disable = v:true
-  call ddc#custom#patch_global('autoCompleteEvents',
-    \ ['TextChangedI', 'TextChangedP', 'CmdlineChanged'])
-endfunction
-
-function s:disable_ddc() abort
-  let b:coc_suggest_disable = v:false
-  call ddc#custom#patch_global('autoCompleteEvents', [])
-endfunction
-
-" initialize
-call <sid>disable_ddc()
-
-augroup skkeleton
-  autocmd!
-  autocmd User skkeleton-enable-pre  call <sid>enable_ddc()
-  autocmd User skkeleton-disable-pre call <sid>disable_ddc()
-augroup END
 
 
 " Coc------------------------------------------------------------------
