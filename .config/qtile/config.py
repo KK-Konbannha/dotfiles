@@ -29,6 +29,7 @@ from libqtile import bar, layout, widget
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
+from lib.widget import MyGmailChecker
 from lib.get_wallpaper_path import (
     get_random_wallpaper_path,
     get_black_wallpaper_path,
@@ -83,29 +84,35 @@ keys = [
     ),
 ]
 
-groups = [Group(i) for i in "zxc"]
 
-for i in groups:
+def init_group_names():
+    return [
+        ("   ", {"layout": "MonadTall"}),
+        ("   ", {"layout": "MonadTall"}),
+    ]
+
+
+def init_groups(group_names):
+    return [Group(name, **kwargs) for name, kwargs in group_names]
+
+
+if __name__ in ["config", "__main__"]:
+    group_names = init_group_names()
+    groups = init_groups(group_names)
+
+for i, (name, kwargs) in enumerate(group_names, 1):
     keys.extend(
         [
             Key(
                 [mod],
-                i.name,
-                lazy.group[i.name].toscreen(),
-                desc="Switch to group {}".format(i.name),
+                str(i),
+                lazy.group[name].toscreen(),
             ),
             Key(
                 [mod, "shift"],
-                i.name,
-                lazy.window.togroup(i.name, switch_group=True),
-                desc="Switch to & move focused window to group {}".format(
-                    i.name
-                ),
+                str(i),
+                lazy.window.togroup(name, switch_group=True),
             ),
-            # Or, use below if you prefer not to switch to that group.
-            # # mod1 + shift + letter of group = move focused window to group
-            # Key([mod, "shift"], i.name, lazy.window.togroup(i.name),
-            #     desc="move focused window to group {}".format(i.name)),
         ]
     )
 
@@ -125,7 +132,12 @@ screens = [
         top=bar.Bar(
             [
                 widget.TextBox("    "),
-                widget.GroupBox(),
+                widget.GroupBox(
+                    fontsize=18,
+                    border_width=1,
+                    this_current_screen_border="03f8fc",
+                    margin=3,
+                ),
                 widget.Prompt(prompt="  : "),
                 widget.WindowName(),
                 widget.Chord(
@@ -135,6 +147,7 @@ screens = [
                     name_transform=lambda name: name.upper(),
                 ),
                 widget.Systray(),
+                MyGmailChecker(),
                 widget.Clock(format="%Y-%m-%d %a %I:%M %p"),
             ],
             32,
