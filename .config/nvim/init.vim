@@ -1,38 +1,63 @@
-" 行番号ひょうじ
-set number
+" Fundamentals "{{{
+" ---------------------------------------------------------------------
 
-" クリップボードとの連携on
-set clipboard=unnamed
+" init autocmd
+autocmd!
+" set script encoding
+scriptencoding utf-8
 
-" ハイライトon
-set hlsearch
+set number " 行番号
+syntax enable
+set fileencodings=utf-8,sjis
+set encoding=utf-8
+set title
+set autoindent
+set nobackup
+set hlsearch " 検索結果をハイライト
+set showcmd
+set cmdheight=1
+set laststatus=2
+set scrolloff=5
+set ignorecase
+set smartcase
+set history=1000
 
-" コマンド履歴の保存数
-set history=10000
+set shell=zsh
+set backupskip=/tmp/*
 
-" タブの半角スペースの個数
-set tabstop=4
-
-set shiftwidth=0
-
-" タブの代わりにスペースを使用
-set expandtab
-
+set et " タブ→スペースの変換
 set smarttab
 
-set shiftround
+" インデント
+filetype plugin indent on
+set shiftwidth=4
+set tabstop=4
+set ai " Auto indent
+set si " Smart indent
+set nowrap " 折り返さない
 
-" 大文字と小文字を無視する
-set ignorecase
+" ファイル検索時サブフォルダまで探す
+set path+=**
+set wildignore+=*/node_modules/*
 
-" 検索パターンが大文字を含んでいたら'ignorecase'を上書きする。('ignorecase'オンのときのみ使われる)
-set smartcase
+set modifiable
+set write
+
+" マウスの設定
+set mouse=n
+
+"}}}
+
+" KeyMaps "{{{
+" ---------------------------------------------------------------------
+" 入力モード中に素早くjjと入力した場合はESCとみなす
+inoremap jj <Esc>
 
 " leaderをspacdにする
 let mapleader = "\<Space>"
 
-" 入力モード中に素早くjjと入力した場合はESCとみなす
-inoremap jj <Esc>
+" Save with root permission
+command! W w !sudo tee > /dev/null %
 
 " <Space>i でコードをインデント整形
 map <Leader>i gg=<S-g><C-o><C-o>zz
@@ -49,60 +74,63 @@ nnoremap <silent><C-e> :NERDTreeToggle<CR>
 " grepのときにquickfix-windowで開く
 autocmd QuickFixCmdPost *grep* cwindow
 
+" Search for selected text, forwards or backwards.
+vnoremap <silent> * :<C-U>
+  \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
+  \gvy/<C-R><C-R>=substitute(
+  \escape(@", '/\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
+  \gV:call setreg('"', old_reg, old_regtype)<CR>
+vnoremap <silent> # :<C-U>
+  \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
+  \gvy?<C-R><C-R>=substitute(
+  \escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
+  \gV:call setreg('"', old_reg, old_regtype)<CR>
+
+imap <C-j> <Plug>(skkeleton-enable)
+cmap <C-j> <Plug>(skkeleton-enable)
+
+"}}}
+
+" Plugins "{{{
+" ---------------------------------------------------------------------
+call plug#begin('~/.config/nvim/plugged')
+
+Plug 'vim-denops/denops.vim' " deno
+Plug 'vim-skk/denops-skkeleton.vim' " skk
+
+Plug 'tomasr/molokai' " color scheme
+Plug 'itchyny/lightline.vim' " ステータスバー
+
+Plug 'scrooloose/nerdtree' " nerdtree
+Plug 'ryanoasis/vim-devicons'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+
+Plug 'nvie/vim-flake8' " flake8(python)
+Plug 'psf/black' " black(python)
+Plug 'mattn/emmet-vim' " emmet(html, cssなど)
+
+Plug 'kat0h/bufpreview.vim' " preview markdown
+Plug 'machakann/vim-sandwich' " sandwich
+
+if has("nvim")
+    Plug 'nvim-lua/popup.nvim'
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'windwp/nvim-autopairs'
+    Plug 'windwp/nvim-ts-autotag'
+    Plug 'nvim-treesitter/nvim-treesitter' " high light
+    Plug 'neoclide/coc.nvim', {'branch': 'release'} " coc nvim
+endif
+
+
+call plug#end()
+
+"}}}
+
+" PluginsConfig "{{{
+" ---------------------------------------------------------------------
 " nerdの設定
 let NERDTreeShowHidden=1
 let g:NERDTreeLimitedSyntax = 1
-
-set modifiable
-set write
-
-"// PLUGIN SETTINGS ---------------------------------------------------
-call plug#begin('~/.config/nvim/plugged')
-
-" ステータスバー
-Plug 'itchyny/lightline.vim'
-
-" deno
-Plug 'vim-denops/denops.vim'
-
-" nerdtree関連
-Plug 'ryanoasis/vim-devicons'
-Plug 'scrooloose/nerdtree'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-
-" coc nvim
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-" python関連
-Plug 'nvie/vim-flake8'
-Plug 'psf/black'
-
-" emmet(html, cssなど)
-Plug 'mattn/emmet-vim'
-
-" markdown
-Plug 'kat0h/bufpreview.vim'
-
-" sandwich
-Plug 'machakann/vim-sandwich'
-
-" skk
-Plug 'vim-skk/denops-skkeleton.vim'
-
-" color scheme
-Plug 'tomasr/molokai'
-
-" high light
-Plug 'nvim-treesitter/nvim-treesitter'
-
-" わからん…
-Plug 'roxma/nvim-yarp'
-Plug 'roxma/vim-hug-neovim-rpc'
-
-call plug#end()
-" ---------------------------------------------------------------------
-
-set laststatus=2
 
 autocmd bufwritepre *.py execute ':Black'
 let g:black_linelength = 79
@@ -135,11 +163,8 @@ require('nvim-treesitter.configs').setup {
 }
 EOF
 
-imap <C-j> <Plug>(skkeleton-enable)
-cmap <C-j> <Plug>(skkeleton-enable)
-
-
-" Coc------------------------------------------------------------------
+" Coc "{{{
+" ---------------------------------------------------------------------
 " coc-extesions
 let g:coc_global_extensions = [
             \ 'coc-json',
@@ -207,11 +232,13 @@ endif
 if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
     let g:coc_global_extensions += ['coc-eslint']
 endif
+"}}}
 
+"}}}
+
+
+" Looks "{{{
 " ---------------------------------------------------------------------
-
-
-" 見た目---------------------------------------------------------------
 " フォント
 set guifont=HackGenNerd\ Console\ 12
 " デフォルトエンコード
@@ -223,5 +250,6 @@ let g:molokai_original = 1
 " 色の設定
 set t_Co=256
 
-" マウスの設定
-set mouse=n
+"}}}
+
+" vim: set foldmethod=marker foldlevel=0:
