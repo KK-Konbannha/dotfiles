@@ -134,7 +134,7 @@ augroup END
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'vim-denops/denops.vim' " deno
-Plug 'vim-skk/denops-skkeleton.vim' " skk
+Plug 'vim-skk/denops-skkeleton.vim', { 'globalJisyo': '~/.skk/SKK-JISYO.L' } " skk
 
 Plug 'tomasr/molokai' " color scheme
 " Plug 'itchyny/lightline.vim' " ステータスバー
@@ -177,10 +177,20 @@ call plug#end()
 
 " PluginsConfig "{{{
 " ---------------------------------------------------------------------
-" nerdの設定
+
+" NerdConfig "{{{
+" ---------------------------------------------------------------------
 let NERDTreeShowHidden=1
 let g:NERDTreeLimitedSyntax = 1
 
+" nerdtreeにアイコンを表示する
+let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+let g:webdevicons_enable_nerdtree = 1
+
+"}}}
+
+" python "{{{
+" ---------------------------------------------------------------------
 autocmd bufwritepre *.py execute ':Black'
 let g:black_linelength = 79
 
@@ -191,14 +201,16 @@ let g:flake8_quickfix_height=7 " Quickfixの高さ
 let g:flake8_show_in_gutter=1  " 左端にシンボルを表示
 let g:flake8_show_in_file=1  " ファイル内にマークを表示
 
-" nerdtreeにアイコンを表示する
-let g:WebDevIconsUnicodeDecorateFolderNodes = 1
-let g:webdevicons_enable_nerdtree = 1
+"}}}
 
-" emmetの設定
+" EmmetConfig "{{{
+" ---------------------------------------------------------------------
 let g:user_emmet_leader_key='<c-y>'
 
-"" treesitter
+"}}}
+
+" TreesitterConfig "{{{
+" ---------------------------------------------------------------------
 lua <<EOF
 require('nvim-treesitter.configs').setup {
   ensure_installed = {
@@ -211,6 +223,8 @@ require('nvim-treesitter.configs').setup {
   },
 }
 EOF
+
+"}}}
 
 " Coc "{{{
 " ---------------------------------------------------------------------
