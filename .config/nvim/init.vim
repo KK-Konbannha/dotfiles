@@ -134,7 +134,7 @@ Plug 'mattn/emmet-vim' " emmet(html, cssなど)
 Plug 'kat0h/bufpreview.vim' " preview markdown
 Plug 'machakann/vim-sandwich' " sandwich
 
-Plug 'miyakogi/seiya.vim' " background opacity
+" Plug 'miyakogi/seiya.vim' " background opacity
 
 if has("nvim")
     Plug 'hoob3rt/lualine.nvim' " ステータスバー
@@ -175,7 +175,7 @@ let g:user_emmet_leader_key='<c-y>'
 
 " SeiyaConfig(opacity) "{{{
 " ---------------------------------------------------------------------
-let g:seiya_auto_enable=1
+" let g:seiya_auto_enable=1
 
 "}}}
 
@@ -190,11 +190,11 @@ set encoding=UTF-8
 
 " カラースキーム
 set termguicolors
-colorscheme gloombuddy
+" colorscheme gloombuddy
 " colorscheme molokai
 " let g:molokai_original = 1
-" runtime ./colors/Konbannha.vim
-" colorscheme Konbannha
+runtime ./colors/Konbannha.vim
+colorscheme Konbannha
 " 色の設定
 set t_Co=256
 
