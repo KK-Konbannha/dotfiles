@@ -11,7 +11,7 @@ let g:colors_name="Konbannha"
 " Colorscheme "{{{
 " ---------------------------------------------------------------------
 hi Normal                   ctermbg=234
-hi CursorLine               ctermbg=235  cterm=none
+hi CursorLine               ctermbg=237  cterm=none
 hi CursorLineNr ctermfg=208               cterm=none
 hi Boolean         ctermfg=135
 hi Character       ctermfg=144
@@ -89,14 +89,14 @@ hi Underlined      ctermfg=244               cterm=underline
 
 hi VertSplit       ctermfg=244 ctermbg=232   cterm=bold
 hi VisualNOS                   ctermbg=238
-hi Visual                      ctermbg=235
+hi Visual                      ctermbg=238
 hi WarningMsg      ctermfg=231 ctermbg=238   cterm=bold
 hi WildMenu        ctermfg=81  ctermbg=16
 
 hi Comment         ctermfg=59
 hi CursorColumn                ctermbg=236
 hi ColorColumn                 ctermbg=236
-hi LineNr          ctermfg=250 ctermbg=236
+hi LineNr          ctermfg=250 ctermbg=234
 hi NonText         ctermfg=59
 
 hi SpecialKey      ctermfg=59

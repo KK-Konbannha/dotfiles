@@ -14,6 +14,8 @@ require'nvim-treesitter.configs'.setup {
     disable = {},
   },
   ensure_installed = {
+    "markdown",
+    "python",
     "tsx",
     "toml",
     "fish",
