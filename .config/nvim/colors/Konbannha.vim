@@ -8,6 +8,12 @@ let g:colors_name="Konbannha"
 
 "}}}
 
+" Paletts "{{{
+" ---------------------------------------------------------------------
+let s:gui_white = "#000000"
+
+"}}}
+
 " Colorscheme "{{{
 " ---------------------------------------------------------------------
 hi Boolean         guifg=#AE81FF
@@ -16,8 +22,8 @@ hi Number          guifg=#AE81FF
 hi String          guifg=#E6DB74
 hi Conditional     guifg=#F92672               gui=bold
 hi Constant        guifg=#AE81FF               gui=bold
-hi Cursor          guifg=#000000
-hi iCursor         guifg=#000000
+hi Cursor          guifg=s:gui_white
+hi iCursor         guifg=s:gui_white
 hi Debug           guifg=#BCA3A3               gui=bold
 hi Define          guifg=#66D9EF
 hi Delimiter       guifg=#8F8F8F
@@ -31,8 +37,8 @@ hi Error           guifg=#E6DB74
 hi ErrorMsg        guifg=#F92672               gui=bold
 hi Exception       guifg=#A6E22E               gui=bold
 hi Float           guifg=#AE81FF
-hi FoldColumn      guifg=#465457 guibg=#000000
-hi Folded          guifg=#465457 guibg=#000000
+hi FoldColumn      guifg=#465457 guibg=s:gui_white
+hi Folded          guifg=#465457 guibg=s:gui_white
 hi Function        guifg=#A6E22E
 hi Identifier      guifg=#FD971F
 hi Ignore          guifg=#808080 guibg=bg
@@ -43,13 +49,13 @@ hi Label           guifg=#E6DB74               gui=none
 hi Macro           guifg=#C4BE89               gui=italic
 hi SpecialKey      guifg=#66D9EF               gui=italic
 
-hi MatchParen      guifg=#000000 guibg=#FD971F gui=bold
+hi MatchParen      guifg=s:gui_white guibg=#FD971F gui=bold
 hi ModeMsg         guifg=#E6DB74
 hi MoreMsg         guifg=#E6DB74
 hi Operator        guifg=#F92672
 
 " complete menu
-hi Pmenu           guifg=#66D9EF guibg=#000000
+hi Pmenu           guifg=#66D9EF guibg=s:gui_white
 hi PmenuSel                      guibg=#808080
 hi PmenuSbar                     guibg=#080808
 hi PmenuThumb      guifg=#66D9EF
@@ -58,7 +64,7 @@ hi PreCondit       guifg=#A6E22E               gui=bold
 hi PreProc         guifg=#A6E22E
 hi Question        guifg=#66D9EF
 hi Repeat          guifg=#F92672               gui=bold
-hi Search          guifg=#000000 guibg=#FFE792
+hi Search          guifg=s:gui_white guibg=#FFE792
 " marks
 hi SignColumn      guifg=#A6E22E guibg=#232526
 hi SpecialChar     guifg=#F92672               gui=bold
@@ -87,7 +93,7 @@ hi VertSplit       guifg=#808080 guibg=#080808 gui=bold
 hi VisualNOS                     guibg=#403D3D
 hi Visual                        guibg=#403D3D
 hi WarningMsg      guifg=#FFFFFF guibg=#333333 gui=bold
-hi WildMenu        guifg=#66D9EF guibg=#000000
+hi WildMenu        guifg=#66D9EF guibg=s:gui_white
 
 hi TabLineFill     guifg=#1B1D1E guibg=#1B1D1E
 hi TabLine         guibg=#1B1D1E guifg=#808080 gui=none

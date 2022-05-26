@@ -7,6 +7,7 @@ let g:coc_global_extensions = [
             \ 'coc-eslint',
             \ 'coc-jedi',
             \ 'coc-vetur',
+            \ 'coc-r-lsp',
             \ ]
 
 " Use tab for trigger completion with characters ahead and navigate.
