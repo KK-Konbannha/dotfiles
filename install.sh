@@ -274,6 +274,7 @@ initialize() {
             neofetch
             picom
             firefox
+            fzf
         )
 
         PRE_REQUISITES_ARCH_AUR=(
