@@ -46,6 +46,9 @@ set write
 " マウスの設定
 set mouse=n
 
+set splitbelow "新しいウィンドウを下に開く
+set splitright "新しいウィンドウを右に開く
+
 "}}}
 
 " File types "{{{
@@ -123,9 +126,7 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'vim-denops/denops.vim' " deno
 Plug 'vim-skk/denops-skkeleton.vim', { 'globalJisyo': '~/.skk/SKK-JISYO.L' } " skk
 
-Plug 'tjdevries/colorbuddy.vim'
-Plug 'tomasr/molokai' " color scheme
-Plug 'bkegley/gloombuddy' " color scheme
+Plug 'thinca/vim-quickrun' " quickrun
 
 Plug 'nvie/vim-flake8' " flake8(python)
 Plug 'psf/black' " black(python)
@@ -133,8 +134,6 @@ Plug 'mattn/emmet-vim' " emmet(html, cssなど)
 
 Plug 'kat0h/bufpreview.vim' " preview markdown
 Plug 'machakann/vim-sandwich' " sandwich
-
-" Plug 'miyakogi/seiya.vim' " background opacity
 
 if has("nvim")
     Plug 'hoob3rt/lualine.nvim' " ステータスバー
@@ -190,9 +189,6 @@ set encoding=UTF-8
 
 " カラースキーム
 set termguicolors
-" colorscheme gloombuddy
-" colorscheme molokai
-" let g:molokai_original = 1
 runtime ./colors/Konbannha.vim
 colorscheme Konbannha
 " 色の設定
