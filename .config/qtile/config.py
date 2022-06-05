@@ -100,21 +100,21 @@ if __name__ in ["config", "__main__"]:
     group_names = init_group_names()
     groups = init_groups(group_names)
 
-for i, (name, kwargs) in enumerate(group_names, 1):
-    keys.extend(
-        [
-            Key(
-                [mod],
-                str(i),
-                lazy.group[name].toscreen(),
-            ),
-            Key(
-                [mod, "shift"],
-                str(i),
-                lazy.window.togroup(name, switch_group=True),
-            ),
-        ]
-    )
+    for i, (name, kwargs) in enumerate(group_names, 1):
+        keys.extend(
+            [
+                Key(
+                    [mod],
+                    str(i),
+                    lazy.group[name].toscreen(),
+                ),
+                Key(
+                    [mod, "shift"],
+                    str(i),
+                    lazy.window.togroup(name, switch_group=True),
+                ),
+            ]
+        )
 
 layouts = [
     layout.MonadTall(border_focus="#57ffff", border_width=2, margin=16),
