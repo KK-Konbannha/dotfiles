@@ -275,6 +275,7 @@ initialize() {
             picom
             firefox
             fzf
+            evince
         )
 
         PRE_REQUISITES_ARCH_AUR=(
