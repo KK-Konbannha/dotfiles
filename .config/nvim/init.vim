@@ -124,7 +124,7 @@ set cursorline
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'vim-denops/denops.vim' " deno
-Plug 'vim-skk/denops-skkeleton.vim', { 'globalJisyo': '~/.skk/SKK-JISYO.L', 'userJisyo': '~/.skk/mine' } " skk
+Plug 'vim-skk/denops-skkeleton.vim' " skk
 
 Plug 'thinca/vim-quickrun' " quickrun
 
@@ -176,6 +176,13 @@ let g:user_emmet_leader_key='<c-y>'
 " SeiyaConfig(opacity) "{{{
 " ---------------------------------------------------------------------
 " let g:seiya_auto_enable=1
+
+"}}}
+
+
+" Skkeleton "{{{
+" ---------------------------------------------------------------------
+call skkeleton#config({ 'globalJisyo': '~/.skk/SKK-JISYO.L', 'userJisyo': '~/.skk/mine' })
 
 "}}}
 
