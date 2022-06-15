@@ -89,6 +89,7 @@ def init_group_names():
     return [
         ("   ", {"layout": "MonadTall"}),
         ("   ", {"layout": "MonadTall"}),
+        ("   ", {"layout": "MonadTall"}),
     ]
 
 
