@@ -1,14 +1,8 @@
 # dotfiles
 
-このdotfilesはwsl上のUbuntuとArch Linuxで動作します。（Ubuntuはリモートデスクトップは動きません）
-
-Windowsのリモートデスクトップからwsl上のlinuxにアクセスすることで別pc、パーティション等にlinuxをクリーンインストールしたときと遜色ないデスクトップ環境を得ることが可能になっています。
-
-環境はWindows11を想定しています。（筆者はhome edition）
-
+OSに依存しないdotfiles
 
 ## 使用ソフトウェア概要
-OS: Arch Linux（リモートデスクトップを利用しないならUbuntuも）  
 Window Manager: qtile  
 terminal: urxvt  
 shell: zsh  

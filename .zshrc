@@ -122,7 +122,11 @@ alias rngconf='vim ~/dotfiles/.config/ranger/rc.conf'
 
 # 基本コマンドのエイリアス
 alias ls='ls --color=auto'
-alias la='ls -la'
+alias ll='ls -alF'
+alias la='ls -A'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
 alias apep='autopep8 --in-place --aggressive --aggressive'
 #alias xmind='~/xmind/xmind.sh &'
 alias e='emacs'
