@@ -34,7 +34,7 @@ URxvt.internalBorder:       10
 ! --- special colors ---
 
 ! *.background: #1c014a
-*.background: rgba:0000/0000/0200/c800
+*.background: rgba:0000/0000/0200/b800
 *.foreground: #d9d9d9
 
 ! --- standard colors ---
