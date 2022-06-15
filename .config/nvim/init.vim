@@ -124,7 +124,7 @@ set cursorline
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'vim-denops/denops.vim' " deno
-Plug 'vim-skk/denops-skkeleton.vim', { 'globalJisyo': '~/.skk/SKK-JISYO.L' } " skk
+Plug 'vim-skk/denops-skkeleton.vim', { 'globalJisyo': '~/.skk/SKK-JISYO.L', 'userJisyo': '~/.skk/skkeleton' } " skk
 
 Plug 'thinca/vim-quickrun' " quickrun
 
