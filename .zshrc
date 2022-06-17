@@ -147,6 +147,21 @@ if [ ! -e "/mnt/c/'Program Files'/Google/Chrome/Application" ]; then
     alias deepl="/mnt/c/'Program Files'/Google/Chrome/Application/chrome.exe https://www.deepl.com/ja/translator"
 fi
 
+function lprompt-icon {
+    randInt=$(python -c "import sys;x = sys.argv[1].split('/');print(4 if x == ['',''] else (len(x)-1)%4)" $(pwd))
+    if [ $randInt -eq 4 ]; then
+        echo " "
+    elif [ $randInt -eq 1 ]; then
+        echo " "
+    elif [ $randInt -eq 2 ]; then
+        echo " "
+    elif [ $randInt -eq 3 ]; then
+        echo " "
+    elif [ $randInt -eq 0 ]; then
+        echo " "
+    fi
+}
+
 # ブランチ名を色付きで表示させるメソッド
 function rprompt-git-current-branch {
   local branch_name st branch_status
@@ -211,12 +226,13 @@ function prompt-ranger-level() {
 # ==============================================================================
 
 # プロンプトで使う関数
+LPROMPT_ICON='`lprompt-icon`'
 PROMPT_RNG='`prompt-ranger-level`'
 RPROMPT_GIT='`rprompt-git-current-branch`'
 
 # 通常のプロンプトです。
 # PROMPT="%F{050}%c %# %f%k"
-PROMPT="%F{050}  %c ${PROMPT_RNG}
+PROMPT="%F{050}${LPROMPT_ICON} %c ${PROMPT_RNG}
   %f%k"
 # for や while 、複数行入力時等に表示されるプロンプトです。
 PROMPT2="> "

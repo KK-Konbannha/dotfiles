@@ -179,10 +179,12 @@ let g:user_emmet_leader_key='<c-y>'
 
 "}}}
 
-
 " Skkeleton "{{{
 " ---------------------------------------------------------------------
 call skkeleton#config({ 'globalJisyo': '~/.skk/SKK-JISYO.L', 'userJisyo': '~/.skk/mine' })
+call skkeleton#register_kanatable('rom', {
+      \ 'jj': 'escape',
+      \ })
 
 "}}}
 
