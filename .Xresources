@@ -17,7 +17,7 @@ URxvt.saveLines:            3000
 URxvt.fading:               40
 
 !! Font list and Spacing
-URxvt.font:                 xft:apricotJapanesefontT-18,\
+URxvt.font:                 xft:apricotJapanesefontT-20,\
                             xft:HackGenNerd With FFxiv Glyph-18,\
                             xft:Symbola-18
 URxvt.letterSpace:          -1
