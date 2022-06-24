@@ -11,7 +11,7 @@ class MyGmailChecker(base.ThreadPoolText):
 
     defaults = [
         ("update_interval", 5, "Update time in seconds."),
-        ("display_fmt", "{0}", "Display format"),
+        ("display_fmt", "{0} {1}", "Display format"),
     ]
 
     def __init__(self, **config):
@@ -19,4 +19,4 @@ class MyGmailChecker(base.ThreadPoolText):
         self.add_defaults(MyGmailChecker.defaults)
 
     def poll(self):
-        return self.display_fmt.format(str(random.randint(1, 10)))
+        return self.display_fmt.format(str(random.randint(1, 10)), " ")

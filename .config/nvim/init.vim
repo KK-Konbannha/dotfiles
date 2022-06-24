@@ -141,6 +141,7 @@ if has("nvim")
     Plug 'windwp/nvim-ts-autotag' " auto close
     Plug 'kyazdani42/nvim-web-devicons' " icon
     Plug 'nvim-treesitter/nvim-treesitter' " high light
+    Plug 'nvim-treesitter/playground' " nvim treesitter config tool
     Plug 'p00f/nvim-ts-rainbow' " parentheses high light
     Plug 'neoclide/coc.nvim', {'branch': 'release'} " coc nvim
 endif

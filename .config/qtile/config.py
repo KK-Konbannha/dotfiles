@@ -149,7 +149,7 @@ screens = [
                 ),
                 widget.Systray(),
                 MyGmailChecker(),
-                widget.Clock(format="%Y-%m-%d %a %I:%M %p"),
+                widget.Clock(format="%m-%d %a %H:%M"),
             ],
             32,
             margin=[16, 16, 0, 16],
