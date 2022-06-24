@@ -1,0 +1,9 @@
+# Color scheme configuration for Terminator terminal emulator (http://www.tenshu.net/terminator/ and https://launchpad.net/terminator)
+# 
+# Copy the following lines within the [profiles] section of terminator configuration file at ~/.config/terminator/config
+
+[[4bit-1656035212618]]
+  use_theme_colors = False
+  background_color = "#000000"
+  foreground_color = "#ffffff"
+  palette = "#606060:#ff716a:#6aff71:#f7ff6a:#716aff:#ff6af7:#6af7ff:#e9e9e9:#888888:#ff928c:#8cff92:#faff8c:#928cff:#ff8cfa:#8cfaff:#ffffff"

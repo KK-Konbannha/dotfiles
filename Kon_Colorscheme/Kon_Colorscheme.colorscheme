@@ -1,0 +1,97 @@
+# --- ~/.kde/share/apps/konsole/NAME.colorscheme -------------------------------
+# ------------------------------------------------------------------------------
+# --- generated with 4bit Terminal Color Scheme Designer -----------------------
+# ------------------------------------------------------------------------------
+# --- http://ciembor.github.com/4bit -------------------------------------------
+# ------------------------------------------------------------------------------
+
+# --- special colors ---
+
+[Background]
+Color=0,0,0
+Transparency=false
+
+[BackgroundIntense]
+color=0,0,0
+Transparency=false
+
+[Foreground]
+Color=255,255,255
+Transparency=false
+
+[ForegroundIntense]
+Color=255,255,255
+Bold=true
+Transparency=false
+
+# --- standard colors ---
+
+[Color0]
+Color=48,48,48
+Transparency=false
+
+[Color0Intense]
+Color=101,101,101
+Transparency=false
+
+[Color1]
+Color=255,71,62
+Transparency=false
+
+[Color1Intense]
+Color=255,113,106
+Transparency=false
+
+[Color2]
+Color=62,255,71
+Transparency=false
+
+[Color2Intense]
+Color=106,255,113
+Transparency=false
+
+[Color3]
+Color=245,255,62
+Transparency=false
+
+[Color3Intense]
+Color=248,255,106
+Transparency=false
+
+[Color4]
+Color=71,62,255
+Transparency=false
+
+[Color4Intense]
+Color=113,106,255
+Transparency=false
+
+[Color5]
+Color=255,62,245
+Transparency=false
+
+[Color5Intense]
+Color=255,106,248
+Transparency=false
+
+[Color6]
+Color=62,245,255
+Transparency=false
+
+[Color6Intense]
+Color=106,248,255
+Transparency=false
+
+[Color7]
+Color=227,227,227
+Transparency=false
+
+[Color7Intense]
+Color=255,255,255
+Transparency=false
+
+# --- general options ---
+
+[General]
+Description=Kon_Colorsheme
+Opacity=1
