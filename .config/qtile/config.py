@@ -30,9 +30,11 @@ from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 from lib.widget import MyGmailChecker
-from lib.get_wallpaper_path import (
+
+from lib.get_images_path import (
     get_random_wallpaper_path,
     get_black_wallpaper_path,
+    get_the_twelve_image_path,
 )
 
 
@@ -41,6 +43,8 @@ terminal = guess_terminal()
 wallpapers_dir_path = os.path.expanduser("~/Wallpapers")
 selected_wallpaper_path = get_random_wallpaper_path(wallpapers_dir_path)
 black_wallpaper_path = get_black_wallpaper_path()
+the_twelve_image_path = get_the_twelve_image_path()
+the_twelve_image_name = the_twelve_image_path.split("/")[-1][3:-4]
 
 keys = [
     Key([mod], "a", lazy.layout.left(), desc="Move focus to left"),
@@ -132,7 +136,13 @@ screens = [
     Screen(
         top=bar.Bar(
             [
-                widget.TextBox("    "),
+                widget.Spacer(length=20),
+                widget.Image(
+                    filename=the_twelve_image_path,
+                    margin=1,
+                ),
+                widget.TextBox(text=the_twelve_image_name, font="EorzeaSmart"),
+                widget.Spacer(length=20),
                 widget.GroupBox(
                     fontsize=18,
                     border_width=1,
@@ -153,7 +163,7 @@ screens = [
             ],
             32,
             margin=[16, 16, 0, 16],
-            border_width=[2, 0, 2, 0],  # Draw top and bottom borders
+            border_width=[3, 0, 3, 0],  # Draw top and bottom borders
             border_color=[
                 "ff8fff",
                 "000000",

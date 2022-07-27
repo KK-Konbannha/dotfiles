@@ -1,5 +1,6 @@
 import os
 import random
+import datetime
 
 
 def get_random_wallpaper_path(wallpapers_dir_path):
@@ -22,3 +23,11 @@ def get_random_wallpaper_path(wallpapers_dir_path):
 
 def get_black_wallpaper_path():
     return os.path.expanduser("~/.config/qtile/wall/black.png")
+
+
+def get_the_twelve_image_path():
+    image_dir = os.path.expanduser("~/.config/qtile/png")
+    month = datetime.date.today().strftime("%m")
+    image_name = next(filter(lambda x: month in x, os.listdir(image_dir)))
+    image_path = f"{image_dir}/{image_name}"
+    return image_path

@@ -1,0 +1,1491 @@
+!SESSION 2022-07-19 13:20:16.307 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=18.0.1.1
+java.vendor=N/A
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=ja_JP
+Command-line arguments:  -data /home/katsu/dotfiles/.config/coc/extensions/coc-java-data/jdt_ws_078fd0f7222fb158feef284b82b101e6
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:17.389
+!MESSAGE class org.eclipse.jdt.ls.core.internal.JavaLanguageServerPlugin is started
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:17.514
+!MESSAGE Main thread is waiting
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:17.549
+!MESSAGE >> initialize
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:17.551
+!MESSAGE Initializing Java Language Server 1.14.0.202207010106
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:17.595
+!MESSAGE Static Commands: []
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:17.595
+!MESSAGE Non-Static Commands: [java.edit.organizeImports, java.project.refreshDiagnostics, java.project.import, java.navigate.openTypeHierarchy, java.project.removeFromSourcePath, java.project.listSourcePaths, java.project.resolveStackTraceLocation, java.project.getAll, java.project.isTestFile, java.project.getClasspaths, java.navigate.resolveTypeHierarchy, java.edit.stringFormatting, java.project.getSettings, java.project.updateSourceAttachment, java.project.resolveWorkspaceSymbol, java.project.upgradeGradle, java.project.resolveSourceAttachment, java.project.addToSourcePath]
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:17.599
+!MESSAGE Wait for AutoBuildOffJob start
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:17.610
+!MESSAGE Wait for AutoBuildOffJob end 11ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:17.611
+!MESSAGE Starting org.eclipse.m2e.core
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:17.611
+!MESSAGE Started org.eclipse.m2e.core 0ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:17.612
+!MESSAGE ProjectRegistryRefreshJob finished 1ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:17.612
+!MESSAGE Starting org.eclipse.buildship.core
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:17.635
+!MESSAGE Started org.eclipse.buildship.core 23ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:17.988
+!MESSAGE LoadingGradleVersionJob finished 352ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:18.001
+!MESSAGE Creating the Java project jdt.ls-java-project
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:18.009
+!MESSAGE >> initialized
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:18.063
+!MESSAGE Finished creating the Java project jdt.ls-java-project
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:18.544
+!MESSAGE Try to create an invisible project for the workspace /mnt/c/Users/cs22040/OneDrive - Shizuoka University/ドキュメント/share/csprog/12/Javaプログラム
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:18.544
+!MESSAGE Creating the Java project Javaプログラム_eafff511
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:18.568
+!MESSAGE Finished creating the Java project Javaプログラム_eafff511
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:18.584
+!MESSAGE Successfully created a workspace invisible project Javaプログラム_eafff511
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:18.618
+!MESSAGE Workspace initialized in 629ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:18.659
+!MESSAGE >> initialization job finished
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:18.660
+!MESSAGE >> workspace/didChangeConfiguration
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:18.669
+!MESSAGE >> New configuration: {java={enabled=true, jdt={ls={vmargs=-noverify -Xmx1G -XX:+UseG1GC -XX:+UseStringDeduplication}}, errors={incompleteClasspath={severity=warning}}, configuration={checkProjectSettingsExclusions=true, updateBuildConfiguration=interactive, runtimes=[]}, trace={server=off}, import={gradle={enabled=true, wrapper={enabled=true}, offline={enabled=false}}, maven={enabled=true}, exclusions=[**/node_modules/**, **/.metadata/**, **/archetype-resources/**, **/META-INF/maven/**]}, maven={updateSnapshots=false, downloadSources=false}, referencesCodeLens={enabled=false}, signatureHelp={enabled=false}, implementationsCodeLens={enabled=false}, format={enabled=true, comments={enabled=true}, onType={enabled=true, fixComment={enabled=true}}}, saveActions={organizeImports=false}, project={referencedLibraries=[lib/**/*.jar], resourceFilters=[node_modules, .git]}, autobuild={enabled=true}, maxConcurrentBuilds=1.0, completion={maxResults=0.0, enabled=true, overwrite=true, guessMethodArguments=false, favoriteStaticMembers=[org.junit.Assert.*, org.junit.Assume.*, org.junit.jupiter.api.Assertions.*, org.junit.jupiter.api.Assumptions.*, org.junit.jupiter.api.DynamicContainer.*, org.junit.jupiter.api.DynamicTest.*, org.mockito.Mockito.*, org.mockito.ArgumentMatchers.*, org.mockito.Answers.*], filteredTypes=[java.awt.*, com.sun.*], importOrder=[java, javax, com, org]}, progressReports={enabled=true}, foldingRange={enabled=true}, codeGeneration={hashCodeEquals={useJava7Objects=false, useInstanceof=false}, useBlocks=false, generateComments=false, toString={template=${object.className} [${member.name()}=${member.value}, ${otherMembers}], codeStyle=STRING_CONCATENATION, skipNullValues=false, listArrayContents=true, limitElements=0.0}}, selectionRange={enabled=true}, sources={organizeImports={starThreshold=99.0, staticStarThreshold=99.0}}, templates={fileHeader=[], typeComment=[]}, references={includeAccessors=true}}}
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:18.671
+!MESSAGE >> document/didOpen
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:19.088
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:19.323
+!MESSAGE begin problem for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:19.325
+!MESSAGE 0 problems reported for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:19.328
+!MESSAGE Validated 1. Took 206 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:19.342
+!MESSAGE >> Updating classpath for project Javaプログラム_eafff511
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:19.360
+!MESSAGE >> build jobs finished
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:19.363
+!MESSAGE >> registerWatchers'
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:19.366
+!MESSAGE >> registerFeature 'workspace/didChangeWatchedFiles'
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:19.368
+!MESSAGE >> watchers registered
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:22.013
+!MESSAGE >> document/willSaveWaitUntil
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:22.039
+!MESSAGE >> document/didSave
+!SESSION 2022-07-19 13:20:24.261 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=18.0.1.1
+java.vendor=N/A
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=ja_JP
+Command-line arguments:  -data /home/katsu/dotfiles/.config/coc/extensions/coc-java-data/jdt_ws_078fd0f7222fb158feef284b82b101e6
+
+!ENTRY org.eclipse.core.resources 2 10035 2022-07-19 13:20:24.975
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:25.389
+!MESSAGE class org.eclipse.jdt.ls.core.internal.JavaLanguageServerPlugin is started
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:25.486
+!MESSAGE Main thread is waiting
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:25.517
+!MESSAGE >> initialize
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:25.517
+!MESSAGE Initializing Java Language Server 1.14.0.202207010106
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:25.532
+!MESSAGE Static Commands: []
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:25.532
+!MESSAGE Non-Static Commands: [java.edit.organizeImports, java.project.refreshDiagnostics, java.project.import, java.navigate.openTypeHierarchy, java.project.removeFromSourcePath, java.project.listSourcePaths, java.project.resolveStackTraceLocation, java.project.getAll, java.project.isTestFile, java.project.getClasspaths, java.navigate.resolveTypeHierarchy, java.edit.stringFormatting, java.project.getSettings, java.project.updateSourceAttachment, java.project.resolveWorkspaceSymbol, java.project.upgradeGradle, java.project.resolveSourceAttachment, java.project.addToSourcePath]
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:25.536
+!MESSAGE Starting org.eclipse.m2e.core
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:25.536
+!MESSAGE Started org.eclipse.m2e.core 0ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:25.548
+!MESSAGE ProjectRegistryRefreshJob finished 12ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:25.548
+!MESSAGE Starting org.eclipse.buildship.core
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:25.569
+!MESSAGE Started org.eclipse.buildship.core 20ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:25.569
+!MESSAGE LoadingGradleVersionJob finished 0ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:25.618
+!MESSAGE >> initialized
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:26.387
+!MESSAGE Workspace initialized in 816ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:26.409
+!MESSAGE >> initialization job finished
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:26.411
+!MESSAGE >> workspace/didChangeConfiguration
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:26.417
+!MESSAGE >> New configuration: {java={enabled=true, jdt={ls={vmargs=-noverify -Xmx1G -XX:+UseG1GC -XX:+UseStringDeduplication}}, errors={incompleteClasspath={severity=warning}}, configuration={checkProjectSettingsExclusions=true, updateBuildConfiguration=interactive, runtimes=[]}, trace={server=off}, import={gradle={enabled=true, wrapper={enabled=true}, offline={enabled=false}}, maven={enabled=true}, exclusions=[**/node_modules/**, **/.metadata/**, **/archetype-resources/**, **/META-INF/maven/**]}, maven={updateSnapshots=false, downloadSources=false}, referencesCodeLens={enabled=false}, signatureHelp={enabled=false}, implementationsCodeLens={enabled=false}, format={enabled=true, comments={enabled=true}, onType={enabled=true, fixComment={enabled=true}}}, saveActions={organizeImports=false}, project={referencedLibraries=[lib/**/*.jar], resourceFilters=[node_modules, .git]}, autobuild={enabled=true}, maxConcurrentBuilds=1.0, completion={maxResults=0.0, enabled=true, overwrite=true, guessMethodArguments=false, favoriteStaticMembers=[org.junit.Assert.*, org.junit.Assume.*, org.junit.jupiter.api.Assertions.*, org.junit.jupiter.api.Assumptions.*, org.junit.jupiter.api.DynamicContainer.*, org.junit.jupiter.api.DynamicTest.*, org.mockito.Mockito.*, org.mockito.ArgumentMatchers.*, org.mockito.Answers.*], filteredTypes=[java.awt.*, com.sun.*], importOrder=[java, javax, com, org]}, progressReports={enabled=true}, foldingRange={enabled=true}, codeGeneration={hashCodeEquals={useJava7Objects=false, useInstanceof=false}, useBlocks=false, generateComments=false, toString={template=${object.className} [${member.name()}=${member.value}, ${otherMembers}], codeStyle=STRING_CONCATENATION, skipNullValues=false, listArrayContents=true, limitElements=0.0}}, selectionRange={enabled=true}, sources={organizeImports={starThreshold=99.0, staticStarThreshold=99.0}}, templates={fileHeader=[], typeComment=[]}, references={includeAccessors=true}}}
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:26.418
+!MESSAGE >> document/didOpen
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:26.805
+!MESSAGE Reconciled 1. Took 2 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:26.926
+!MESSAGE begin problem for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:26.927
+!MESSAGE 0 problems reported for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:26.929
+!MESSAGE Validated 1. Took 115 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:26.939
+!MESSAGE >> Updating classpath for project Javaプログラム_eafff511
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:26.958
+!MESSAGE >> build jobs finished
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:26.959
+!MESSAGE >> registerWatchers'
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:26.961
+!MESSAGE >> registerFeature 'workspace/didChangeWatchedFiles'
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:26.963
+!MESSAGE >> watchers registered
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:33.977
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:34.001
+!MESSAGE Reconciled 1. Took 10 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:34.192
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:34.198
+!MESSAGE >> document/completion
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:34.204
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:34.257
+!MESSAGE Reconciled 1. Took 2 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:34.727
+!MESSAGE begin problem for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:34.727
+!MESSAGE 0 problems reported for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:34.727
+!MESSAGE Validated 1. Took 19 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:36.175
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:36.239
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:36.707
+!MESSAGE begin problem for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:36.707
+!MESSAGE 0 problems reported for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:36.708
+!MESSAGE Validated 1. Took 19 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:36.768
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:36.834
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:36.952
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:37.016
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:37.110
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:37.114
+!MESSAGE >> document/completion
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:37.116
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:37.172
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:37.594
+!MESSAGE begin problem for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:37.594
+!MESSAGE 0 problems reported for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:37.594
+!MESSAGE Validated 1. Took 20 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:39.814
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:39.875
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:39.977
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:39.981
+!MESSAGE >> document/completion
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:39.983
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:40.028
+!MESSAGE Reconciled 1. Took 2 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:40.443
+!MESSAGE begin problem for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:40.443
+!MESSAGE 0 problems reported for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:40.444
+!MESSAGE Validated 1. Took 14 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:42.992
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:43.003
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:43.358
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:43.362
+!MESSAGE >> document/completion
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:43.364
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:43.406
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:43.871
+!MESSAGE begin problem for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:43.871
+!MESSAGE 0 problems reported for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:43.871
+!MESSAGE Validated 1. Took 15 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:44.821
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:44.884
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:45.298
+!MESSAGE begin problem for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:45.298
+!MESSAGE 0 problems reported for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:45.298
+!MESSAGE Validated 1. Took 12 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:48.536
+!MESSAGE >> document/willSaveWaitUntil
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:20:48.560
+!MESSAGE >> document/didClose
+!SESSION 2022-07-19 13:23:27.725 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=18.0.1.1
+java.vendor=N/A
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=ja_JP
+Command-line arguments:  -data /home/katsu/dotfiles/.config/coc/extensions/coc-java-data/jdt_ws_078fd0f7222fb158feef284b82b101e6
+
+!ENTRY org.eclipse.core.resources 2 10035 2022-07-19 13:23:28.398
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:28.768
+!MESSAGE class org.eclipse.jdt.ls.core.internal.JavaLanguageServerPlugin is started
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:28.866
+!MESSAGE Main thread is waiting
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:28.901
+!MESSAGE >> initialize
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:28.902
+!MESSAGE Initializing Java Language Server 1.14.0.202207010106
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:28.917
+!MESSAGE Static Commands: []
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:28.917
+!MESSAGE Non-Static Commands: [java.edit.organizeImports, java.project.refreshDiagnostics, java.project.import, java.navigate.openTypeHierarchy, java.project.removeFromSourcePath, java.project.listSourcePaths, java.project.resolveStackTraceLocation, java.project.getAll, java.project.isTestFile, java.project.getClasspaths, java.navigate.resolveTypeHierarchy, java.edit.stringFormatting, java.project.getSettings, java.project.updateSourceAttachment, java.project.resolveWorkspaceSymbol, java.project.upgradeGradle, java.project.resolveSourceAttachment, java.project.addToSourcePath]
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:28.920
+!MESSAGE Starting org.eclipse.m2e.core
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:28.920
+!MESSAGE Started org.eclipse.m2e.core 0ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:28.931
+!MESSAGE ProjectRegistryRefreshJob finished 11ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:28.932
+!MESSAGE Starting org.eclipse.buildship.core
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:28.950
+!MESSAGE Started org.eclipse.buildship.core 18ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:28.951
+!MESSAGE LoadingGradleVersionJob finished 1ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:28.971
+!MESSAGE >> initialized
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:29.361
+!MESSAGE Workspace initialized in 409ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:29.372
+!MESSAGE >> initialization job finished
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:29.374
+!MESSAGE >> workspace/didChangeConfiguration
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:29.380
+!MESSAGE >> New configuration: {java={enabled=true, jdt={ls={vmargs=-noverify -Xmx1G -XX:+UseG1GC -XX:+UseStringDeduplication}}, errors={incompleteClasspath={severity=warning}}, configuration={checkProjectSettingsExclusions=true, updateBuildConfiguration=interactive, runtimes=[]}, trace={server=off}, import={gradle={enabled=true, wrapper={enabled=true}, offline={enabled=false}}, maven={enabled=true}, exclusions=[**/node_modules/**, **/.metadata/**, **/archetype-resources/**, **/META-INF/maven/**]}, maven={updateSnapshots=false, downloadSources=false}, referencesCodeLens={enabled=false}, signatureHelp={enabled=false}, implementationsCodeLens={enabled=false}, format={enabled=true, comments={enabled=true}, onType={enabled=true, fixComment={enabled=true}}}, saveActions={organizeImports=false}, project={referencedLibraries=[lib/**/*.jar], resourceFilters=[node_modules, .git]}, autobuild={enabled=true}, maxConcurrentBuilds=1.0, completion={maxResults=0.0, enabled=true, overwrite=true, guessMethodArguments=false, favoriteStaticMembers=[org.junit.Assert.*, org.junit.Assume.*, org.junit.jupiter.api.Assertions.*, org.junit.jupiter.api.Assumptions.*, org.junit.jupiter.api.DynamicContainer.*, org.junit.jupiter.api.DynamicTest.*, org.mockito.Mockito.*, org.mockito.ArgumentMatchers.*, org.mockito.Answers.*], filteredTypes=[java.awt.*, com.sun.*], importOrder=[java, javax, com, org]}, progressReports={enabled=true}, foldingRange={enabled=true}, codeGeneration={hashCodeEquals={useJava7Objects=false, useInstanceof=false}, useBlocks=false, generateComments=false, toString={template=${object.className} [${member.name()}=${member.value}, ${otherMembers}], codeStyle=STRING_CONCATENATION, skipNullValues=false, listArrayContents=true, limitElements=0.0}}, selectionRange={enabled=true}, sources={organizeImports={starThreshold=99.0, staticStarThreshold=99.0}}, templates={fileHeader=[], typeComment=[]}, references={includeAccessors=true}}}
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:29.382
+!MESSAGE >> document/didOpen
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:29.694
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:29.800
+!MESSAGE begin problem for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:29.800
+!MESSAGE 0 problems reported for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:29.803
+!MESSAGE Validated 1. Took 99 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:29.808
+!MESSAGE >> Updating classpath for project Javaプログラム_eafff511
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:29.826
+!MESSAGE >> build jobs finished
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:29.828
+!MESSAGE >> registerWatchers'
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:29.830
+!MESSAGE >> registerFeature 'workspace/didChangeWatchedFiles'
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:29.832
+!MESSAGE >> watchers registered
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:30.584
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:30.646
+!MESSAGE Reconciled 1. Took 2 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:30.789
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:30.797
+!MESSAGE Reconciled 1. Took 2 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:31.219
+!MESSAGE begin problem for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:31.219
+!MESSAGE 0 problems reported for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:31.219
+!MESSAGE Validated 1. Took 21 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:31.270
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:31.276
+!MESSAGE >> document/completion
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:31.281
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:31.329
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:31.802
+!MESSAGE begin problem for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:31.802
+!MESSAGE 0 problems reported for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:31.803
+!MESSAGE Validated 1. Took 23 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:34.574
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:34.633
+!MESSAGE Reconciled 1. Took 2 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:35.101
+!MESSAGE begin problem for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:35.102
+!MESSAGE 0 problems reported for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:35.102
+!MESSAGE Validated 1. Took 19 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:35.332
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:35.347
+!MESSAGE Reconciled 1. Took 8 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:35.809
+!MESSAGE begin problem for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:35.810
+!MESSAGE 1 problems reported for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:35.810
+!MESSAGE Validated 1. Took 25 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:36.552
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:36.613
+!MESSAGE Reconciled 1. Took 2 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:37.028
+!MESSAGE begin problem for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:37.028
+!MESSAGE 0 problems reported for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:37.028
+!MESSAGE Validated 1. Took 13 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:37.373
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:37.432
+!MESSAGE Reconciled 1. Took 2 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:37.846
+!MESSAGE begin problem for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:37.846
+!MESSAGE 0 problems reported for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:37.846
+!MESSAGE Validated 1. Took 13 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:52.494
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:52.553
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:52.966
+!MESSAGE begin problem for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:52.966
+!MESSAGE 0 problems reported for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:52.967
+!MESSAGE Validated 1. Took 13 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:53.976
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:54.035
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:54.325
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:54.330
+!MESSAGE >> document/completion
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:54.332
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:54.385
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:54.817
+!MESSAGE begin problem for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:54.817
+!MESSAGE 0 problems reported for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:54.817
+!MESSAGE Validated 1. Took 11 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:57.578
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:57.639
+!MESSAGE Reconciled 1. Took 2 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:57.957
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:57.961
+!MESSAGE >> document/completion
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:57.963
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:58.016
+!MESSAGE Reconciled 1. Took 2 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:58.479
+!MESSAGE begin problem for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:58.479
+!MESSAGE 0 problems reported for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:23:58.479
+!MESSAGE Validated 1. Took 13 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:01.626
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:01.685
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:01.853
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:01.911
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:02.069
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:02.129
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:02.497
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:02.530
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:02.943
+!MESSAGE begin problem for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:02.943
+!MESSAGE 0 problems reported for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:02.943
+!MESSAGE Validated 1. Took 11 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:07.018
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:07.078
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:07.489
+!MESSAGE begin problem for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:07.489
+!MESSAGE 0 problems reported for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:07.490
+!MESSAGE Validated 1. Took 11 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:10.290
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:10.302
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:10.713
+!MESSAGE begin problem for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:10.713
+!MESSAGE 0 problems reported for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:10.713
+!MESSAGE Validated 1. Took 10 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:11.821
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:11.880
+!MESSAGE Reconciled 1. Took 2 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:12.293
+!MESSAGE begin problem for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:12.293
+!MESSAGE 0 problems reported for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:12.293
+!MESSAGE Validated 1. Took 13 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:13.210
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:13.214
+!MESSAGE >> document/completion
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:13.216
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:13.269
+!MESSAGE Reconciled 1. Took 2 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:13.730
+!MESSAGE begin problem for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:13.730
+!MESSAGE 0 problems reported for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:13.730
+!MESSAGE Validated 1. Took 11 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:18.643
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:18.702
+!MESSAGE Reconciled 1. Took 2 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:19.163
+!MESSAGE begin problem for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:19.163
+!MESSAGE 0 problems reported for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:19.163
+!MESSAGE Validated 1. Took 9 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:19.326
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:19.330
+!MESSAGE >> document/completion
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:19.332
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:19.385
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:19.796
+!MESSAGE begin problem for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:19.797
+!MESSAGE 0 problems reported for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:19.797
+!MESSAGE Validated 1. Took 11 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:21.400
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:21.408
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:21.608
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:21.667
+!MESSAGE Reconciled 1. Took 3 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:21.775
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:21.782
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:21.953
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:22.011
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:22.334
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:22.339
+!MESSAGE >> document/completion
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:22.341
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:22.343
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:22.753
+!MESSAGE begin problem for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:22.753
+!MESSAGE 0 problems reported for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:22.754
+!MESSAGE Validated 1. Took 11 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:25.360
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:25.419
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:25.700
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:25.704
+!MESSAGE >> document/completion
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:25.705
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:25.757
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:26.218
+!MESSAGE begin problem for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:26.218
+!MESSAGE 0 problems reported for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:26.218
+!MESSAGE Validated 1. Took 11 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:30.006
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:30.013
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:30.424
+!MESSAGE begin problem for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:30.431
+!MESSAGE 0 problems reported for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:30.431
+!MESSAGE Validated 1. Took 16 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:32.474
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:32.481
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:32.892
+!MESSAGE begin problem for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:32.892
+!MESSAGE 0 problems reported for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:32.892
+!MESSAGE Validated 1. Took 9 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:33.109
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:33.167
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:33.627
+!MESSAGE begin problem for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:33.628
+!MESSAGE 0 problems reported for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:33.628
+!MESSAGE Validated 1. Took 10 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:36.144
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:36.152
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:36.611
+!MESSAGE begin problem for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:36.611
+!MESSAGE 0 problems reported for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:36.611
+!MESSAGE Validated 1. Took 9 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:40.312
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:40.320
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:40.647
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:40.655
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:41.003
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:41.056
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:41.363
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:41.371
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:41.708
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:41.765
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:42.175
+!MESSAGE begin problem for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:42.175
+!MESSAGE 0 problems reported for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:42.176
+!MESSAGE Validated 1. Took 9 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:46.553
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:46.562
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:46.928
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:46.932
+!MESSAGE >> document/completion
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:46.934
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:46.966
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:47.380
+!MESSAGE begin problem for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:47.380
+!MESSAGE 0 problems reported for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:47.380
+!MESSAGE Validated 1. Took 13 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:50.626
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:50.634
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:51.044
+!MESSAGE begin problem for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:51.044
+!MESSAGE 0 problems reported for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:51.044
+!MESSAGE Validated 1. Took 9 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:51.895
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:51.953
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:52.412
+!MESSAGE begin problem for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:52.412
+!MESSAGE 0 problems reported for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:52.412
+!MESSAGE Validated 1. Took 8 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:55.915
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:55.923
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:56.331
+!MESSAGE begin problem for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:56.332
+!MESSAGE 0 problems reported for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:24:56.332
+!MESSAGE Validated 1. Took 9 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:02.180
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:02.238
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:02.647
+!MESSAGE begin problem for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:02.647
+!MESSAGE 0 problems reported for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:02.647
+!MESSAGE Validated 1. Took 8 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:04.890
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:04.948
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:05.406
+!MESSAGE begin problem for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:05.407
+!MESSAGE 0 problems reported for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:05.418
+!MESSAGE Validated 1. Took 19 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:06.858
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:06.915
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:07.325
+!MESSAGE begin problem for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:07.325
+!MESSAGE 0 problems reported for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:07.325
+!MESSAGE Validated 1. Took 9 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:07.490
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:07.497
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:07.957
+!MESSAGE begin problem for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:07.957
+!MESSAGE 0 problems reported for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:07.957
+!MESSAGE Validated 1. Took 9 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:09.630
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:09.687
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:10.145
+!MESSAGE begin problem for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:10.145
+!MESSAGE 0 problems reported for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:10.145
+!MESSAGE Validated 1. Took 8 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:12.753
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:12.812
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:12.996
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:13.054
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:13.513
+!MESSAGE begin problem for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:13.513
+!MESSAGE 0 problems reported for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:13.513
+!MESSAGE Validated 1. Took 8 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:16.159
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:16.217
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:16.675
+!MESSAGE begin problem for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:16.675
+!MESSAGE 0 problems reported for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:16.675
+!MESSAGE Validated 1. Took 8 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:18.458
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:18.469
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:18.879
+!MESSAGE begin problem for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:18.879
+!MESSAGE 0 problems reported for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:18.880
+!MESSAGE Validated 1. Took 9 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:20.904
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:20.963
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:21.420
+!MESSAGE begin problem for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:21.421
+!MESSAGE 0 problems reported for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:21.432
+!MESSAGE Validated 1. Took 19 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:24.779
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:24.837
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:25.246
+!MESSAGE begin problem for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:25.246
+!MESSAGE 0 problems reported for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:25.246
+!MESSAGE Validated 1. Took 7 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:27.586
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:27.647
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:28.106
+!MESSAGE begin problem for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:28.106
+!MESSAGE 0 problems reported for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:28.106
+!MESSAGE Validated 1. Took 8 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:29.890
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:29.948
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:30.409
+!MESSAGE begin problem for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:30.409
+!MESSAGE 0 problems reported for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:30.409
+!MESSAGE Validated 1. Took 10 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:31.619
+!MESSAGE >> document/willSaveWaitUntil
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:31.640
+!MESSAGE >> document/didSave
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:34.313
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:34.370
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:34.831
+!MESSAGE begin problem for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:34.832
+!MESSAGE 0 problems reported for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:34.832
+!MESSAGE Validated 1. Took 10 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:35.184
+!MESSAGE >> document/willSaveWaitUntil
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:35.200
+!MESSAGE >> document/didSave
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:36.503
+!MESSAGE >> document/willSaveWaitUntil
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:36.521
+!MESSAGE >> document/didSave
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:36.537
+!MESSAGE >> document/didClose
+!SESSION 2022-07-19 13:25:38.950 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=18.0.1.1
+java.vendor=N/A
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=ja_JP
+Command-line arguments:  -data /home/katsu/dotfiles/.config/coc/extensions/coc-java-data/jdt_ws_078fd0f7222fb158feef284b82b101e6
+
+!ENTRY org.eclipse.core.resources 2 10035 2022-07-19 13:25:39.667
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:40.029
+!MESSAGE class org.eclipse.jdt.ls.core.internal.JavaLanguageServerPlugin is started
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:40.162
+!MESSAGE Main thread is waiting
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:40.196
+!MESSAGE >> initialize
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:40.197
+!MESSAGE Initializing Java Language Server 1.14.0.202207010106
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:40.211
+!MESSAGE Static Commands: []
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:40.211
+!MESSAGE Non-Static Commands: [java.edit.organizeImports, java.project.refreshDiagnostics, java.project.import, java.navigate.openTypeHierarchy, java.project.removeFromSourcePath, java.project.listSourcePaths, java.project.resolveStackTraceLocation, java.project.getAll, java.project.isTestFile, java.project.getClasspaths, java.navigate.resolveTypeHierarchy, java.edit.stringFormatting, java.project.getSettings, java.project.updateSourceAttachment, java.project.resolveWorkspaceSymbol, java.project.upgradeGradle, java.project.resolveSourceAttachment, java.project.addToSourcePath]
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:40.215
+!MESSAGE Starting org.eclipse.m2e.core
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:40.215
+!MESSAGE Started org.eclipse.m2e.core 1ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:40.226
+!MESSAGE ProjectRegistryRefreshJob finished 11ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:40.227
+!MESSAGE Starting org.eclipse.buildship.core
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:40.245
+!MESSAGE Started org.eclipse.buildship.core 17ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:40.245
+!MESSAGE LoadingGradleVersionJob finished 0ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:40.264
+!MESSAGE >> initialized
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:40.668
+!MESSAGE Workspace initialized in 421ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:40.687
+!MESSAGE >> initialization job finished
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:40.689
+!MESSAGE >> workspace/didChangeConfiguration
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:40.695
+!MESSAGE >> New configuration: {java={enabled=true, jdt={ls={vmargs=-noverify -Xmx1G -XX:+UseG1GC -XX:+UseStringDeduplication}}, errors={incompleteClasspath={severity=warning}}, configuration={checkProjectSettingsExclusions=true, updateBuildConfiguration=interactive, runtimes=[]}, trace={server=off}, import={gradle={enabled=true, wrapper={enabled=true}, offline={enabled=false}}, maven={enabled=true}, exclusions=[**/node_modules/**, **/.metadata/**, **/archetype-resources/**, **/META-INF/maven/**]}, maven={updateSnapshots=false, downloadSources=false}, referencesCodeLens={enabled=false}, signatureHelp={enabled=false}, implementationsCodeLens={enabled=false}, format={enabled=true, comments={enabled=true}, onType={enabled=true, fixComment={enabled=true}}}, saveActions={organizeImports=false}, project={referencedLibraries=[lib/**/*.jar], resourceFilters=[node_modules, .git]}, autobuild={enabled=true}, maxConcurrentBuilds=1.0, completion={maxResults=0.0, enabled=true, overwrite=true, guessMethodArguments=false, favoriteStaticMembers=[org.junit.Assert.*, org.junit.Assume.*, org.junit.jupiter.api.Assertions.*, org.junit.jupiter.api.Assumptions.*, org.junit.jupiter.api.DynamicContainer.*, org.junit.jupiter.api.DynamicTest.*, org.mockito.Mockito.*, org.mockito.ArgumentMatchers.*, org.mockito.Answers.*], filteredTypes=[java.awt.*, com.sun.*], importOrder=[java, javax, com, org]}, progressReports={enabled=true}, foldingRange={enabled=true}, codeGeneration={hashCodeEquals={useJava7Objects=false, useInstanceof=false}, useBlocks=false, generateComments=false, toString={template=${object.className} [${member.name()}=${member.value}, ${otherMembers}], codeStyle=STRING_CONCATENATION, skipNullValues=false, listArrayContents=true, limitElements=0.0}}, selectionRange={enabled=true}, sources={organizeImports={starThreshold=99.0, staticStarThreshold=99.0}}, templates={fileHeader=[], typeComment=[]}, references={includeAccessors=true}}}
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:40.696
+!MESSAGE >> document/didOpen
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:41.039
+!MESSAGE Reconciled 1. Took 1 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:41.143
+!MESSAGE begin problem for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:41.144
+!MESSAGE 0 problems reported for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:41.146
+!MESSAGE Validated 1. Took 98 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:41.151
+!MESSAGE >> Updating classpath for project Javaプログラム_eafff511
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:41.170
+!MESSAGE >> build jobs finished
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:41.173
+!MESSAGE >> registerWatchers'
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:41.175
+!MESSAGE >> registerFeature 'workspace/didChangeWatchedFiles'
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:41.176
+!MESSAGE >> watchers registered
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:44.534
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:44.547
+!MESSAGE >> document/completion
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:44.590
+!MESSAGE Reconciled 1. Took 11 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:44.625
+!MESSAGE Completion request completed
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:45.028
+!MESSAGE begin problem for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:45.028
+!MESSAGE 3 problems reported for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:45.030
+!MESSAGE Validated 1. Took 39 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:45.691
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:45.747
+!MESSAGE Reconciled 1. Took 4 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:46.190
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:46.207
+!MESSAGE Reconciled 1. Took 2 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:46.674
+!MESSAGE begin problem for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:46.674
+!MESSAGE 0 problems reported for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:46.675
+!MESSAGE Validated 1. Took 17 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:58.402
+!MESSAGE >> document/willSaveWaitUntil
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:25:58.425
+!MESSAGE >> document/didSave
+!SESSION 2022-07-19 13:31:22.587 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=18.0.1.1
+java.vendor=N/A
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=ja_JP
+Command-line arguments:  -data /home/katsu/dotfiles/.config/coc/extensions/coc-java-data/jdt_ws_078fd0f7222fb158feef284b82b101e6
+
+!ENTRY org.eclipse.core.resources 2 10035 2022-07-19 13:31:23.249
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:31:23.587
+!MESSAGE class org.eclipse.jdt.ls.core.internal.JavaLanguageServerPlugin is started
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:31:23.689
+!MESSAGE Main thread is waiting
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:31:23.719
+!MESSAGE >> initialize
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:31:23.722
+!MESSAGE Initializing Java Language Server 1.14.0.202207010106
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:31:23.739
+!MESSAGE Static Commands: []
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:31:23.739
+!MESSAGE Non-Static Commands: [java.edit.organizeImports, java.project.refreshDiagnostics, java.project.import, java.navigate.openTypeHierarchy, java.project.removeFromSourcePath, java.project.listSourcePaths, java.project.resolveStackTraceLocation, java.project.getAll, java.project.isTestFile, java.project.getClasspaths, java.navigate.resolveTypeHierarchy, java.edit.stringFormatting, java.project.getSettings, java.project.updateSourceAttachment, java.project.resolveWorkspaceSymbol, java.project.upgradeGradle, java.project.resolveSourceAttachment, java.project.addToSourcePath]
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:31:23.742
+!MESSAGE Starting org.eclipse.m2e.core
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:31:23.742
+!MESSAGE Started org.eclipse.m2e.core 0ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:31:23.754
+!MESSAGE ProjectRegistryRefreshJob finished 12ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:31:23.754
+!MESSAGE Starting org.eclipse.buildship.core
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:31:23.777
+!MESSAGE Started org.eclipse.buildship.core 23ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:31:23.778
+!MESSAGE LoadingGradleVersionJob finished 0ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:31:23.797
+!MESSAGE >> initialized
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:31:24.172
+!MESSAGE Workspace initialized in 393ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:31:24.192
+!MESSAGE >> initialization job finished
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:31:24.193
+!MESSAGE >> workspace/didChangeConfiguration
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:31:24.199
+!MESSAGE >> New configuration: {java={enabled=true, jdt={ls={vmargs=-noverify -Xmx1G -XX:+UseG1GC -XX:+UseStringDeduplication}}, errors={incompleteClasspath={severity=warning}}, configuration={checkProjectSettingsExclusions=true, updateBuildConfiguration=interactive, runtimes=[]}, trace={server=off}, import={gradle={enabled=true, wrapper={enabled=true}, offline={enabled=false}}, maven={enabled=true}, exclusions=[**/node_modules/**, **/.metadata/**, **/archetype-resources/**, **/META-INF/maven/**]}, maven={updateSnapshots=false, downloadSources=false}, referencesCodeLens={enabled=false}, signatureHelp={enabled=false}, implementationsCodeLens={enabled=false}, format={enabled=true, comments={enabled=true}, onType={enabled=true, fixComment={enabled=true}}}, saveActions={organizeImports=false}, project={referencedLibraries=[lib/**/*.jar], resourceFilters=[node_modules, .git]}, autobuild={enabled=true}, maxConcurrentBuilds=1.0, completion={maxResults=0.0, enabled=true, overwrite=true, guessMethodArguments=false, favoriteStaticMembers=[org.junit.Assert.*, org.junit.Assume.*, org.junit.jupiter.api.Assertions.*, org.junit.jupiter.api.Assumptions.*, org.junit.jupiter.api.DynamicContainer.*, org.junit.jupiter.api.DynamicTest.*, org.mockito.Mockito.*, org.mockito.ArgumentMatchers.*, org.mockito.Answers.*], filteredTypes=[java.awt.*, com.sun.*], importOrder=[java, javax, com, org]}, progressReports={enabled=true}, foldingRange={enabled=true}, codeGeneration={hashCodeEquals={useJava7Objects=false, useInstanceof=false}, useBlocks=false, generateComments=false, toString={template=${object.className} [${member.name()}=${member.value}, ${otherMembers}], codeStyle=STRING_CONCATENATION, skipNullValues=false, listArrayContents=true, limitElements=0.0}}, selectionRange={enabled=true}, sources={organizeImports={starThreshold=99.0, staticStarThreshold=99.0}}, templates={fileHeader=[], typeComment=[]}, references={includeAccessors=true}}}
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:31:24.200
+!MESSAGE >> document/didOpen
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:31:24.501
+!MESSAGE Reconciled 1. Took 0 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:31:24.642
+!MESSAGE begin problem for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:31:24.642
+!MESSAGE 0 problems reported for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:31:24.647
+!MESSAGE Validated 1. Took 137 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:31:24.653
+!MESSAGE >> Updating classpath for project Javaプログラム_eafff511
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:31:24.671
+!MESSAGE >> build jobs finished
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:31:24.673
+!MESSAGE >> registerWatchers'
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:31:24.676
+!MESSAGE >> registerFeature 'workspace/didChangeWatchedFiles'
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:31:24.678
+!MESSAGE >> watchers registered
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:31:25.583
+!MESSAGE >> document/willSaveWaitUntil
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:31:25.639
+!MESSAGE >> document/didSave
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:31:28.452
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:31:28.514
+!MESSAGE Reconciled 1. Took 2 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:31:28.937
+!MESSAGE begin problem for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:31:28.937
+!MESSAGE 0 problems reported for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:31:28.937
+!MESSAGE Validated 1. Took 22 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:31:29.482
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:31:29.541
+!MESSAGE Reconciled 1. Took 2 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:31:29.960
+!MESSAGE begin problem for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:31:29.960
+!MESSAGE 0 problems reported for /FizzBuzzA.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:31:29.960
+!MESSAGE Validated 1. Took 18 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:31:31.086
+!MESSAGE >> document/willSaveWaitUntil
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:31:31.106
+!MESSAGE >> document/didSave
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2022-07-19 13:48:52.265
+!MESSAGE >> document/didClose

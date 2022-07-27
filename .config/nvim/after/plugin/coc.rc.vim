@@ -8,6 +8,8 @@ let g:coc_global_extensions = [
             \ 'coc-jedi',
             \ 'coc-vetur',
             \ 'coc-r-lsp',
+            \ 'coc-java',
+            \ 'coc-clangd',
             \ ]
 
 " Use tab for trigger completion with characters ahead and navigate.
@@ -42,8 +44,9 @@ endfunction
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Formatting selected code.
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+xmap <Leader>f  :CocCommand prettier.formatFile<CR>
+vmap <Leader>f  :CocCommand prettier.formatFile<CR> 
+nmap <Leader>f  :CocCommand prettier.formatFile<CR> 
 
 augroup mygroup
     autocmd!
@@ -66,3 +69,6 @@ endif
 if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
     let g:coc_global_extensions += ['coc-eslint']
 endif
+
+" prettierのコマンド
+command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument

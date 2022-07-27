@@ -1,0 +1,4 @@
+INDEX VERSION 1.131+/home/katsu/dotfiles/.config/coc/extensions/coc-java-data/jdt_ws_078fd0f7222fb158feef284b82b101e6/.metadata/.plugins/org.eclipse.jdt.core
+3842426239.index
+1865797976.index
+2715936997.index

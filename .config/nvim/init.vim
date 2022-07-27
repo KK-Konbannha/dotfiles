@@ -85,7 +85,7 @@ let mapleader = "\<Space>"
 command! W w !sudo tee > /dev/null %
 
 " <Space>i でコードをインデント整形
-map <Leader>i gg=<S-g><C-o><C-o>zz
+" map <Leader>i gg=<S-g><C-o><C-o>zz
 
 " ESCを二回押すことでハイライトを消す
 nmap <silent> <esc><esc> :nohlsearch<cr>
