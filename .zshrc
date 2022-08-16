@@ -5,31 +5,29 @@
 #
 #
 
-# ==============================================================================
-# 
-# history補完(C-r)ができなくなった時 
-# 
-# ==============================================================================
+# 基本設定 "{{{
+# ---------------------------------------------------------------------
+
+# history補完(C-r)ができなくなった時
 
 bindkey -v
 bindkey '\e[3~' delete-char
 bindkey '^R' history-incremental-search-backward
 
-# ==============================================================================
-#
-# 基本設定
-#
-# ==============================================================================
+# C-sで画面が止まることを防止する。
+if [[ -t 0 ]]; then
+  stty stop undef
+  stty start undef
+fi
 
 # 色をつけられるようにします。
 autoload -Uz colors
 colors
 
-# ==============================================================================
-# 
-# 環境変数
-# 
-# ==============================================================================
+#}}}
+
+# 環境変数 "{{{
+# ---------------------------------------------------------------------
 
 # デフォルトで使用するエディタを設定します。
 export EDITOR=vim
@@ -59,11 +57,23 @@ export PIPENV_VENV_IN_PROJECT=1
 export RANGER_LOAD_DEFAULT_RC=FALSE
 
 export PATH=$HOME/bin:$HOME/.local/bin:$PATH
-# ==============================================================================
-# 
-# プラグイン読み込み
-# 
-# ==============================================================================
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+[ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env" # ghcup-env
+
+export DENO_INSTALL="$HOME/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+#}}}
+
+# プラグイン読み込み "{{{
+# ---------------------------------------------------------------------
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
@@ -93,20 +103,20 @@ zinit light "mollifier/anyframe"
 # ディレクトリ移動を高速化（fzf であいまい検索）
 zinit light "b4b4r07/enhancd"
 
-# ==============================================================================
-# 
-# エイリアス, コマンド
-# 
-# ==============================================================================
+#}}}
 
-# C-sで画面が止まることを防止する。
-if [[ -t 0 ]]; then
-  stty stop undef
-  stty start undef
-fi
+# エイリアス, 関数 "{{{
+# ---------------------------------------------------------------------
 
 # 保管される前にオリジナルのコマンドまで展開してチェックします。
 setopt complete_aliases
+
+# Ctrl + n, pで履歴を遡る
+bindkey "^N" down-line-or-history
+bindkey "^P" up-line-or-history
+
+# エイリアス "{{{
+# ---------------------------------------------------------------------
 
 # .zshrc編集簡略化用エイリアス 
 alias reload='source ~/dotfiles/.zshrc && zplug load –-verbose ; clear'
@@ -147,6 +157,10 @@ if [ ! -e "/mnt/c/'Program Files'/Google/Chrome/Application" ]; then
     alias deepl="/mnt/c/'Program Files'/Google/Chrome/Application/chrome.exe https://www.deepl.com/ja/translator"
 fi
 
+#}}}
+
+# 関数 "{{{
+# ---------------------------------------------------------------------
 function lprompt-icon {
     randInt=$(python -c "import sys;x = sys.argv[1].split('/');print(4 if x == ['',''] else (len(x)-1)%4)" $(pwd))
     if [ $randInt -eq 4 ]; then
@@ -198,10 +212,6 @@ function rprompt-git-current-branch {
 
 setopt prompt_subst
 
-# Ctrl + n, pで履歴を遡る
-bindkey "^N" down-line-or-history
-bindkey "^P" up-line-or-history
-
 # rangerの起動を制御したい
 function ranger() {
     if [ -z "$RANGER_LEVEL" ]; then
@@ -219,11 +229,12 @@ function prompt-ranger-level() {
     fi
 }
 
-# ==============================================================================
-# 
-# プロンプト関係
-# 
-# ==============================================================================
+#}}}
+
+#}}}
+
+# プロンプト関係 "{{{
+# ---------------------------------------------------------------------
 
 # プロンプトで使う関数
 LPROMPT_ICON='`lprompt-icon`'
@@ -242,11 +253,10 @@ RPROMPT=${RPROMPT_GIT}"%F{050}  [%m]%f%k"
 # 右プロンプトまで入力が来たら消すようにします。
 setopt transient_rprompt
 
-# ==============================================================================
-# 
-# 補完関係
-# 
-# ==============================================================================
+#}}}
+
+# 補完関係 "{{{
+# ---------------------------------------------------------------------
 
 # 標準の保管設定を行います。
 autoload -Uz compinit
@@ -295,11 +305,10 @@ zstyle ':completion:*' menu select
 # pipenvの補完
 # eval "$(pipenv --completion)"
 
-# ==============================================================================
-# 
-# 履歴関係
-# 
-# ==============================================================================
+#}}}
+
+# 履歴関係 "{{{
+# ---------------------------------------------------------------------
 
 # ヒストリーファイルのパスを設定します。
 HISTFILE=~/.zsh_history
@@ -337,14 +346,6 @@ setopt auto_pushd
 # ディレクトリスタックで重複する古い方を削除することにします。
 setopt pushd_ignore_dups
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+#}}}
 
-[ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env" # ghcup-env
-
-export DENO_INSTALL="$HOME/.deno"
-export PATH="$DENO_INSTALL/bin:$PATH"
-
-
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+# vim: set foldmethod=marker foldlevel=0:
