@@ -1,4 +1,3 @@
-local status, dracula = pcall(require, 'dracula')
-if (not status) then return end
+vim.g.dracula_transparent_bg = true
 
 vim.cmd [[colorscheme dracula]]
