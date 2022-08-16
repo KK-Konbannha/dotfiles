@@ -37,7 +37,6 @@ packer.startup(function(use)
   use 'windwp/nvim-ts-autotag'
   use 'norcalli/nvim-colorizer.lua'
   use 'm-demare/hlargs.nvim'
-  use 'j-hui/fidget.nvim'
   use 'machakann/vim-sandwich'
   use 'mrshmllow/document-color.nvim'
 
