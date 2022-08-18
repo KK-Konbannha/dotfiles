@@ -275,6 +275,7 @@ initialize() {
             firefox
             fzf
             evince
+            gwenview
         )
 
         PRE_REQUISITES_ARCH_AUR=(
