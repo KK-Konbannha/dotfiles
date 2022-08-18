@@ -123,7 +123,7 @@ alias reload='source ~/dotfiles/.zshrc && zplug load –-verbose ; clear'
 alias zshconf='vim ~/dotfiles/.zshrc'
 
 # init.vim(.vimrc)編集簡略化用エイリj
-alias vimconf='vim ~/dotfiles/.config/nvim/init.vim'
+alias vimconf='vim ~/dotfiles/.config/nvim'
 
 # ranger起動簡略化用エイリアス
 alias rng='ranger'

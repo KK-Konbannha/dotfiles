@@ -199,7 +199,7 @@ initialize() {
 
     elif [ ${dist} = "Arch" ]; then
 
-        # mkdir -p "${HOME}/tmp/xorgxrdp-logs"
+        mkdir -p "${HOME}/tmp/xorgxrdp-logs"
 
         # locale設定
         sudo sed -i -e 's/#ja_JP.UTF-8/ja_JP.UTF-8/' /etc/locale.gen && sudo locale-gen
