@@ -41,4 +41,6 @@ packer.startup(function(use)
   use 'mrshmllow/document-color.nvim'
 
   use 'lewis6991/gitsigns.nvim'
+
+  use 'psf/black'
 end)
