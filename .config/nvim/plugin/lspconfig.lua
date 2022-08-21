@@ -1,7 +1,7 @@
 local status, nvim_lsp = pcall(require, "lspconfig")
 if (not status) then return end
 
-local protocol = require('vim.lsp.protocol')
+-- local protocol = require('vim.lsp.protocol')
 
 local on_attach = function(client, bufnr)
   if client.server_capabilities.colorProvider then
@@ -44,3 +44,5 @@ nvim_lsp.sumneko_lua.setup {
 nvim_lsp.tailwindcss.setup {
   on_attach = on_attach
 }
+
+nvim_lsp.pyright.setup {}
