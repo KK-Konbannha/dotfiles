@@ -1,4 +1,5 @@
-local status, packer = pcall(require, "packer")
+iocal
+status, packer = pcall(require, "packer")
 if (not status) then
   print("Packer is not installed")
   return
@@ -39,8 +40,11 @@ packer.startup(function(use)
   use 'm-demare/hlargs.nvim'
   use 'machakann/vim-sandwich'
   use 'mrshmllow/document-color.nvim'
-
   use 'lewis6991/gitsigns.nvim'
 
   use 'psf/black'
+
+  use 'vim-denops/denops.vim' -- To use plugin made in deno
+  use 'vim-skk/skkeleton' -- To input japanese
+  use 'delphinus/skkeleton_indicator.nvim' -- Skkeleton UIs
 end)
