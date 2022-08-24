@@ -40,10 +40,11 @@ packer.startup(function(use)
   use 'machakann/vim-sandwich'
   use 'mrshmllow/document-color.nvim'
   use 'lewis6991/gitsigns.nvim'
-
   use 'psf/black'
 
   use 'vim-denops/denops.vim' -- To use plugin made in deno
   use 'vim-skk/skkeleton' -- To input japanese
   use 'delphinus/skkeleton_indicator.nvim' -- Skkeleton UIs
+
+  use 'LudoPinelli/comment-box.nvim'
 end)
