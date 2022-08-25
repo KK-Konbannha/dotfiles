@@ -6,10 +6,13 @@ def symlink_dotfiles(
     dirs_should_exclude: list[str], dirs_shouldnt_exclude: list[str] = []
 ) -> int:
     """
-    dotfilesのファイルのシンボリックリンクを貼る。
-
-    dirs_should_exclude: 除外したいディレクトリのリスト。
-    dirs_shouldnt_exclude: dotfileじゃないけどリンクを作りたいディレクトリのリスト。
+    ╭──────────────────────────────────────────────────────────╮
+    │      dotfilesのファイルのシンボリックリンクを貼る。      │
+    │                                                          │
+    │  dirs_should_exclude: 除外したいディレクトリのリスト。   │
+    │                  dirs_shouldnt_exclude:                  │
+    │dotfileじゃないけどリンクを作りたいディレクトリのリスト。 │
+    ╰──────────────────────────────────────────────────────────╯
     """
     HOME_DIR: Final[str] = os.path.expanduser("~")
     DOTFILES_DIR: Final[str] = os.path.expanduser("~/dotfiles")
