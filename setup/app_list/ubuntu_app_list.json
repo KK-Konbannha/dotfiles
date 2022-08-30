@@ -1,0 +1,17 @@
+{
+    "apt": [
+        "zsh",
+        "gcc",
+        "make",
+        "tree",
+        "tmuxp",
+        "ranger",
+        "unzip",
+        "locales-all",
+        "libgmp-dev",
+        "libgmp3-dev",
+        "libicu-dev",
+        "libncurses-dev",
+        "zlib1g-dev"
+    ]
+}

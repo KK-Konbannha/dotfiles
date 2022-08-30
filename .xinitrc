@@ -12,6 +12,8 @@ export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 export $(dbus-launch)
 
+eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+export SSH_AUTH_SOCK
 
 # merge in defaults and keymaps
 
@@ -39,6 +41,10 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  done
  unset f
 fi
+
+/usr/bin/pipewire &
+/usr/bin/pipewire-pulse &
+/usr/bin/wireplumber &
 
 picom --experimental-backends &
 

@@ -9,9 +9,10 @@ def symlink_dotfiles(
     ╭──────────────────────────────────────────────────────────╮
     │      dotfilesのファイルのシンボリックリンクを貼る。      │
     │                                                          │
-    │  dirs_should_exclude: 除外したいディレクトリのリスト。   │
-    │                  dirs_shouldnt_exclude:                  │
-    │dotfileじゃないけどリンクを作りたいディレクトリのリスト。 │
+    │dirs_should_exclude:                                      │
+    │ 除外したいディレクトリのリスト。                         │
+    │dirs_shouldnt_exclude:                                    │
+    │ dotfileじゃないけどリンクを作りたいディレクトリのリスト。│
     ╰──────────────────────────────────────────────────────────╯
     """
     HOME_DIR: Final[str] = os.path.expanduser("~")
@@ -49,3 +50,6 @@ def symlink_dotfiles(
             os.system(f"ln -snfv {ORG_PATH} {SYMLINK_PATH}")
 
     return 1
+
+
+symlink_dotfiles([".git", ".gitigonre"])
