@@ -1,3 +1,6 @@
+import:
+  - ~/.config/alacritty/dracula.yml
+
 # Configuration for Alacritty, the GPU enhanced terminal emulator.
 
 # Import additional configuration files
@@ -189,33 +192,33 @@ font:
 #draw_bold_text_with_bright_colors: false
 
 # Colors (Kon_Colorscheme)
-colors:
- # Default colors
- primary:
-   background: '#000002'
-   foreground: '#d9d9d9'
-
- # Normal colors
- normal:
-   black:   '#41373f'
-   red:     '#ff6257'
-   green:   '#59f56a'
-   yellow:  '#ebf557'
-   blue:    '#6c4ffd'
-   magenta: '#ff4fe9'
-   cyan:    '#59e2fd'
-   white:   '#e7dde5'
-
- # Bright colors
- bright:
-   black:   '#7b7178'
-   red:     '#ff7a72'
-   green:   '#75f582'
-   yellow:  '#eff572'
-   blue:    '#846bfd'
-   magenta: '#ff6bec'
-   cyan:    '#75e5fd'
-   white:   '#fff5fd'
+# colors:
+#  # Default colors
+#  primary:
+#    background: '#000002'
+#    foreground: '#d9d9d9'
+# 
+#  # Normal colors
+#  normal:
+#    black:   '#41373f'
+#    red:     '#ff6257'
+#    green:   '#59f56a'
+#    yellow:  '#ebf557'
+#    blue:    '#6c4ffd'
+#    magenta: '#ff4fe9'
+#    cyan:    '#59e2fd'
+#    white:   '#e7dde5'
+# 
+#  # Bright colors
+#  bright:
+#    black:   '#7b7178'
+#    red:     '#ff7a72'
+#    green:   '#75f582'
+#    yellow:  '#eff572'
+#    blue:    '#846bfd'
+#    magenta: '#ff6bec'
+#    cyan:    '#75e5fd'
+#    white:   '#fff5fd'
 
 # Colors (Tomorrow Night)
 #colors:

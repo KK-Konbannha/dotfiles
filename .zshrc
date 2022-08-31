@@ -134,6 +134,9 @@ autoload -Uz _zinit
 #  ╭──────────────────────────────────────────────────────────╮
 #  │                         plugins                          │
 #  ╰──────────────────────────────────────────────────────────╯
+# カラースキーム
+zinit light "dracula/zsh"
+
 # 入力途中に候補をうっすら表示
 zinit light "zsh-users/zsh-autosuggestions"
 
