@@ -29,6 +29,7 @@ packer.startup(function(use)
     run = ':TSUpdate'
   }
   use 'nvim-treesitter/nvim-treesitter-textobjects'
+  use 'yioneko/nvim-yati'
   use 'kyazdani42/nvim-web-devicons' -- File icons
   use 'nvim-telescope/telescope.nvim'
   use 'nvim-telescope/telescope-file-browser.nvim'

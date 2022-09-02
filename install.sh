@@ -87,50 +87,7 @@ fi
 
 
 initialize() {
-    if [ ${dist} = "Ubuntu" ]; then
-
-        # aptのアップデート
-        sudo apt update && sudo apt upgrade
-
-        # vimの削除
-        sudo apt remove vim && sudo apt autoremove
-
-        # インストールするパッケージリスト
-        PRE_REQUISITES_UBUNTU=(
-            zsh
-            gcc
-            make
-            tree
-            tmuxp
-            ranger
-            unzip
-            locales-all
-            libgmp-dev
-            libgmp3-dev
-            libicu-dev
-            libncurses-dev
-            zlib1g-dev
-        )
-
-        for p in ${PRE_REQUISITES_UBUNTU[@]}
-        do
-            yes | sudo apt install $p
-        done
-        echo $(tput setaf 2)Installing apps complete!. ✔︎$(tput sgr0)
-
-        # nvimのインストール
-        cd "${HOME}/Downloads"
-        curl -OL "https://github.com/neovim/neovim/releases/download/v0.7.0/nvim-linux64.deb"
-        sudo apt install ./nvim-linux64.deb
-        sudo update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 60
-        sudo update-alternatives --config vi
-        sudo update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 60
-        sudo update-alternatives --config vim
-        sudo update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60
-        sudo update-alternatives --config editor
-        echo $(tput setaf 2)Installing nvim complete!. ✔︎$(tput sgr0)
-
-    elif [ ${dist} = "Arch" ]; then
+    if [ ${dist} = "Arch" ]; then
 
         # mkdir -p "${HOME}/tmp/xorgxrdp-logs"
 
@@ -292,26 +249,3 @@ initialize() {
     cd ${HOME}
 
 }
-
-
-# 引数によって場合分け
-if [ $# = 0 ]; then
-    command=""
-else
-    command=$1
-fi
-
-# 引数がなければヘルプ
-case $command in
-    deploy)
-        link_files
-        ;;
-    init*)
-        initialize
-        ;;
-    *)
-        usage
-        ;;
-esac
-
-exit 0
