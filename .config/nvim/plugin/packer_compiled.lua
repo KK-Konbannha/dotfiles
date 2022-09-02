@@ -74,6 +74,11 @@ _G.packer_plugins = {
     path = "/home/katsu/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  black = {
+    loaded = true,
+    path = "/home/katsu/.local/share/nvim/site/pack/packer/start/black",
+    url = "https://github.com/psf/black"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/katsu/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -84,6 +89,16 @@ _G.packer_plugins = {
     path = "/home/katsu/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
+  ["comment-box.nvim"] = {
+    loaded = true,
+    path = "/home/katsu/.local/share/nvim/site/pack/packer/start/comment-box.nvim",
+    url = "https://github.com/LudoPinelli/comment-box.nvim"
+  },
+  ["denops.vim"] = {
+    loaded = true,
+    path = "/home/katsu/.local/share/nvim/site/pack/packer/start/denops.vim",
+    url = "https://github.com/vim-denops/denops.vim"
+  },
   ["document-color.nvim"] = {
     loaded = true,
     path = "/home/katsu/.local/share/nvim/site/pack/packer/start/document-color.nvim",
@@ -93,11 +108,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/katsu/.local/share/nvim/site/pack/packer/start/dracula.nvim",
     url = "https://github.com/Mofiqul/dracula.nvim"
-  },
-  ["fidget.nvim"] = {
-    loaded = true,
-    path = "/home/katsu/.local/share/nvim/site/pack/packer/start/fidget.nvim",
-    url = "https://github.com/j-hui/fidget.nvim"
   },
   ["gitsigns.nvim"] = {
     loaded = true,
@@ -179,6 +189,11 @@ _G.packer_plugins = {
     path = "/home/katsu/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
+  ["nvim-yati"] = {
+    loaded = true,
+    path = "/home/katsu/.local/share/nvim/site/pack/packer/start/nvim-yati",
+    url = "https://github.com/yioneko/nvim-yati"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/katsu/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -198,6 +213,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/katsu/.local/share/nvim/site/pack/packer/start/prettier.nvim",
     url = "https://github.com/MunifTanjim/prettier.nvim"
+  },
+  skkeleton = {
+    loaded = true,
+    path = "/home/katsu/.local/share/nvim/site/pack/packer/start/skkeleton",
+    url = "https://github.com/vim-skk/skkeleton"
+  },
+  ["skkeleton_indicator.nvim"] = {
+    loaded = true,
+    path = "/home/katsu/.local/share/nvim/site/pack/packer/start/skkeleton_indicator.nvim",
+    url = "https://github.com/delphinus/skkeleton_indicator.nvim"
   },
   ["telescope-file-browser.nvim"] = {
     loaded = true,
