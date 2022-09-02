@@ -5,6 +5,7 @@
 /.config/qtile/lib/__pycache__/
 /.config/qtile/lib/widget/__pycache__/
 /.config/nvim/plugin/packer_compiled.lua
+/.config/zsh/.zcompdump
 
 *~
 *.swp

@@ -1,0 +1,67 @@
+[need]
+base = [
+  "base-devel",
+  "unzip",
+  "openssh",
+  "python3",
+  "python-pip",
+]
+
+sound = [
+  "sof-firmware",
+  "pipewire",
+  "pipewire-alsa",
+  "pipewire-pulse",
+  "alsa-utls",
+]
+
+network = [
+  "netctl",
+  "iw",
+  "wpa_supplicant",
+  "networkmanager",
+]
+
+shell = [
+  "zsh",
+  "sheldon",
+  "fzf",
+  "neovim",
+  "python-pynvim",
+]
+
+[optional]
+shell = [
+  "lsd",
+  "ranger",
+  "neofetch",
+  "ueberzug",
+]
+
+x = [
+  "xorg",
+  "xorg-xinit",
+  "xf86-video-intel",
+]
+
+wm = [
+  "qtile",
+  "picom",
+  "rofi",
+]
+
+gui_utils = [
+  "alacritty-sixel-git",
+  "evince",
+  "gwenview"
+]
+
+browser = [
+  "firefox",
+  "google-chrome",
+]
+
+input_method = [
+  "fcitx5-im",
+  "fcitx5-skk",
+]
