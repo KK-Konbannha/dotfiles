@@ -1,4 +1,5 @@
 export XDG_CONFIG_HOME=$HOME/.config
+export TERM=x256-color
 export ZDOTDIR=$HOME/.config/zsh
 export ENHANCD_DIR=$HOME/.local/share/enhancd
 export EDITOR=nvim
@@ -14,3 +15,4 @@ export DENO_INSTALL="$HOME/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH=$HOME/bin:$HOME/.local/bin:$PATH
+. "$HOME/.cargo/env"

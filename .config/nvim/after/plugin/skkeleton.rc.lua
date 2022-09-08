@@ -1,5 +1,3 @@
-local status, skkeleton = pcall(require, "skkeleton")
-if (not status) then return end
 vim.api.nvim_command("call skkeleton#config({ 'globalJisyo': '~/.skk/SKK-JISYO.L', 'userJisyo': '~/.skk/mine' })")
 vim.api.nvim_command("call skkeleton#register_kanatable('rom', { 'jj': 'escape', }) ")
 
