@@ -37,12 +37,13 @@ return {
   hide_tab_bar_if_only_one_tab = true,
   show_tab_index_in_tab_bar = false,
   tab_bar_at_bottom = true,
+  use_fancy_tab_bar = false,
 
   window_padding = {
-    left = 20,
+    left = 25,
     right = 4,
-    top = 20,
-    bottom = 10,
+    top = 25,
+    bottom = 25,
   },
 
   disable_default_key_bindings = true,
