@@ -51,6 +51,7 @@ wm = [
 ]
 
 gui_utils = [
+  "pavucontrol",
   "alacritty-sixel-git",
   "evince",
   "gwenview"

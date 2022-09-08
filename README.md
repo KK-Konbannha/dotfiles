@@ -8,3 +8,11 @@
 - **Editor:** [neovim](https://github.com/neovim/neovim)
 - **Compositor:** [picom](https://github.com/yshui/picom)
 - **Application Launcher:** [rofi](https://github.com/davatorium/rofi)
+
+# Setup
+
+install.pyを実行する前に以下のパッケージをインストールしてください。
+```Shell
+sudo pacman -Syy python3 python-pip
+pip install toml
+```

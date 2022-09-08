@@ -1,5 +1,7 @@
 from typing import Final
 import os
+import subprocess
+import sys
 
 
 def symlink_dotfiles(
@@ -43,13 +45,21 @@ def symlink_dotfiles(
                 SYMLINK_CONFIG_PATH: Final[str] = os.path.join(
                     HOME_DIR, target_file, config_dirs
                 )
-                os.system(f"ln -snfv {ORG_CONFIG_PATH} {SYMLINK_CONFIG_PATH}")
+                res = subprocess.run(
+                    ["ln", "-snfv", ORG_CONFIG_PATH, SYMLINK_CONFIG_PATH],
+                    stdout=subprocess.PIPE,
+                )
+                sys.stdout.buffer.write(res.stdout)
         else:
             ORG_PATH: Final[str] = os.path.join(DOTFILES_DIR, target_file)
             SYMLINK_PATH: Final[str] = os.path.join(HOME_DIR, target_file)
-            os.system(f"ln -snfv {ORG_PATH} {SYMLINK_PATH}")
+            res = subprocess.run(
+                ["ln", "-snfv", ORG_PATH, SYMLINK_PATH], stdout=subprocess.PIPE
+            )
+            sys.stdout.buffer.write(res.stdout)
 
     return 1
 
 
-symlink_dotfiles([".git", ".gitigonre"])
+if __name__ == "__main__":
+    symlink_dotfiles([".git", ".gitigonre"])
