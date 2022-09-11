@@ -1,3 +1,4 @@
+from libqtile import qtile
 from libqtile import bar, widget
 from libqtile.config import Screen
 
@@ -6,6 +7,11 @@ from modules.get_images_path import get_random_wallpaper_path
 from modules.colors import dracula
 
 selected_wallpaper_path = get_random_wallpaper_path(wallpapers_dir_path)
+
+
+def open_rofi():
+    qtile.cmd_spawn("rofi -show combi")
+
 
 screens = [
     Screen(
@@ -17,6 +23,7 @@ screens = [
                     font="apricotJapanesefontT",
                     fontsize=25,
                     background=dracula["purple"],
+                    mouse_callbacks={"Button1": open_rofi},
                 ),
                 widget.Spacer(length=5, background=dracula["purple"]),
                 widget.TextBox(
@@ -43,15 +50,25 @@ screens = [
                     padding=0,
                 ),
                 widget.Spacer(length=40),
-                widget.Prompt(
-                    prompt="  : ",
-                ),
+                # widget.Prompt(
+                #     prompt="  : ",
+                # ),
                 widget.Spacer(length=bar.STRETCH),
                 widget.Systray(icon_size=28),
                 widget.TextBox(
                     text=" ",
                     fontsize=33,
+                    foreground=dracula["bg"],
+                    padding=0,
+                ),
+                widget.Battery(
+                    format="  {percent:2.0%}", background=dracula["bg"]
+                ),
+                widget.TextBox(
+                    text=" ",
+                    fontsize=33,
                     foreground=dracula["green"],
+                    background=dracula["bg"],
                     padding=0,
                 ),
                 widget.Clock(

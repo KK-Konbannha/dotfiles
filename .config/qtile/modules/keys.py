@@ -40,17 +40,22 @@ keys = [
         lazy.reload_config(),
         desc="Reload the config",
     ),
+    # Key(
+    #     [mod],
+    #     "0",
+    #     lazy.spawn("rofi -show drun"),
+    # ),
     Key(
         [mod],
         "0",
-        lazy.spawn("rofi -show drun"),
+        lazy.spawn("rofi -terminal wezterm -show combi"),
     ),
-    Key(
-        [mod],
-        "r",
-        lazy.spawncmd(),
-        desc="Spawn a command using a prompt widget",
-    ),
+    # Key(
+    #     [mod],
+    #     "r",
+    #     lazy.spawncmd(),
+    #     desc="Spawn a command using a prompt widget",
+    # ),
     Key([mod], "f", lazy.spawn("firefox"), desc="Launch firefox"),
     Key(
         [mod],

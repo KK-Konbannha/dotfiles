@@ -1,11 +1,15 @@
 /*Dracula theme based on the Purple official rofi theme*/
 
 configuration {
+    modi: "window,drun,ssh,combi";
+    combi-modi: "window,drun,ssh";
+    display-combi: "  ";
     display-drun: "  ";
     font: "HackGenNerd With FFxiv Glyph 22";
     show-icons: true;
     icon-thme: "Papirus";
     location: 1;
+    run-shell-command: "wezterm start -- {cmd}";
 }
 
 * {

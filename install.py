@@ -16,3 +16,7 @@ def main():
     group.add_argument(
         "-i", "--init", help="install packages and deploy dotfiles"
     )
+
+
+if __name__ == "__main__":
+    main()
