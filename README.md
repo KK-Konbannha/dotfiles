@@ -11,8 +11,5 @@
 
 # Setup
 
-install.pyを実行する前に以下のパッケージをインストールしてください。
-```Shell
-sudo pacman -Syy python3 python-pip
-pip install toml
-```
+onedrive入れ方
+https://github.com/skilion/onedrive/blob/master/README.md
