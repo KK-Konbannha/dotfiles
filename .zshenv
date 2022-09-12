@@ -1,5 +1,4 @@
 export XDG_CONFIG_HOME=$HOME/.config
-export TERM=x256-color
 export ZDOTDIR=$HOME/.config/zsh
 export ENHANCD_DIR=$HOME/.local/share/enhancd
 export EDITOR=nvim

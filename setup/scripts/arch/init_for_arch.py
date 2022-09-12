@@ -2,10 +2,10 @@ import os
 import subprocess
 from shutil import which
 
-from exec_sh import exec_sh
-from ..makedirs import makedirs
-from ..install_apps import install_apps
-from ..symlink import symlink_dotfiles
+from setup.scripts.arch.exec_sh import exec_sh
+from setup.scripts.makedirs import makedirs
+from setup.scripts.install_apps import install_apps
+from setup.scripts.symlink import symlink_dotfiles
 
 dirs_should_make = [".config", "dev", "Wallpapers", "Downloads"]
 dirs_should_reset = ["tmp", ".Trash"]

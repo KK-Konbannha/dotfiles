@@ -4,6 +4,10 @@
 /.config/qtile/__pycache__/
 /.config/qtile/lib/__pycache__/
 /.config/qtile/lib/widget/__pycache__/
+/setup/__pycache__/
+/setup/scripts/__pycache__/
+/setup/scripts/arch/__pycache__/
+
 /.config/nvim/plugin/packer_compiled.lua
 /.config/zsh/.zcompdump
 

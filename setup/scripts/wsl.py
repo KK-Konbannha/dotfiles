@@ -1,4 +1,4 @@
-from exec_sh import exec_sh
+from setup.scripts.arch.exec_sh import exec_sh
 
 
 def setup_wsl(DIST):
