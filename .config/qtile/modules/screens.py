@@ -1,3 +1,4 @@
+import os
 from libqtile import qtile
 from libqtile import bar, widget
 from libqtile.config import Screen
@@ -5,6 +6,7 @@ from libqtile.config import Screen
 from modules.settings import wallpapers_dir_path
 from modules.get_images_path import get_random_wallpaper_path
 from modules.colors import dracula
+from modules.arcobattery import BatteryIcon
 
 selected_wallpaper_path = get_random_wallpaper_path(wallpapers_dir_path)
 
@@ -61,8 +63,21 @@ screens = [
                     foreground=dracula["bg"],
                     padding=0,
                 ),
+                BatteryIcon(
+                    padding=0,
+                    scale=0.7,
+                    y_poss=2,
+                    theme_path=os.path.expanduser(
+                        "~/.config/qtile/icons/battery_icons_horiz"
+                    ),
+                    update_interval=5,
+                    background=dracula["bg"],
+                ),
                 widget.Battery(
-                    format="  {percent:2.0%}", background=dracula["bg"]
+                    font="apricotJapanesefontT",
+                    fontsize=25,
+                    format="{percent:2.0%}",
+                    background=dracula["bg"],
                 ),
                 widget.TextBox(
                     text=" ",

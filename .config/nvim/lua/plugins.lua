@@ -8,7 +8,7 @@ vim.cmd [[packadd packer.nvim]]
 
 packer.startup(function(use)
   use 'wbthomason/packer.nvim'
-  use 'Mofiqul/dracula.nvim'
+  use { 'Mofiqul/dracula.nvim', opt = true }
   use 'nvim-lualine/lualine.nvim' -- Statusline
   use 'nvim-lua/popup.nvim' -- Common utilities
   use 'nvim-lua/plenary.nvim' -- Common utilities

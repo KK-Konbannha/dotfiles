@@ -5,6 +5,7 @@ base = [
   "openssh",
   "python3",
   "python-pip",
+  "deno",
 ]
 
 sound = [
@@ -12,7 +13,7 @@ sound = [
   "pipewire",
   "pipewire-alsa",
   "pipewire-pulse",
-  "alsa-utls",
+  "alsa-utils",
 ]
 
 network = [

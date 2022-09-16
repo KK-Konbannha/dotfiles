@@ -11,6 +11,12 @@
 /.config/nvim/plugin/packer_compiled.lua
 /.config/zsh/.zcompdump
 
+/.config/mpd/playlists/
+/.config/mpd/database
+/.config/mpd/log
+/.config/mpd/pid
+/.config/mpd/state
+
 *~
 *.swp
 .zsh_history
