@@ -15,9 +15,11 @@ def main():
 
     DIRS_SHOULD_MAKE: Final[list[str]] = [
         ".config",
+        ".lyrics",
         "dev",
         "Wallpapers",
         "Downloads",
+        "Music",
     ]
     DIRS_SHOULD_RESET: Final[list[str]] = [".Trash", "tmp"]
 
