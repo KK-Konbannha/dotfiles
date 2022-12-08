@@ -12,6 +12,7 @@ ts.setup {
   },
   ensure_installed = {
     "javascript",
+    "java",
     "python",
     "tsx",
     "toml",

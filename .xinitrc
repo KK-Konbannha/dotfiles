@@ -44,7 +44,8 @@ fi
 /usr/bin/pipewire-pulse &
 /usr/bin/wireplumber &
 
-picom --experimental-backends &
+# picom --experimental-backends &
+picom &
 
 fcitx5 &
 

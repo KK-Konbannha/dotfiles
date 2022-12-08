@@ -15,10 +15,10 @@ shell = "zsh"
 
 [plugins.zsh-defer]
 github = "romkatv/zsh-defer"
-apply = ["source"]
+#apply = ["source"]
 
-[templates]
-defer = { value = 'zsh-defer source ""', each = true }
+#[templates]
+#defer = { value = 'zsh-defer source ""', each = true }
 
 [plugins.compinit]
 inline = 'autoload -Uz compinit && compinit'
@@ -28,23 +28,23 @@ inline = 'autoload -Uz colors && zsh-defer colors'
 
 [plugins.dracula]
 github = "dracula/zsh"
-apply = ["source"]
+#apply = ["source"]
 
 [plugins.zsh-autosuggestions]
 github = "zsh-users/zsh-autosuggestions"
-apply = ["source"]
+#apply = ["source"]
 
 [plugins.enhancd]
 github = "b4b4r07/enhancd"
-apply = ["source"]
+#apply = ["source"]
 
 [plugins.zsh-syntax-highlighting]
 github = "zsh-users/zsh-syntax-highlighting"
-apply = ["source"]
+#apply = ["source"]
 
 [plugins.zsh-better-npm-completion]
 github = "lukechilds/zsh-better-npm-completion"
-apply = ["defer"]
+#apply = ["defer"]
 
 #[plugins.dotfiles-defers]
 #local = "~/.config/zsh/defer"
