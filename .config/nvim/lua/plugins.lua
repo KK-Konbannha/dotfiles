@@ -51,4 +51,6 @@ packer.startup(function(use)
     use 'delphinus/skkeleton_indicator.nvim' -- Skkeleton UIs
 
     use 'LudoPinelli/comment-box.nvim'
+    use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install",
+        setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 end)

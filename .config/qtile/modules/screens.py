@@ -27,10 +27,10 @@ screens = [
                     background=dracula["purple"],
                     mouse_callbacks={"Button1": open_rofi},
                 ),
-                widget.Spacer(length=5, background=dracula["purple"]),
+                # widget.Spacer(length=5, background=dracula["purple"]),
                 widget.TextBox(
-                    text=" ",
-                    fontsize=33,
+                    text="█ ",
+                    fontsize=34,
                     foreground=dracula["purple"],
                     background=dracula["bg"],
                     padding=0,

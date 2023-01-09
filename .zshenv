@@ -14,3 +14,4 @@ export DENO_INSTALL="$HOME/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH=$HOME/bin:$HOME/.local/bin:$PATH
+export PATH=$HOME/.local/share/gem/ruby/3.0.0/bin:$PATH
