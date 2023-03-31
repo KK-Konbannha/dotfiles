@@ -57,5 +57,8 @@ if [ ! -e "/mnt/c/'Program Files'/Google/Chrome/Application" ]; then
     alias deepl="/mnt/c/'Program Files'/Google/Chrome/Application/chrome.exe https://www.deepl.com/ja/translator"
 fi
 
+#  ╭──────────────────────────────────────────────────────────╮
+#  │                         javafx                           │
+#  ╰──────────────────────────────────────────────────────────╯
 alias javafxc='javac --module-path /usr/lib/jvm/java-19-openjdk/lib/javafx --add-modules javafx.controls,javafx.fxml,javafx.media'
 alias javafx='java --module-path   /usr/lib/jvm/java-19-openjdk/lib/javafx --add-modules javafx.controls,javafx.fxml,javafx.media'
