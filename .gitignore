@@ -4,6 +4,7 @@
 /.config/qtile/__pycache__/
 /.config/qtile/lib/__pycache__/
 /.config/qtile/lib/widget/__pycache__/
+/.config/qtile/modules/__pycache__/
 /setup/__pycache__/
 /setup/scripts/__pycache__/
 /setup/scripts/arch/__pycache__/
