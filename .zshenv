@@ -8,6 +8,7 @@ export LC_ALL=ja_JP.UTF-8
 export LANG=ja_JP.UTF-8
 export LISTMAX=0 # zshの補完リストが多い時(-1:尋ねない 0:尋ねる)
 export PIPENV_VENV_IN_PROJECT=1 # pipenvの環境変数
+export VIRTUAL_ENV_DISABLE_PROMPT=1
 export RANGER_LOAD_DEFAULT_RC=FALSE
 export NVM_DIR="$HOME/.nvm"
 export DENO_INSTALL="$HOME/.deno"
