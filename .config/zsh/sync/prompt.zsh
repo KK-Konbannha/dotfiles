@@ -124,7 +124,7 @@ function lprompt-venv() {
   if [ -z "$VIRTUAL_ENV" ]; then
     echo ""
   else
-    echo "%F{yellow}  $(basename ${VIRTUAL_ENV}) %f"
+    echo "%F{011}  $(basename ${VIRTUAL_ENV}) %f"
   fi
 }
 
