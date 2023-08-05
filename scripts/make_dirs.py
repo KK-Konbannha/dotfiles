@@ -1,22 +1,24 @@
-from typing import Final
 import os
 import shutil
 
 
-def makedirs(dirs_should_make: list[str], dirs_should_reset: list[str] = []):
+def make_dirs(home_dir: str, dirs_to_create: list[str], dirs_to_reset: list[str] = []):
     """
-    ╭───────────────────────────────────────────────────────────────────╮
-    │     ディレクトリをホームディレクトリの下に作るだけ。              │
-    │                                                                   │
-    │     dir_should_make: 作りたいディレクトリのリスト。               │
-    │     dirs_should_reset:                                            │
-    │           リセットし(消してもう一度作り)たいディレクトリのリスト。│
-    ╰───────────────────────────────────────────────────────────────────╯
+    ホームディレクトリ内にディレクトリを作成またはリセットする。
+
+    Parameters:
+        home_dir (str): ホームディレクトリのパス。
+        dirs_to_create (list[str]): 作成したいディレクトリのリスト。
+        dirs_to_reset (list[str], optional): リセットしたいディレクトリのリスト。
+
+    Notes:
+        dirs_to_createとdirs_to_resetに含まれるディレクトリは全てhome_dir内に作成される。
+        dirs_to_resetに含まれるディレクトリは既に存在している場合、削除され再作成される。
     """
-    HOME_DIR: Final[str] = os.path.expanduser("~")
+    # リセットしたいディレクトリを削除
+    for dir_to_reset in dirs_to_reset:
+        shutil.rmtree(os.path.join(home_dir, dir_to_reset))
 
-    for dir_should_reset in dirs_should_reset:
-        shutil.rmtree(os.path.join(HOME_DIR, dir_should_reset))
-
-    for dir_should_make in dirs_should_make + dirs_should_reset:
-        os.makedirs(os.path.join(HOME_DIR, dir_should_make))
+    # ディレクトリを作成
+    for dir_to_create in dirs_to_create + dirs_to_reset:
+        os.makedirs(os.path.join(home_dir, dir_to_create))
