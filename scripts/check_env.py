@@ -1,10 +1,10 @@
-from typing import Final, Literal
+from typing import Literal
 
 
 Dist_type = Literal["A", "U"]
 
 
-def checkenv() -> dict[str, bool | Dist_type]:
+def check_env() -> dict[str, bool | Dist_type]:
     """
     #  ╭──────────────────────────────────────────────────────────╮
     #  │                   環境を確かめる関数。                   │
@@ -31,42 +31,38 @@ def checkenv() -> dict[str, bool | Dist_type]:
     """
     )
 
-    IS_WSL: Final[bool] = checkwsl()
-    DIST: Final[Dist_type] = checkdist()
+    IS_WSL: bool = check_wsl()
+    DIST: Dist_type = check_dist()
 
     return {"IS_WSL": IS_WSL, "DIST": DIST}
 
 
-def checkwsl() -> bool:
+def check_wsl() -> bool:
     """
     wsl上か確かめる関数。
     """
-    is_wsl_input: Final[str] = input("wsl上にインストールしようとしていますか？ [Y/n] ")
-    match is_wsl_input:
-        case "Y" | "Yes" | "y" | "yes":
-            return True
-        case "N" | "No" | "n" | "no":
-            return False
-        case _:
-            print("YesかNoで答えてください。")
-            checkwsl()
-
-    return False
+    while True:
+        is_wsl_input: str = input("wsl上にインストールしようとしていますか？ [Y/n] ").lower()
+        match is_wsl_input:
+            case "y" | "yes":
+                return True
+            case "n" | "no":
+                return False
+            case _:
+                print("YesかNoで答えてください。")
 
 
-def checkdist() -> Dist_type:
+def check_dist() -> Dist_type:
     """
     ディストリビューションを確かめる関数。
     """
-    dist: Final[str] = input("ディストリビューションは何を使っていますか？[(A)rch/(U)buntu] ")
-    match dist:
-        case "A" | "Arch" | "a" | "arch":
-            return "A"
-        case "U" | "Ubuntu" | "u" | "ubuntu":
-            return "U"
-        case _:
-            print("現在ArchまたはUbuntuのみの対応になります。")
-            print("ArchかUbuntuで答えてください。")
-            checkdist()
-
-    return "A"
+    while True:
+        dist: str = input("ディストリビューションは何を使っていますか？[(A)rch/(U)buntu] ").lower()
+        match dist:
+            case "a" | "arch":
+                return "A"
+            case "u" | "ubuntu":
+                return "U"
+            case _:
+                print("現在ArchまたはUbuntuのみの対応になります。")
+                print("ArchかUbuntuで答えてください。")
