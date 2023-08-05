@@ -1,7 +1,7 @@
 # プロンプトの表示時に変数を展開できるように
 setopt prompt_subst
 # 右プロンプトまで入力が来たら消すようにします。
-setopt transient_rprompt 
+setopt transient_rprompt
 
 # 関数 "{{{
 # ---------------------------------------------------------------------
@@ -117,11 +117,21 @@ function prompt-ranger-level() {
         echo " "
     fi
 }
+#  ╭──────────────────────────────────────────────────────────╮
+#  │         venvに入ったときにそのことが分かるように         │
+#  ╰──────────────────────────────────────────────────────────╯
+function lprompt-venv() {
+  if [ -z "$VIRTUAL_ENV" ]; then
+    echo ""
+  else
+    echo "%F{011}  $(basename ${VIRTUAL_ENV}) %f"
+  fi
+}
 
 #  ╭──────────────────────────────────────────────────────────╮
 #  │          コマンドのあとに空行を挿入できるように          │
 #  ╰──────────────────────────────────────────────────────────╯
-add_newline() {
+function add-newline() {
   if [[ -z $PS1_NEWLINE_LOGIN ]]; then
     PS1_NEWLINE_LOGIN=true
   else
@@ -129,7 +139,9 @@ add_newline() {
   fi
 }
 
-precmd() { add_newline }
+function precmd() {
+  add-newline
+}
 
 #}}}
 
@@ -142,13 +154,14 @@ precmd() { add_newline }
 LPROMPT_ICON='`lprompt-icon`'
 PROMPT_RNG='`prompt-ranger-level`'
 LPROMPT_GIT='`lprompt-git-current-branch`'
+LPROMPT_VENV='`lprompt-venv`'
 RPROMPT_GIT='`rprompt-git-current-branch`'
 
 #  ╭──────────────────────────────────────────────────────────╮
 #  │                  通常のプロンプトです。                  │
 #  ╰──────────────────────────────────────────────────────────╯
 # PROMPT="%F{050}%c %# %f%k"
-PROMPT="%F{241}╭─ %f${LPROMPT_ICON} ${LPROMPT_GIT}%F{050} ${PROMPT_RNG}
+PROMPT="%F{241}╭─ %f${LPROMPT_ICON} ${LPROMPT_GIT} ${LPROMPT_VENV}%F{050} ${PROMPT_RNG}
 %F{241}╰─%f %f%k"
 #  ╭──────────────────────────────────────────────────────────╮
 #  │for や while 、複数行入力時等に表示されるプロンプトです。 │

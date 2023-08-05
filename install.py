@@ -1,19 +1,19 @@
 #!/bin/python
 import os
 import argparse
-from typing import Final
 
-from setup.scripts.symlink import symlink_dotfiles
-from setup.scripts.init import init
+from scripts.symlink import symlink_dotfiles
+
+## from scripts.init import init
 
 
 def main():
-    HOME: Final[str] = os.path.expanduser("~")
+    home_dir = os.path.expanduser("~")
 
-    DOT_DIRECTORY: Final[str] = f"{HOME}/dotfiles"
-    REMOTE_URL: Final[str] = "https://github.com/KK-Konbannha/dotfiles.git"
+    dotfiles_dir = f"{home_dir}/dotfiles"
+    remote_url = "https://github.com/KK-Konbannha/dotfiles.git"
 
-    DIRS_SHOULD_MAKE: Final[list[str]] = [
+    dirs_to_make = [
         ".config",
         ".lyrics",
         "dev",
@@ -21,16 +21,14 @@ def main():
         "Downloads",
         "Music",
     ]
-    DIRS_SHOULD_RESET: Final[list[str]] = [".Trash", "tmp"]
+    dirs_to_reset = [".Trash", "tmp"]
 
-    DIRS_SHOULD_EXLCUDE: Final[list[str]] = [".git", ".gitignore"]
-    DIRS_SHOULDNT_EXCLUDE: Final[list[str]] = ["bin"]
+    dirs_to_exclude = [".git", ".gitignore"]
+    dirs_to_include = ["bin"]
 
     parser = argparse.ArgumentParser(description="setup my dotfiles")
     group = parser.add_mutually_exclusive_group(required=True)
-    group.add_argument(
-        "-d", "--deploy", help="deploy my dotfiles", action="store_true"
-    )
+    group.add_argument("-d", "--deploy", help="deploy my dotfiles", action="store_true")
     group.add_argument(
         "-i",
         "--init",
@@ -40,11 +38,15 @@ def main():
     args = parser.parse_args()
 
     if args.deploy:
-        symlink_dotfiles(DIRS_SHOULD_EXLCUDE, DIRS_SHOULDNT_EXCLUDE)
+        res = symlink_dotfiles(home_dir, dotfiles_dir, dirs_to_exclude, dirs_to_include)
+        if res:
+            print("dotfilesを正常に展開しました。")
+        else:
+            print("dotfilesの展開に失敗しました。")
     elif args.init:
-        init(HOME)
-    else:
-        pass
+        ## init(home_dir)
+        if not (os.path.exists(dotfiles_dir) and os.path.isdir(dotfiles_dir)):
+            pass
 
 
 if __name__ == "__main__":

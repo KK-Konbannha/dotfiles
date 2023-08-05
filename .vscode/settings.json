@@ -1,4 +1,10 @@
 {
-    "deno.enable": true,
-    "deno.unstable": true
+  "deno.enable": true,
+  "deno.unstable": true,
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true
+  },
+  "python.analysis.typeCheckingMode": "basic",
+  "cSpell.words": ["dotfile", "DOTFILES"]
 }
