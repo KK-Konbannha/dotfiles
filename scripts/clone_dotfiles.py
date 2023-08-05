@@ -6,7 +6,7 @@ import re
 from shutil import which
 
 
-def instal_dotfiles(home_dir: str, dotfiles_dir: str, remote_url: str) -> bool:
+def clone_dotfiles(home_dir: str, dotfiles_dir: str, remote_url: str) -> bool:
     """
     リモートリポジトリからdotfilesをインストールする。
 
@@ -28,16 +28,19 @@ def instal_dotfiles(home_dir: str, dotfiles_dir: str, remote_url: str) -> bool:
             match other_place:
                 case "y" | "yes":
                     other_dir: str = os.path.expanduser(
-                        input("homeからの相対パスでディレクトリを教えてください: (e.g., ~/your/dotfiles): ")
+                        input("homeからの相対パスでディレクトリを教えてください: (e.g., ~/your): ")
                     )
-
                     if os.path.exists(other_dir) and os.path.isdir(other_dir):
-                        home_dir = other_dir
-                        dotfiles_dir = f"{home_dir}/dotfiles"
+                        return clone_dotfiles(
+                            other_dir, f"{other_dir}/dotfiles", remote_url
+                        )
+
                     else:
+                        print("そのようなディレクトリは存在しません。")
                         return False
 
                 case "n" | "no":
+                    print("dotfilesのインストールを中止します。")
                     return False
 
                 case _:
@@ -71,4 +74,4 @@ def instal_dotfiles(home_dir: str, dotfiles_dir: str, remote_url: str) -> bool:
 if __name__ == "__main__":
     home_dir = os.path.expanduser("~")
     remote_url: str = input("Remote urlを入力してください: ")
-    instal_dotfiles(home_dir, f"{home_dir}/dotfiles", remote_url)
+    clone_dotfiles(home_dir, f"{home_dir}/dotfiles", remote_url)

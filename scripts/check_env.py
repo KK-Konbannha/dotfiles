@@ -1,19 +1,17 @@
-from typing import Literal
+from typing import Literal, Union
 
 
 Dist_type = Literal["A", "U"]
 
 
-def check_env() -> dict[str, bool | Dist_type]:
+def check_env() -> dict[str, Union[bool, Dist_type]]:
     """
-    #  ╭──────────────────────────────────────────────────────────╮
-    #  │                   環境を確かめる関数。                   │
-    #  │                                                          │
-    #  │                 2022/08/23 現在 対応環境                 │
-    #  │                 wsl上:              Arch                 │
-    #  │                                     Ubuntu               │
-    #  │                 直接インストール:   Arch                 │
-    #  ╰──────────────────────────────────────────────────────────╯
+    環境を確認する関数。WSL上かどうかとディストリビューションを尋ねる。
+
+    Returns:
+        dict[str, Union[bool, Dist_type]]: 環境情報を含む辞書。
+            - "IS_WSL" (bool): WSL上にインストールするかどうかの真偽値。
+            - "DIST" (Dist_type): ディストリビューション ("A" -> Arch, "U" -> Ubuntu)。
     """
     print(
         """
@@ -39,7 +37,9 @@ def check_env() -> dict[str, bool | Dist_type]:
 
 def check_wsl() -> bool:
     """
-    wsl上か確かめる関数。
+    WSL上かどうかを確認する関数。
+    Returns:
+        bool: WSL上にインストールするかどうかの真偽値。
     """
     while True:
         is_wsl_input: str = input("wsl上にインストールしようとしていますか？ [Y/n] ").lower()
@@ -54,7 +54,9 @@ def check_wsl() -> bool:
 
 def check_dist() -> Dist_type:
     """
-    ディストリビューションを確かめる関数。
+    ディストリビューションを確認する関数。
+    Returns:
+        Dist_type: ディストリビューション ("A" -> Arch, "U" -> Ubuntu)。
     """
     while True:
         dist: str = input("ディストリビューションは何を使っていますか？[(A)rch/(U)buntu] ").lower()
@@ -64,5 +66,5 @@ def check_dist() -> Dist_type:
             case "u" | "ubuntu":
                 return "U"
             case _:
-                print("現在ArchまたはUbuntuのみの対応になります。")
+                print("ArchまたはUbuntuのみの対応になります。")
                 print("ArchかUbuntuで答えてください。")
