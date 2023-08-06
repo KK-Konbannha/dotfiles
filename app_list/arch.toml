@@ -1,11 +1,13 @@
-[need]
+[share]
 base = [
+  "archlinux-keyring",
   "base-devel",
   "unzip",
   "openssh",
   "python3",
   "python-pip",
   "deno",
+  "dosfstools",
 ]
 
 sound = [
@@ -13,7 +15,6 @@ sound = [
   "pipewire",
   "pipewire-alsa",
   "pipewire-pulse",
-  "alsa-utils",
 ]
 
 network = [
@@ -21,6 +22,7 @@ network = [
   "iw",
   "wpa_supplicant",
   "networkmanager",
+  "dhcpcd",
 ]
 
 shell = [
@@ -31,12 +33,14 @@ shell = [
   "python-pynvim",
 ]
 
-[optional]
-shell = [
+shell_tools = [
   "lsd",
   "ranger",
   "neofetch",
   "ueberzug",
+  "man-db",
+  "man-pages",
+  "textinfo",
 ]
 
 x = [
@@ -52,10 +56,10 @@ wm = [
 ]
 
 gui_utils = [
-  "pavucontrol",
-  "alacritty-sixel-git",
   "evince",
-  "gwenview"
+  "pavucontrol",
+  "gwenview",
+  "discord"
 ]
 
 browser = [
@@ -66,4 +70,11 @@ browser = [
 input_method = [
   "fcitx5-im",
   "fcitx5-skk",
+]
+
+[wsl]
+[not wsl]
+base = [
+  "docker",
+  "efibootmgr",
 ]
