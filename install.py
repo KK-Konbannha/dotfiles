@@ -3,6 +3,9 @@ import os
 import argparse
 
 from scripts.symlink import symlink_dotfiles
+from scripts.clone_dotfiles import clone_dotfiles
+from scripts.make_dirs import make_dirs
+from scripts.check_env import check_env
 
 ## from scripts.init import init
 
@@ -13,7 +16,7 @@ def main():
     dotfiles_dir = f"{home_dir}/dotfiles"
     remote_url = "https://github.com/KK-Konbannha/dotfiles.git"
 
-    dirs_to_make = [
+    dirs_to_create = [
         ".config",
         ".lyrics",
         "dev",
@@ -43,10 +46,28 @@ def main():
             print("dotfilesを正常に展開しました。")
         else:
             print("dotfilesの展開に失敗しました。")
+
+        return
+
     elif args.init:
-        ## init(home_dir)
+        # dotfilesが存在するかを確認し、存在しなければcloneします。
         if not (os.path.exists(dotfiles_dir) and os.path.isdir(dotfiles_dir)):
-            pass
+            if not clone_dotfiles(home_dir, dotfiles_dir, remote_url):
+                print("dotfilesのイニシャライズに失敗しました。")
+                return
+
+        # dirs_to_create及びdirs_to_resetに存在するディレクトリを作成します。
+        make_dirs(home_dir, dirs_to_create, dirs_to_reset)
+
+        IS_WSL, DIST = check_env()
+
+        match DIST:
+            case "A":
+                # init_for_arch()
+                pass
+            case "U":
+                # init_for_ubuntu()
+                pass
 
 
 if __name__ == "__main__":
