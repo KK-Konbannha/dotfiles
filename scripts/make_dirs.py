@@ -21,4 +21,4 @@ def make_dirs(home_dir: str, dirs_to_create: list[str], dirs_to_reset: list[str]
 
     # ディレクトリを作成
     for dir_to_create in dirs_to_create + dirs_to_reset:
-        os.makedirs(os.path.join(home_dir, dir_to_create))
+        os.makedirs(os.path.join(home_dir, dir_to_create), exist_ok=True)
