@@ -82,7 +82,7 @@ return {
         repeat_y = 'NoRepeat',
         horizontal_align = 'Right',
         vertical_align = 'Bottom',
-        opacity = 0.5,
+        opacity = 0.7,
     }
   },
 
