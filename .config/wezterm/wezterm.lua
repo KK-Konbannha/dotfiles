@@ -71,6 +71,22 @@ return {
   },
 
 
+  background = {
+    {
+      source = {
+        File = "/home/katsu/.config/wezterm/background/background.png"
+      },
+        width = 'Contain',
+        height = 'Contain',
+        repeat_x = 'NoRepeat',
+        repeat_y = 'NoRepeat',
+        horizontal_align = 'Right',
+        vertical_align = 'Bottom',
+        opacity = 0.5,
+    }
+  },
+
+
   audible_bell = "Disabled",
   automatically_reload_config = true,
   window_background_opacity = 0.7,
