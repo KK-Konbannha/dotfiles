@@ -5,7 +5,7 @@ local function font_with_fallback(name, params)
   return wezterm.font_with_fallback(names, params)
 end
 
-local font_name = "HackGenNerd With FFxiv Glyph"
+local font_name = "HackGen Console NF With FFxiv Glyph"
 
 return {
   front_end = "OpenGL",

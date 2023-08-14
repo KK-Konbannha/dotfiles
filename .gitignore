@@ -18,6 +18,8 @@
 /.config/mpd/pid
 /.config/mpd/state
 
+/.config/wezterm/background/
+
 *~
 *.swp
 .zsh_history
