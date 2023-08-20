@@ -41,6 +41,9 @@ alias egrep='egrep --color=auto'
 alias apep='autopep8 --in-place --aggressive --aggressive'
 #alias xmind='~/xmind/xmind.sh &'
 alias e='emacs'
+alias c='code'
+
+alias dc='docker-compose'
 
 #  ╭──────────────────────────────────────────────────────────╮
 #  │         npm startで起動するブラウザを制御したい          │
@@ -52,10 +55,10 @@ alias e='emacs'
 #  │                         windows                          │
 #  │         chromeとdeeplにエイリアスでアクセスする          │
 #  ╰──────────────────────────────────────────────────────────╯
-if [ ! -e "/mnt/c/'Program Files'/Google/Chrome/Application" ]; then
-    alias c="/mnt/c/'Program Files'/Google/Chrome/Application/chrome.exe"
-    alias deepl="/mnt/c/'Program Files'/Google/Chrome/Application/chrome.exe https://www.deepl.com/ja/translator"
-fi
+# if [ ! -e "/mnt/c/'Program Files'/Google/Chrome/Application" ]; then
+#     alias c="/mnt/c/'Program Files'/Google/Chrome/Application/chrome.exe"
+#     alias deepl="/mnt/c/'Program Files'/Google/Chrome/Application/chrome.exe https://www.deepl.com/ja/translator"
+# fi
 
 #  ╭──────────────────────────────────────────────────────────╮
 #  │                         javafx                           │
