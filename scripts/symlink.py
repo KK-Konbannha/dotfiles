@@ -53,6 +53,8 @@ def symlink_dotfiles(
                 )
                 if b"failed" in res.stdout:
                     return False
+                print(b"/home" in res.stdout)
+                print(b"failed" in res.stdout)
                 sys.stdout.buffer.write(res.stdout)
                 if b"failed" in res.stdout:
                     return False
