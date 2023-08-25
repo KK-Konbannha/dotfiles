@@ -1,9 +1,9 @@
 import os
 import subprocess
-import requests
 import zipfile
 import re
 from shutil import which
+from urllib.request import urlopen
 
 
 def clone_dotfiles(home_dir: str, dotfiles_dir: str, remote_url: str) -> bool:
@@ -53,11 +53,10 @@ def clone_dotfiles(home_dir: str, dotfiles_dir: str, remote_url: str) -> bool:
 
     # gitコマンドが使えない場合はリモートからzipファイルをダウンロード
     remote_zip_url = re.sub(r"\.git$", "/archive/refs/heads/main.zip", remote_url)
-    res = requests.get(remote_zip_url)
     zip_file_path = dotfiles_dir + ".zip"
 
-    with open(zip_file_path, "wb") as f:
-        f.write(res.content)
+    with urlopen(remote_zip_url) as res, open(zip_file_path, "wb") as f:
+        f.write(res.read())
 
     with zipfile.ZipFile(zip_file_path, "r") as zip_ref:
         zip_ref.extractall(home_dir)
