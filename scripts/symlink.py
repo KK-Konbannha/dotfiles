@@ -52,26 +52,21 @@ def symlink_dotfiles(
                     stdout=subprocess.PIPE,
                     stderr=subprocess.PIPE,
                 )
-                if b"failed" in res.stdout:
+                if b"failed" in res.stderr:
                     return False
-                print(b"/home" in res.stdout)
-                print(b"failed" in res.stdout)
-                print(b"failed")
-                print(res.stdout)
-                print(res.stderr)
-                sys.stdout.buffer.write(res.stdout)
-                if b"failed" in res.stdout:
-                    return False
+                sys.stdout.buffer.write(res.stdout or res.stderr)
         else:
             # 通常のファイルをリンクする
             org_path = os.path.join(dotfiles_dir, target_file)
             symlink_path = os.path.join(home_dir, target_file)
             res = subprocess.run(
-                ["ln", "-snfv", org_path, symlink_path], stdout=subprocess.PIPE
+                ["ln", "-snfv", org_path, symlink_path],
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
             )
-            sys.stdout.buffer.write(res.stdout)
-            if b"failed" in res.stdout:
+            if b"failed" in res.stderr:
                 return False
+            sys.stdout.buffer.write(res.stdout or res.stderr)
 
     return True
 
