@@ -2,10 +2,10 @@
 import os
 import argparse
 
-from scripts.symlink import symlink_dotfiles
-from scripts.clone_dotfiles import clone_dotfiles
-from scripts.make_dirs import make_dirs
-from scripts.check_env import check_env
+from scripts.share.symlink import symlink_dotfiles
+from scripts.share.clone_dotfiles import clone_dotfiles
+from scripts.share.make_dirs import make_dirs
+from scripts.share.check_env import check_env
 
 ## from scripts.init import init
 
@@ -60,7 +60,7 @@ def main():
         print("ディレクトリを作成します。")
         make_dirs(home_dir, dirs_to_create, dirs_to_reset)
 
-        IS_WSL, DIST = check_env()
+        DIST, IS_GUI, IS_WSL = check_env()
 
         match DIST:
             case "A":
