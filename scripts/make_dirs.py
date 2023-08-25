@@ -17,7 +17,9 @@ def make_dirs(home_dir: str, dirs_to_create: list[str], dirs_to_reset: list[str]
     """
     # リセットしたいディレクトリを削除
     for dir_to_reset in dirs_to_reset:
-        shutil.rmtree(os.path.join(home_dir, dir_to_reset))
+        full_path = os.path.join(home_dir, dir_to_reset)
+        if os.path.exists(full_path):
+            shutil.rmtree(full_path)
 
     # ディレクトリを作成
     for dir_to_create in dirs_to_create + dirs_to_reset:
