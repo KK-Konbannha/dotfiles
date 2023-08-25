@@ -42,7 +42,7 @@ def check_wsl() -> bool:
         bool: WSL上にインストールするかどうかの真偽値。
     """
     while True:
-        is_wsl_input: str = input("wsl上にインストールしようとしていますか？ [Y/n] ").lower()
+        is_wsl_input: str = input("wsl上にインストールしようとしていますか？ [Y/n]: ").lower()
         match is_wsl_input:
             case "y" | "yes":
                 return True
@@ -59,7 +59,7 @@ def check_dist() -> Dist_type:
         Dist_type: ディストリビューション ("A" -> Arch, "U" -> Ubuntu)。
     """
     while True:
-        dist: str = input("ディストリビューションは何を使っていますか？[(A)rch/(U)buntu] ").lower()
+        dist: str = input("ディストリビューションは何を使っていますか？[(A)rch/(U)buntu]: ").lower()
         match dist:
             case "a" | "arch":
                 return "A"
