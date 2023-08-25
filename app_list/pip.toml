@@ -1,4 +1,0 @@
-pip = [
-  "toml",
-  "pyright",
-]
