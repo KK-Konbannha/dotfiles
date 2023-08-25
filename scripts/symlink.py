@@ -19,7 +19,7 @@ def symlink_dotfiles(
         dirs_to_include (list[str], optional): ドットファイルではないがリンクを作成するディレクトリのリスト。
 
     Returns:
-        bool: 成功した場合はTrueを、dotfilesまたは.configディレクトリが存在しない場合はFalseを返す。
+        bool: 成功した場合はTrueを、dotfilesまたは.configディレクトリが存在しない、またはlnのstdoutにfailedが含まれる場合はFalseを返す。
     """
     config_dir_path = os.path.join(dotfiles_dir, ".config")
 
@@ -52,6 +52,8 @@ def symlink_dotfiles(
                     stdout=subprocess.PIPE,
                 )
                 sys.stdout.buffer.write(res.stdout)
+                if b"failed" in res.stdout:
+                    return False
         else:
             # 通常のファイルをリンクする
             org_path = os.path.join(dotfiles_dir, target_file)
@@ -60,6 +62,8 @@ def symlink_dotfiles(
                 ["ln", "-snfv", org_path, symlink_path], stdout=subprocess.PIPE
             )
             sys.stdout.buffer.write(res.stdout)
+            if b"failed" in res.stdout:
+                return False
 
     return True
 
