@@ -1,15 +1,15 @@
-from typing import Literal, Union
+from typing import Literal
 
 
 Dist_type = Literal["A", "U"]
 
 
-def check_env() -> dict[str, Union[bool, Dist_type]]:
+def check_env():
     """
     環境を確認する関数。WSL上かどうかとディストリビューションを尋ねる。
 
     Returns:
-        dict[str, Union[bool, Dist_type]]: 環境情報を含む辞書。
+        list[bool | Dist_type]: 環境情報を含むリスト。
             - "DIST" (Dist_type): ディストリビューション ("A" -> Arch, "U" -> Ubuntu)。
             - "IS_GUI" (bool): GUI環境かどうかの真偽値。
             - "IS_WSL" (bool): WSL上にインストールするかどうかの真偽値。
@@ -38,11 +38,11 @@ def check_env() -> dict[str, Union[bool, Dist_type]]:
         IS_GUI: bool = False
         IS_WSL: bool = False
 
-    return {
-        "DIST": DIST,
-        "IS_GUI": IS_GUI,
-        "IS_WSL": IS_WSL,
-    }
+    return [
+        DIST,
+        IS_GUI,
+        IS_WSL,
+    ]
 
 
 def check_dist() -> Dist_type:

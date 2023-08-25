@@ -102,8 +102,8 @@ def main():
 
     create_symlinks(files_to_link=[".git", ".gitigonre"], directories_to_link=["bin"])
 
-    # nvmにリンクを貼る
-    subprocess.run(["sudo", "ln", "-sf", which("nvim"), "/usr/bin/vim"])  # type: ignore
+    # nvimにリンクを貼る
+    subprocess.run(["sudo", "ln", "-sf", which("nvim"), "/usr/bin/vim"])
 
     # シェルをzshにする
     if os.getenv("SHELL") != "/bin/zsh":
