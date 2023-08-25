@@ -50,6 +50,7 @@ def symlink_dotfiles(
                 res = subprocess.run(
                     ["ln", "-snfv", org_config_path, symlink_config_path],
                     stdout=subprocess.PIPE,
+                    stderr=subprocess.PIPE,
                 )
                 if b"failed" in res.stdout:
                     return False
@@ -57,6 +58,7 @@ def symlink_dotfiles(
                 print(b"failed" in res.stdout)
                 print(b"failed")
                 print(res.stdout)
+                print(res.stderr)
                 sys.stdout.buffer.write(res.stdout)
                 if b"failed" in res.stdout:
                     return False
