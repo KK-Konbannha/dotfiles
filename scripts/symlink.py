@@ -51,6 +51,8 @@ def symlink_dotfiles(
                     ["ln", "-snfv", org_config_path, symlink_config_path],
                     stdout=subprocess.PIPE,
                 )
+                if b"failed" in res.stdout:
+                    return False
                 sys.stdout.buffer.write(res.stdout)
                 if b"failed" in res.stdout:
                     return False
