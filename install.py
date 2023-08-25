@@ -45,7 +45,7 @@ def main():
         if res:
             print("dotfilesを正常に展開しました。")
         else:
-            print("dotfilesの展開に失敗しました。")
+            print("dotfilesの展開に失敗しました。\nディレクトリ構成を確認してください。")
 
         return
 
@@ -57,6 +57,7 @@ def main():
                 return
 
         # dirs_to_create及びdirs_to_resetに存在するディレクトリを作成します。
+        print("ディレクトリを作成します。")
         make_dirs(home_dir, dirs_to_create, dirs_to_reset)
 
         IS_WSL, DIST = check_env()
