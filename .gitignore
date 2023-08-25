@@ -23,4 +23,5 @@
 *~
 *.swp
 .zsh_history
+*.cpython-310.pyc
 *.pyc
