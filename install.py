@@ -6,6 +6,10 @@ from scripts.share.symlink import symlink_dotfiles
 from scripts.share.clone_dotfiles import clone_dotfiles
 from scripts.share.make_dirs import make_dirs
 from scripts.share.check_env import check_env
+from scripts.arch.before_install_app import before_install_app
+from scripts.arch.install_yay import install_yay
+from scripts.arch.install_apps_by_yay import install_apps_by_yay
+from scripts.arch.after_install_app import after_install_app
 
 ## from scripts.init import init
 
@@ -65,7 +69,10 @@ def main():
         match DIST:
             case "A":
                 # init_for_arch()
-                pass
+                before_install_app()
+                install_yay()
+                install_apps_by_yay(dotfiles_dir, IS_GUI, IS_WSL)
+                after_install_app()
             case "U":
                 # init_for_ubuntu()
                 pass

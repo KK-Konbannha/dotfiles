@@ -1,0 +1,64 @@
+#!/bin/bash
+
+distro_name=$(cat /etc/os-release | grep -Po '(?<=^NAME=").*?(?=")' | sed 's/NAME="//;s/"$//')
+
+if [ "$1" == "-p" ]; then
+
+
+    if [ "$distro_name" = "Arch Linux" ]; then
+        echo "pacmanを捕捉!!"
+        echo "app_list_for_arch.txtを作成!!!!"
+        ~/dotfiles/app_list/make_app_list_for_arch.sh
+        echo "app_list_for_arch.txtを作成完了!!!!!!"
+    elif [ "$distro_name" = "Ubuntu" ]; then
+        exit
+    fi
+    # pacman -Qqe の出力を保存
+    pacman -Qqe > pacman_list.txt
+
+    # app_list.txt との差分を比較して抜き出し
+    diff_output=$(diff pacman_list.txt ~/dotfiles/app_list/app_list_for_arch.txt)
+    added_items=$(echo "$diff_output" | grep '>' | sed 's/> //')
+
+    # 結果を表示
+    echo "これよりpacman -Qqe と app_list.txt の差分を照会する!!!!!!"
+    diff_output=$(comm -13 <(sort pacman_list.txt) <(sort ~/dotfiles/app_list/app_list_for_arch.txt))
+    echo "$diff_output"
+
+
+    echo ""
+    echo "以上!!"
+    # 一時ファイルの削除
+    rm pacman_list.txt
+
+elif [ "$1" == "-a" ]; then
+
+    if [ "$distro_name" = "Arch Linux" ]; then
+        echo "pacmanを補足!!"
+        echo "app_list_for_arch.txtを作成!!!!"
+        ~/dotfiles/app_list/make_app_list_for_arch.sh
+        echo "app_list_for_arch.txtを作成完了!!!!!!"
+    elif [ "$distro_name" = "Ubuntu" ]; then
+        exit
+    fi
+
+    # pacman -Qqe の出力を保存
+    pacman -Qqe > pacman_list.txt
+
+    # app_list.txt との差分を比較して抜き出し
+    diff_output=$(diff pacman_list.txt ~/dotfiles/app_list/app_list_for_arch.txt)
+    added_items=$(echo "$diff_output" | grep '>' | sed 's/> //')
+
+    echo "これよりpacman -Qqe と app_list.txt の差分を照会する!!!!!!"
+    # app_list.txt にしかなかった要素を抜き出す
+    diff_output=$(comm -13 <(sort ~/dotfiles/app_list/app_list_for_arch.txt) <(sort pacman_list.txt))
+    echo "$diff_output"
+
+    echo ""
+    echo "以上!!"
+    # 一時ファイルの削除
+    rm pacman_list.txt
+
+else
+    echo "無効な引数です。-p または -a を使用してください。"
+fi
