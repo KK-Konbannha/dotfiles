@@ -4,12 +4,14 @@ import subprocess
 
 def install_packages_from_file(file_path: str, IS_BREAK: bool = False):
     """
-    Function to read the package list from the specified file path and install it using yay.
+    Function to read the package list from the specified file path and install it using paru.
 
     Params:
         file_path (str): Package list file path.
         IS_BREAK (bool): Whether to exit the loop if there is a blank line or not.
     """
+    install_packages = []
+
     with open(file_path, "r") as f:
         packages = f.readlines()
 
@@ -20,13 +22,19 @@ def install_packages_from_file(file_path: str, IS_BREAK: bool = False):
                 break
             else:
                 continue
-        subprocess.run(["yay", "-g"])
-        subprocess.run(["yay", "-Syy", package])
+
+        install_packages.append(package)
+
+    subprocess.run(["paru", "-g"])
+    subprocess.run(
+        ["paru", "-S", "--needed", "--noconfirm"]
+        + [package for package in install_packages]
+    )
 
 
-def install_apps_by_yay(dotfiles_dir: str, IS_GUI: bool, IS_WSL: bool):
+def install_apps_by_paru(dotfiles_dir: str, IS_GUI: bool, IS_WSL: bool):
     """
-    Function to install applications listed in app_list.txt using yay.
+    Function to install applications listed in app_list.txt using paru.
 
     Params:
         dotfiles_dir (str): Path to dotfiles directory.
@@ -45,4 +53,4 @@ def install_apps_by_yay(dotfiles_dir: str, IS_GUI: bool, IS_WSL: bool):
 
 if __name__ == "__main__":
     home_dir = os.path.expanduser("~")
-    install_apps_by_yay(f"{home_dir}/dotfiles", False, False)
+    install_apps_by_paru(f"{home_dir}/dotfiles", False, False)
