@@ -4,38 +4,34 @@ import subprocess
 
 def install_packages_from_file(file_path: str, IS_BREAK: bool = False):
     """
-    指定されたファイルパスからパッケージリストを読み取り、yayを用いてインストールする。
+    Function to read the package list from the specified file path and install it using yay.
 
-    Parameters:
-        file_path (str): パッケージリストのファイルパス。
-        IS_BREAK (bool): 空行があった場合にループを抜けるか否か。
+    Params:
+        file_path (str): Package list file path.
+        IS_BREAK (bool): Whether to exit the loop if there is a blank line or not.
     """
     with open(file_path, "r") as f:
         packages = f.readlines()
 
     for package in packages:
-        package = package.strip()  # 余分なスペースや改行を削除
-        if not package:  # 空行の場合
+        package = package.strip()  # Delete extra spaces and line breaks
+        if not package:
             if IS_BREAK:
                 break
             else:
                 continue
-        cmd = ["yay", "-S", package]
-        subprocess.run(cmd)
+        subprocess.run(["yay", "-g"])
+        subprocess.run(["yay", "-Syy", package])
 
 
 def install_apps_by_yay(dotfiles_dir: str, IS_GUI: bool, IS_WSL: bool):
     """
-    app_list.txtに記載されたアプリケーションをyayを用いてインストールする。
+    Function to install applications listed in app_list.txt using yay.
 
-    Parameters:
-        dotfiles_dir (str): ドットファイルディレクトリのパス。
-        IS_GUI (bool): GUI環境か否か。
-        IS_WSL (bool): WSL環境か否か。
-
-    Notes:
-        - 各パッケージ名は新しい行に記載されていることを前提としています。
-        - yayが既にインストールされていることと、適切な権限でこの関数が実行されていることを前提としています。
+    Params:
+        dotfiles_dir (str): Path to dotfiles directory.
+        IS_GUI (bool): Whether it is a GUI environment or not.
+        IS_WSL (bool): Whether to install on WSL or not.
     """
     if IS_WSL:
         app_list_path = os.path.join(dotfiles_dir, "app_list", "app_list_cui.txt")

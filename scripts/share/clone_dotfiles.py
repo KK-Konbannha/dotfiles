@@ -8,27 +8,29 @@ from urllib.request import urlopen
 
 def clone_dotfiles(home_dir: str, dotfiles_dir: str, remote_url: str) -> bool:
     """
-    リモートリポジトリからdotfilesをインストールする。
+    Install dotfiles from remote repository.
 
-    Parameters:
-        home_dir (str): ホームディレクトリパス。
-        dotfiles_dir (str): インストール先のディレクトリパス。
-        remote_url (str): リモートリポジトリのURL。
+    Params:
+        home_dir (str): Home directory path.
+        dotfiles_dir (str): Directory path where to install dotfiles.
+        remote_url (str): Remote repository URL.
 
     Returns:
-        bool: インストールが成功した場合はTrue、失敗した場合はFalse。
+        bool: Whether the installation was successful or not.
     """
-    # インストール先のディレクトリが既に存在する場合の処理
+    # Handle if the installation directory already exists.
     if os.path.exists(dotfiles_dir):
         while True:
             other_place: str = input(
-                "dotfilesは既に存在します。他の場所にdotfilesをcloneしますか？ [Y/n] "
+                "dotfiles are already exists. Clone dotfiles to other place? [Y/n] "
             ).lower()
 
             match other_place:
                 case "y" | "yes":
                     other_dir: str = os.path.expanduser(
-                        input("homeからの相対パスでディレクトリを教えてください: (e.g., ~/your): ")
+                        input(
+                            "Please provide a directory relative to home: (e.g., ~/your): "
+                        )
                     )
                     if os.path.exists(other_dir) and os.path.isdir(other_dir):
                         return clone_dotfiles(
@@ -36,22 +38,24 @@ def clone_dotfiles(home_dir: str, dotfiles_dir: str, remote_url: str) -> bool:
                         )
 
                     else:
-                        print("そのようなディレクトリは存在しません。")
+                        print("Such a directory does not exist.")
+                        print("Please enter again.")
+                        print("e.g., ~/your")
                         return False
 
                 case "n" | "no":
-                    print("dotfilesのインストールを中止します。")
+                    print("Installation of dotfiles is aborted.")
                     return False
 
                 case _:
                     pass
 
-    # gitコマンドが使える場合はgit cloneを実行
+    # If git command is available, execute git clone.
     if which("git"):
         subprocess.run(["git", "clone", remote_url, dotfiles_dir])
         return True
 
-    # gitコマンドが使えない場合はリモートからzipファイルをダウンロード
+    # If git command is not available, download zip file from remote.
     remote_zip_url = re.sub(r"\.git$", "/archive/refs/heads/main.zip", remote_url)
     zip_file_path = dotfiles_dir + ".zip"
 
@@ -72,5 +76,5 @@ def clone_dotfiles(home_dir: str, dotfiles_dir: str, remote_url: str) -> bool:
 
 if __name__ == "__main__":
     home_dir = os.path.expanduser("~")
-    remote_url: str = input("Remote urlを入力してください: ")
+    remote_url: str = input("Please input remote url: ")
     clone_dotfiles(home_dir, f"{home_dir}/dotfiles", remote_url)

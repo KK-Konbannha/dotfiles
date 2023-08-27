@@ -4,23 +4,20 @@ import shutil
 
 def make_dirs(home_dir: str, dirs_to_create: list[str], dirs_to_reset: list[str] = []):
     """
-    ホームディレクトリ内にディレクトリを作成またはリセットする。
+    Function to create or reset directories in the home directory.
 
-    Parameters:
-        home_dir (str): ホームディレクトリのパス。
-        dirs_to_create (list[str]): 作成したいディレクトリのリスト。
-        dirs_to_reset (list[str], optional): リセットしたいディレクトリのリスト。
+    Params:
+        home_dir (str): Home directory path.
+        dirs_to_create (list[str]): List of directories to create.
+        dirs_to_reset (list[str], optional): List of directories to reset.
 
-    Notes:
-        dirs_to_createとdirs_to_resetに含まれるディレクトリは全てhome_dir内に作成される。
-        dirs_to_resetに含まれるディレクトリは既に存在している場合、削除され再作成される。
     """
-    # リセットしたいディレクトリを削除
+    # Remove directories to reset.
     for dir_to_reset in dirs_to_reset:
         full_path = os.path.join(home_dir, dir_to_reset)
         if os.path.exists(full_path):
             shutil.rmtree(full_path)
 
-    # ディレクトリを作成
+    # Create directories.
     for dir_to_create in dirs_to_create + dirs_to_reset:
         os.makedirs(os.path.join(home_dir, dir_to_create), exist_ok=True)
