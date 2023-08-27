@@ -6,30 +6,14 @@ Dist_type = Literal["A", "U"]
 
 def check_env():
     """
-    環境を確認する関数。WSL上かどうかとディストリビューションを尋ねる。
+    Function to check the environment. Ask if it is on WSL and the distribution.
 
     Returns:
-        list[bool | Dist_type]: 環境情報を含むリスト。
-            - "DIST" (Dist_type): ディストリビューション ("A" -> Arch, "U" -> Ubuntu)。
-            - "IS_GUI" (bool): GUI環境かどうかの真偽値。
-            - "IS_WSL" (bool): WSL上にインストールするかどうかの真偽値。
+        list[bool | Dist_type]: List containing environment information.
+            - "DIST" (Dist_type): Distribution ("A" -> Arch, "U" -> Ubuntu).
+            - "IS_GUI" (bool): Whether it is a GUI environment or not.
+            - "IS_WSL" (bool): Whether to install on WSL or not.
     """
-    print(
-        """
-
-╭──────────────────────────────────────────────────────────╮
-│  ======================================================  │
-│                 2022/08/23 現在 対応環境                 │
-│                 wsl上:              Arch                 │
-│                                     Ubuntu               │
-│                 直接インストール:   Arch                 │
-│  ======================================================  │
-╰──────────────────────────────────────────────────────────╯
-
-
-    """
-    )
-
     DIST: Dist_type = check_dist()
     if DIST == "A":
         IS_GUI: bool = check_gui()
@@ -47,51 +31,56 @@ def check_env():
 
 def check_dist() -> Dist_type:
     """
-    ディストリビューションを確認する関数。
+    Function to check the distribution.
+
     Returns:
-        Dist_type: ディストリビューション ("A" -> Arch, "U" -> Ubuntu)。
+        Dist_type: Distribution ("A" -> Arch, "U" -> Ubuntu).
     """
     while True:
-        dist: str = input("ディストリビューションは何を使っていますか？[(A)rch/(U)buntu]: ").lower()
+        dist: str = input(
+            "Which distribution are you using?[(A)rch/(U)buntu]: "
+        ).lower()
         match dist:
             case "a" | "arch":
                 return "A"
             case "u" | "ubuntu":
                 return "U"
             case _:
-                print("ArchまたはUbuntuのみの対応になります。")
-                print("ArchかUbuntuで答えてください。")
+                print("Only Arch or Ubuntu is supported.")
+                print("Please answer Arch or Ubuntu.")
 
 
 def check_gui() -> bool:
     """
-    GUI環境かどうかを確認する関数。
+    Function to check if it is a GUI environment.
+
     Returns:
-        bool: GUI環境かどうかの真偽値。
+        bool: Whether it is a GUI environment or not.
     """
     while True:
-        is_gui: str = input("GUI環境ですか？ [Y/n]: ").lower()
+        is_gui: str = input("Is it a GUI environment? [Y/n]: ").lower()
         match is_gui:
             case "y" | "yes":
                 return True
             case "n" | "no":
                 return False
             case _:
-                print("YesかNoで答えてください。")
+                print("Please answer Yes or No.")
 
 
 def check_wsl() -> bool:
     """
-    WSL上かどうかを確認する関数。
+    Function to check if it is on WSL.
+
     Returns:
-        bool: WSL上にインストールするかどうかの真偽値。
+        bool: Whether to install on WSL or not.
     """
     while True:
-        is_wsl_input: str = input("wsl上にインストールしようとしていますか？ [Y/n]: ").lower()
+        is_wsl_input: str = input("Are you trying to install on WSL? [Y/n]: ").lower()
         match is_wsl_input:
             case "y" | "yes":
                 return True
             case "n" | "no":
                 return False
             case _:
-                print("YesかNoで答えてください。")
+                print("Please answer Yes or No.")
