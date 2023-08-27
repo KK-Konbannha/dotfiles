@@ -2,7 +2,6 @@ adobe-source-han-sans-otc-fonts
 adobe-source-han-serif-otc-fonts
 archlinux-keyring
 deno
-dhcpcd
 discord
 docker
 dosfstools
@@ -28,8 +27,6 @@ lsd
 man-db
 neofetch
 neovim
-netctl
-networkmanager
 noto-fonts-cjk
 noto-fonts-emoji
 onedrive-abraunegg
@@ -51,6 +48,5 @@ unzip
 wezterm
 wget
 which
-wpa_supplicant
 xorg
 zsh

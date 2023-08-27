@@ -25,13 +25,9 @@ wget
 which
 zsh
 
-dhcpcd
 docker
 dosfstools
-netctl
-networkmanager
 onedrive-abraunegg
 tesseract
 tesseract-data-eng
 tesseract-data-jpn
-wpa_supplicant

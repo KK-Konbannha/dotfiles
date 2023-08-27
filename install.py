@@ -22,7 +22,6 @@ def main():
 
     dirs_to_create = [
         ".config",
-        ".lyrics",
         "dev",
         "Wallpapers",
         "Downloads",
@@ -47,21 +46,21 @@ def main():
     if args.deploy:
         res = symlink_dotfiles(home_dir, dotfiles_dir, dirs_to_exclude, dirs_to_include)
         if res:
-            print("dotfilesを正常に展開しました。")
+            print("Successfully deployed dotfiles.")
         else:
-            print("dotfilesの展開に失敗しました。\nディレクトリ構成を確認してください。")
+            print("Failed to deploy dotfiles.\nPlease check the error message.")
 
         return
 
     elif args.init:
-        # dotfilesが存在するかを確認し、存在しなければcloneします。
+        # Check if dotfiles directory exists. And clone dotfiles if not exists.
         if not (os.path.exists(dotfiles_dir) and os.path.isdir(dotfiles_dir)):
             if not clone_dotfiles(home_dir, dotfiles_dir, remote_url):
-                print("dotfilesのイニシャライズに失敗しました。")
+                print("Failed to initialize dotfiles.")
                 return
 
-        # dirs_to_create及びdirs_to_resetに存在するディレクトリを作成します。
-        print("ディレクトリを作成します。")
+        # Create directories if not exists.
+        print("Creating directories.")
         make_dirs(home_dir, dirs_to_create, dirs_to_reset)
 
         DIST, IS_GUI, IS_WSL = check_env()
