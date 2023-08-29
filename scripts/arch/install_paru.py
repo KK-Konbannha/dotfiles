@@ -14,12 +14,16 @@ def install_paru(home_dir: str):
     os.chdir(home_dir)
     commands = [
         ["sudo", "pacman", "-S", "--needed", "--noconfirm", "git", "base-devel"],
-        ["git", "clone", "https://aur.archlinux.org/paru.gi"],
+        ["git", "clone", "https://aur.archlinux.org/paru.git"],
         ["cd", "paru"],
         ["makepkg", "-si"],
     ]
 
     for command in commands:
+        if "cd" in command:
+            os.chdir(f"{home_dir}/paru")
+            continue
+            
         subprocess.run(command)
 
     os.chdir(original_directory)

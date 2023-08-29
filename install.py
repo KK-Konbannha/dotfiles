@@ -14,6 +14,15 @@ from scripts.arch.after_install_app import after_install_app
 ## from scripts.init import init
 
 
+def deploy(home_dir, dotfiles_dir, dirs_to_exclude, dirs_to_include):
+    res = symlink_dotfiles(home_dir, dotfiles_dir, dirs_to_exclude, dirs_to_include)
+    if res:
+        print("Successfully deployed dotfiles.")
+    else:
+        print("Failed to deploy dotfiles.\nPlease check the error message.")
+
+    return
+
 def main():
     home_dir = os.path.expanduser("~")
 
@@ -44,12 +53,7 @@ def main():
     args = parser.parse_args()
 
     if args.deploy:
-        res = symlink_dotfiles(home_dir, dotfiles_dir, dirs_to_exclude, dirs_to_include)
-        if res:
-            print("Successfully deployed dotfiles.")
-        else:
-            print("Failed to deploy dotfiles.\nPlease check the error message.")
-
+        deploy(home_dir, dotfiles_dir, dirs_to_exclude, dirs_to_include)
         return
 
     elif args.init:
@@ -75,6 +79,10 @@ def main():
             case "U":
                 # init_for_ubuntu()
                 pass
+
+        deploy(home_dir, dotfiles_dir, dirs_to_exclude, dirs_to_include)
+
+        
 
 
 if __name__ == "__main__":
