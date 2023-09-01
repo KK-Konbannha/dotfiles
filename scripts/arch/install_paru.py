@@ -9,6 +9,9 @@ def install_paru(home_dir: str):
     Params:
         home_dir (str): The home directory of the user.
     """
+    if os.path.exists(f"{home_dir}/paru"):
+        print("paru is already installed.")
+        return
     print("Install paru.")
     original_directory = os.getcwd()
     os.chdir(home_dir)

@@ -1,8 +1,8 @@
 [user]
 	email = katsuk.618@gmail.com
 	name = KK-Konbannha
-[url "git@github.com:"]
-    InsteadOf = https://github.com/
+# [url "git@github.com:"]
+#     InsteadOf = https://github.com/
 [merge]
 	ff = false
 [pull]

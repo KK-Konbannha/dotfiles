@@ -75,7 +75,7 @@ def main():
                 before_install_app()
                 install_paru(home_dir)
                 install_apps_by_paru(dotfiles_dir, IS_GUI, IS_WSL)
-                after_install_app()
+                after_install_app(home_dir)
             case "U":
                 # init_for_ubuntu()
                 pass

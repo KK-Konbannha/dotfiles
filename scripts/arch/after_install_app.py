@@ -3,7 +3,7 @@ import subprocess
 from shutil import which
 
 
-def after_install_app():
+def after_install_app(home_dir: str):
     # Create symbolic link to nvim.
     print("Create symbolic link to nvim.")
     subprocess.run(["sudo", "ln", "-sf", str(which("nvim")), "/usr/bin/vim"])
@@ -20,6 +20,6 @@ def after_install_app():
             "git",
             "clone",
             "https://github.com/alexanderjeurissen/ranger_devicons",
-            "~/.config/ranger/plugins/ranger_devicons",
+            f"{home_dir}/.config/ranger/plugins/ranger_devicons",
         ]
     )
