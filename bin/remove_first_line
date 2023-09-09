@@ -1,0 +1,22 @@
+#!/bin/bash
+
+if [ $# -lt 1 ]; then
+    echo "使用法: $0 ファイル名"
+    exit 1
+fi
+
+file="$1"
+
+if [ ! -f "$file" ]; then
+    echo "ファイルが存在しません: $file"
+    exit 1
+fi
+
+# 一時ファイルを作成
+tempfile=$(mktemp)
+tail -n +2 "$file" > "$tempfile"
+
+# 元のファイルを上書き
+mv "$tempfile" "$file"
+
+echo "一行目を削除しました: $file"
