@@ -1,15 +1,15 @@
 #!/bin/python
-import os
 import argparse
+import os
 
-from scripts.share.symlink import symlink_dotfiles
+from scripts.arch.before_install_app import before_install_app
+from scripts.arch.install_apps_by_paru import install_apps_by_paru
+from scripts.arch.install_paru import install_paru
+from scripts.share.after_install_app import after_install_app
+from scripts.share.check_env import check_env
 from scripts.share.clone_dotfiles import clone_dotfiles
 from scripts.share.make_dirs import make_dirs
-from scripts.share.check_env import check_env
-from scripts.arch.before_install_app import before_install_app
-from scripts.arch.install_paru import install_paru
-from scripts.arch.install_apps_by_paru import install_apps_by_paru
-from scripts.arch.after_install_app import after_install_app
+from scripts.share.symlink import symlink_dotfiles
 
 ## from scripts.init import init
 
@@ -22,6 +22,7 @@ def deploy(home_dir, dotfiles_dir, dirs_to_exclude, dirs_to_include):
         print("Failed to deploy dotfiles.\nPlease check the error message.")
 
     return
+
 
 def main():
     home_dir = os.path.expanduser("~")
@@ -78,11 +79,10 @@ def main():
                 after_install_app(home_dir)
             case "U":
                 # init_for_ubuntu()
+                after_install_app(home_dir)
                 pass
 
         deploy(home_dir, dotfiles_dir, dirs_to_exclude, dirs_to_include)
-
-        
 
 
 if __name__ == "__main__":
