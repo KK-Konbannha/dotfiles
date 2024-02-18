@@ -9,6 +9,11 @@ vim.cmd [[packadd packer.nvim]]
 packer.startup(function(use)
     use 'wbthomason/packer.nvim'
     use 'Mofiqul/dracula.nvim'
+
+    use 'github/copilot.vim'
+    use 'easymotion/vim-easymotion'
+
+
     use 'nvim-lualine/lualine.nvim' -- Statusline
     use 'nvim-lua/popup.nvim' -- Common utilities
     use 'nvim-lua/plenary.nvim' -- Common utilities
@@ -25,7 +30,7 @@ packer.startup(function(use)
     use 'mfussenegger/nvim-jdtls'
     use 'mhartington/formatter.nvim'
 
-    use 'glepnir/lspsaga.nvim' -- LSP UIs
+    use 'nvimdev/lspsaga.nvim' -- LSP UIs
     use 'L3MON4D3/LuaSnip'
     use {
         'nvim-treesitter/nvim-treesitter',
