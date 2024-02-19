@@ -30,7 +30,7 @@ return {
     },
   },
   warn_about_missing_glyphs = false,
-  font_size = 24,
+  font_size = 18,
   line_height = 1.0,
 
   enable_tab_bar = true,

@@ -42,8 +42,10 @@ packer.startup(function(use)
     use 'nvim-telescope/telescope.nvim'
     use 'nvim-telescope/telescope-file-browser.nvim'
     use 'nvim-telescope/telescope-media-files.nvim'
+
     use 'windwp/nvim-autopairs'
     use 'windwp/nvim-ts-autotag'
+
     use 'norcalli/nvim-colorizer.lua'
     use 'm-demare/hlargs.nvim'
     use 'machakann/vim-sandwich'
@@ -51,9 +53,9 @@ packer.startup(function(use)
     use 'lewis6991/gitsigns.nvim'
     use 'psf/black'
 
-    use 'vim-denops/denops.vim' -- To use plugin made in deno
-    use 'vim-skk/skkeleton' -- To input japanese
-    use 'delphinus/skkeleton_indicator.nvim' -- Skkeleton UIs
+    -- use 'vim-denops/denops.vim' -- To use plugin made in deno
+    -- use 'vim-skk/skkeleton' -- To input japanese
+    -- use 'delphinus/skkeleton_indicator.nvim' -- Skkeleton UIs
 
     use 'LudoPinelli/comment-box.nvim'
     use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install",

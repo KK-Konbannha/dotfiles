@@ -1,4 +1,8 @@
 !! ~/.Xresources
+!
+! cursor
+Xcursor.theme: Vimix-white-cursors
+Xcursor.size: 24
 
 !!
 !! rxvt-unicode (urxvt)
