@@ -8,6 +8,7 @@ dracula.setup {
         CursorLine = {},
         BufferLineFill = {},
         BufferLineBufferSelected = {},
+        TelescopeNormal = {},
     }
     end,
 }
