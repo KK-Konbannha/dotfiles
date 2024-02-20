@@ -69,4 +69,5 @@ require("lazy").setup({
 	},
 
 	"nvimtools/none-ls.nvim",
+	"neovim/nvim-lspconfig",
 })
