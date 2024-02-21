@@ -25,6 +25,14 @@ wget
 which
 zsh
 
+clang
+google-java-format
+ruff
+eslint_d
+prettier
+luarocks
+stylua
+
 docker
 dosfstools
 onedrive-abraunegg

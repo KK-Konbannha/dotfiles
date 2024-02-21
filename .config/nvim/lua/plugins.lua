@@ -1,63 +1,88 @@
-local status, packer = pcall(require, "packer")
-if (not status) then
-    print("Packer is not installed")
-    return
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+	vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"https://github.com/folke/lazy.nvim.git",
+		"--branch=stable", -- latest stable release
+		lazypath,
+	})
 end
+vim.opt.rtp:prepend(lazypath)
 
-vim.cmd [[packadd packer.nvim]]
+require("lazy").setup({
+	{
+		"Mofiqul/dracula.nvim",
+		lazy = false,
+	},
+	"nvim-treesitter/nvim-treesitter",
+	"norcalli/nvim-colorizer.lua",
+	"m-demare/hlargs.nvim",
+	"lewis6991/gitsigns.nvim",
+	"nvim-tree/nvim-web-devicons",
+	{
+		"akinsho/bufferline.nvim",
+		version = "*",
+		dependencies = "nvim-tree/nvim-web-devicons",
+	},
+	{
+		"nvim-lualine/lualine.nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+	},
 
-packer.startup(function(use)
-    use 'wbthomason/packer.nvim'
-    use 'Mofiqul/dracula.nvim'
+	"nvim-treesitter/nvim-treesitter-textobjects",
+	{
+		"kylechui/nvim-surround",
+		version = "*",
+		event = "VeryLazy",
+	},
 
-    use 'github/copilot.vim'
-    use 'easymotion/vim-easymotion'
+	"windwp/nvim-ts-autotag",
+	{
+		"windwp/nvim-autopairs",
+		event = "InsertEnter",
+	},
 
+	"easymotion/vim-easymotion",
 
-    use 'nvim-lualine/lualine.nvim' -- Statusline
-    use 'nvim-lua/popup.nvim' -- Common utilities
-    use 'nvim-lua/plenary.nvim' -- Common utilities
-    use 'onsails/lspkind-nvim' -- vscode-like pictograms
-    use 'hrsh7th/cmp-buffer' -- nvim-cmp source for buffer words
-    use 'hrsh7th/cmp-nvim-lsp' -- nvim-cmp source for neovim's built-in LSP
-    use 'hrsh7th/nvim-cmp' -- Completion
-    use 'neovim/nvim-lspconfig' -- LSP
-    use 'jose-elias-alvarez/null-ls.nvim' -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
-    use 'MunifTanjim/prettier.nvim' -- Prettier plugin for Neovim's built-in LSP client
-    use 'williamboman/mason.nvim'
-    use 'williamboman/mason-lspconfig.nvim'
+	{
+		"akinsho/toggleterm.nvim",
+		version = "*",
+		config = true,
+	},
 
-    use 'mfussenegger/nvim-jdtls'
-    use 'mhartington/formatter.nvim'
+	"nvim-lua/popup.nvim",
+	"nvim-lua/plenary.nvim",
+	{
+		"nvim-telescope/telescope.nvim",
+		branch = "0.1.x",
+		dependencies = { "nvim-lua/plenary.nvim" },
+	},
+	{
+		"nvim-telescope/telescope-media-files.nvim",
+		dependencies = { "nvim-lua/popup.nvim", "nvim-lua/plenary.nvim", "nvim-telescope/telescope.nvim" },
+	},
+	{
+		"nvim-telescope/telescope-file-browser.nvim",
+		dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+	},
 
-    use 'nvimdev/lspsaga.nvim' -- LSP UIs
-    use 'L3MON4D3/LuaSnip'
-    use {
-        'nvim-treesitter/nvim-treesitter',
-        run = ':TSUpdate'
-    }
-    use 'nvim-treesitter/nvim-treesitter-textobjects'
-    -- use 'yioneko/nvim-yati'
-    use 'kyazdani42/nvim-web-devicons' -- File icons
-    use 'nvim-telescope/telescope.nvim'
-    use 'nvim-telescope/telescope-file-browser.nvim'
-    use 'nvim-telescope/telescope-media-files.nvim'
+	"nvimtools/none-ls.nvim",
+	"neovim/nvim-lspconfig",
 
-    use 'windwp/nvim-autopairs'
-    use 'windwp/nvim-ts-autotag'
+	"hrsh7th/cmp-nvim-lsp",
+	"hrsh7th/cmp-buffer",
+	"hrsh7th/cmp-path",
+	"hrsh7th/cmp-cmdline",
+	"hrsh7th/cmp-nvim-lsp-signature-help",
+	"hrsh7th/nvim-cmp",
 
-    use 'norcalli/nvim-colorizer.lua'
-    use 'm-demare/hlargs.nvim'
-    use 'machakann/vim-sandwich'
-    use 'mrshmllow/document-color.nvim'
-    use 'lewis6991/gitsigns.nvim'
-    use 'psf/black'
+	"onsails/lspkind.nvim",
+	"nvimdev/lspsaga.nvim",
 
-    -- use 'vim-denops/denops.vim' -- To use plugin made in deno
-    -- use 'vim-skk/skkeleton' -- To input japanese
-    -- use 'delphinus/skkeleton_indicator.nvim' -- Skkeleton UIs
+	"L3MON4D3/LuaSnip",
+	"saadparwaiz1/cmp_luasnip",
 
-    use 'LudoPinelli/comment-box.nvim'
-    use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install",
-        setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
-end)
+	"github/copilot.vim",
+})
