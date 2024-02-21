@@ -29,6 +29,7 @@ treesitter.setup({
 		"toml",
 		"yaml",
 		"markdown",
+		"markdown_inline",
 		"gitignore",
 		"dockerfile",
 	},
