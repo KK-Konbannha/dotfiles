@@ -6,25 +6,16 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 null_ls.setup({
 	sources = {
-		-- python
-		null_ls.builtins.diagnostics.ruff,
-		null_ls.builtins.formatting.ruff_format,
-
 		-- lua
-		null_ls.builtins.diagnostics.luacheck,
 		null_ls.builtins.formatting.stylua,
 
 		-- java
 		null_ls.builtins.formatting.google_java_format,
 
 		-- javascript
-		null_ls.builtins.diagnostics.eslint_d.with({
-			diagnostics_format = "[eslint] #{m}\n(#{c})",
-		}),
 		null_ls.builtins.formatting.prettier,
 
 		-- c++
-		null_ls.builtins.diagnostics.clang_check,
 		null_ls.builtins.formatting.clang_format,
 	},
 	on_attach = function(client, bufnr)
