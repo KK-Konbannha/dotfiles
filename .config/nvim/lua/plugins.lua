@@ -85,4 +85,8 @@ require("lazy").setup({
 	"saadparwaiz1/cmp_luasnip",
 
 	"github/copilot.vim",
+
+	"vim-denops/denops.vim",
+	"vim-skk/skkeleton",
+	"delphinus/skkeleton_indicator.nvim",
 })
