@@ -6,7 +6,12 @@ end
 lspconfig.pyright.setup({})
 lspconfig.tsserver.setup({})
 lspconfig.jdtls.setup({})
-lspconfig.clangd.setup({})
+lspconfig.clangd.setup({
+	cmd = {
+		"clangd",
+		"--offset-encoding=utf-16",
+	},
+})
 
 lspconfig.lua_ls.setup({
 	on_init = function(client)
