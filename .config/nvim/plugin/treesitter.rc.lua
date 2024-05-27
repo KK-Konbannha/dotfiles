@@ -32,6 +32,7 @@ treesitter.setup({
 		"markdown_inline",
 		"gitignore",
 		"dockerfile",
+		"go",
 	},
 	autotag = {
 		enable = true,
