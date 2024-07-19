@@ -45,6 +45,10 @@ def default_icon_path():
     return os.path.join(root, "resources", "battery-icons")
 
 
+def is_laptop():
+    return BAT_NAME != ""
+
+
 class _Battery(base._TextBox):
     """Base battery class"""
 
@@ -216,9 +220,7 @@ class Battery(_Battery):
         else:
             self.layout.colour = self.foreground
 
-        return self.format.format(
-            char=char, percent=percent, hour=hour, min=min
-        )
+        return self.format.format(char=char, percent=percent, hour=hour, min=min)
 
     def update(self):
         ntext = self._get_text()

@@ -1,3 +1,7 @@
+from libqtile import qtile, hook
+from libqtile.backend.wayland import InputConfig
+
+
 from modules.settings import *
 from modules.groups import groups
 from modules.keys import keys
@@ -16,5 +20,15 @@ auto_fullscreen = True
 focus_on_window_activation = "smart"
 reconfigure_screens = True
 auto_minimize = True
-wl_input_rules = None
 wmname = "LG3D"
+
+if qtile.core.name == "X11":
+    wl_input_rules = None
+elif qtile.core.name == "wayland":
+    wl_input_rules = {
+        "type:keyboard": InputConfig(kb_layout="jp", kb_options="ctrl:nocaps"),
+    }
+
+    @hook.subscribe.startup_once
+    def autostart():
+        qtile.cmd_spawn("fcitx5 &")

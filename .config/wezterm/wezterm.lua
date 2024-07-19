@@ -9,8 +9,8 @@ local font_name = "HackGen Console NF With FFxiv Glyph"
 local italic_font_name = "Hack Nerd Font"
 
 return {
-	front_end = "OpenGL",
-	enable_wayland = false,
+	-- front_end = "OpenGL",
+	-- enable_wayland = false,
 
 	color_scheme = "Dracula (Official)",
 

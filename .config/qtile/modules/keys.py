@@ -57,6 +57,7 @@ keys = [
     #     desc="Spawn a command using a prompt widget",
     # ),
     Key([mod], "f", lazy.spawn("firefox"), desc="Launch firefox"),
+    Key([mod], "h", lazy.spawn("chrome"), desc="Launch chrome"),
     Key(
         [mod],
         "b",

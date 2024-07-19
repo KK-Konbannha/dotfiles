@@ -16,6 +16,11 @@ require("lazy").setup({
 		"Mofiqul/dracula.nvim",
 		lazy = false,
 	},
+	{
+		"folke/tokyonight.nvim",
+		lazy = false,
+		priority = 1000,
+	},
 	"nvim-treesitter/nvim-treesitter",
 	"norcalli/nvim-colorizer.lua",
 	"m-demare/hlargs.nvim",
@@ -68,6 +73,8 @@ require("lazy").setup({
 		dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
 	},
 
+	"nvim-tree/nvim-tree.lua",
+
 	"nvimtools/none-ls.nvim",
 	"neovim/nvim-lspconfig",
 
@@ -96,5 +103,10 @@ require("lazy").setup({
 		build = function()
 			vim.fn["mkdp#util#install"]()
 		end,
+	},
+	{
+		"ramilito/winbar.nvim",
+		event = "VimEnter", -- Alternatively, BufReadPre if we don't care about the empty file when starting with 'nvim'
+		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
 })

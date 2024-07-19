@@ -3,11 +3,12 @@ if not status then
 	return
 end
 
+lspconfig.html.setup({})
 lspconfig.tsserver.setup({})
 lspconfig.eslint.setup({
 	on_attach = function(client, bufnr)
 		vim.api.nvim_create_autocmd("BufWritePre", {
-			bufnr = bufnr,
+			buffer = bufnr,
 			command = "EslintFixAll",
 		})
 	end,
@@ -104,4 +105,36 @@ lspconfig.gopls.setup({
 			end,
 		})
 	end,
+})
+
+lspconfig.rust_analyzer.setup({
+	on_attach = function(client, bufnr)
+		vim.api.nvim_create_autocmd("BufWritePre", {
+			pattern = "*.rs",
+			callback = function()
+				vim.lsp.buf.format({ async == true })
+			end,
+		})
+	end,
+	settings = {
+		["rust-analyzer"] = {
+			checkOnSave = {
+				command = "clippy",
+			},
+			imports = {
+				granlurity = {
+					group = "module",
+				},
+				prefix = "self",
+			},
+			cargo = {
+				buildScripts = {
+					enable = true,
+				},
+			},
+			procMacro = {
+				enable = true,
+			},
+		},
+	},
 })

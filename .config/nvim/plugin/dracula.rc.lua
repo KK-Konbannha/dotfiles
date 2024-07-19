@@ -4,13 +4,14 @@ if not status then
 end
 
 dracula.setup({
-	transparent_bg = true,
+	transparent_bg = vim.g.neovide and false or true,
 	overrides = function(colors)
 		return {
 			CursorLine = {},
 			BufferLineFill = {},
 			BufferLineBufferSelected = {},
 			TelescopeNormal = {},
+			TelescopeSelection = {},
 		}
 	end,
 })

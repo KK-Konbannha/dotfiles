@@ -33,6 +33,7 @@ treesitter.setup({
 		"gitignore",
 		"dockerfile",
 		"go",
+		"rust",
 	},
 	autotag = {
 		enable = true,
