@@ -1,0 +1,56 @@
+# `sheldon` configuration file
+# ----------------------------
+#
+# You can modify this file directly or you can use one of the following
+# `sheldon` commands which are provided to assist in editing the config file:
+#
+# - `sheldon add` to add a new plugin to the config file
+# - `sheldon edit` to open up the config file in the default editor
+# - `sheldon remove` to remove a plugin from the config file
+#
+# See the documentation for more https://github.com/rossmacarthur/sheldon#readme
+
+shell = "zsh"
+
+
+[plugins.zsh-defer]
+github = "romkatv/zsh-defer"
+#apply = ["source"]
+
+#[templates]
+#defer = { value = 'zsh-defer source ""', each = true }
+
+[plugins.compinit]
+inline = 'autoload -Uz compinit && compinit'
+
+[plugins.colors]
+inline = 'autoload -Uz colors && zsh-defer colors'
+
+[plugins.dracula]
+github = "dracula/zsh"
+#apply = ["source"]
+
+[plugins.zsh-autosuggestions]
+github = "zsh-users/zsh-autosuggestions"
+#apply = ["source"]
+
+[plugins.enhancd]
+github = "b4b4r07/enhancd"
+#apply = ["source"]
+
+[plugins.zsh-syntax-highlighting]
+github = "zsh-users/zsh-syntax-highlighting"
+#apply = ["source"]
+
+[plugins.zsh-better-npm-completion]
+github = "lukechilds/zsh-better-npm-completion"
+#apply = ["defer"]
+
+#[plugins.dotfiles-defers]
+#local = "~/.config/zsh/defer"
+#use = ["*.zsh"]
+
+[plugins.dotfiles-sync]
+local = "~/.config/zsh/sync"
+use = ["*.zsh"]
+apply = ["source"]

@@ -1,0 +1,95 @@
+{
+    "reload_style_on_change": true,
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    "height": 36, // Waybar height (to be removed for auto height)
+    // "width": 1280, // Waybar width
+    // "spacing": 4, // Gaps between modules (4px)
+    // Choose the order of the modules
+    "margin": "10px 30px 0px",
+    "modules-left": [
+	    "hyprland/workspaces",
+        "network"
+    ],
+    "modules-center": [
+        "hyprland/window"
+    ],
+    "modules-right": [
+        "tray",
+        "battery",
+        "battery#bat2",
+        "cpu",
+        "memory",
+        "clock"
+    ],
+    "hyprland/workspaces": {
+      "format": "{icon}",
+      "show-special": true,
+      "format-icons": {
+        "1": "壱",
+        "2": "弐",
+        "3": "参",
+        "4": "肆",
+        "5": "伍",
+
+        "_right": "",
+        "_down": "",
+
+        "box": "凹"
+      },
+
+      "persistent-workspaces": {
+        "DP-3": [1, 2, 3, 4, 5],
+        "DP-1": ["_right"],
+        "HDMI-A-2": ["_down"]
+      }
+    },
+    "hyprland/window" : {
+      "separate-outputs": true,
+      "icon": true,
+      "format": "",
+    },
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+    "clock": {
+        "timezone": "Asia/Tokyo",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    "cpu": {
+        "format": "  {usage}%",
+        "tooltip": false
+    },
+    "memory": {
+        "format": "  {}%"
+    },
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}  {capacity}%",
+        "format-full": "{icon}  {capacity}%",
+        "format-charging": "  {capacity}%",
+        "format-plugged": "  {capacity}%",
+        "format-alt": "{icon}  {time}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "battery#bat2": {
+        "bat": "BAT2"
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "  {essid} ({signalStrength}%)",
+        "format-ethernet": "  {ipaddr}/{cidr}",
+        "tooltip-format": "  {ifname} via {gwaddr}",
+        "format-linked": "  {ifname} (No IP)",
+        "format-disconnected": "⚠  Disconnected",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    }
+}

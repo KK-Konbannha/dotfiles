@@ -1,0 +1,11 @@
+/.git/
+
+/.config/nvim/lazy-lock.json
+/.config/nvim/plugin/packer_compiled.lua
+
+/.zplug/
+/.config/zsh/.zcompdump
+.zsh_history
+
+/.config/wezterm/background/
+

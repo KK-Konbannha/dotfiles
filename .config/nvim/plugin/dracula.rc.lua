@@ -1,0 +1,19 @@
+local status, dracula = pcall(require, "dracula")
+if not status then
+	return
+end
+
+dracula.setup({
+	transparent_bg = vim.g.neovide and false or true,
+	overrides = function(colors)
+		return {
+			CursorLine = {},
+			BufferLineFill = {},
+			BufferLineBufferSelected = {},
+			TelescopeNormal = {},
+			TelescopeSelection = {},
+		}
+	end,
+})
+
+vim.cmd([[colorscheme dracula]])
