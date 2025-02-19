@@ -1,162 +1,157 @@
 #!/bin/bash
 set -eu
 
-cd ${HOME}
+red=$(tput setaf 1)
+green=$(tput setaf 2)
+no_color=$(tput sgr0)
 
-DOT_DIRECTORY="${HOME}/dotfiles"
-REMOTE_URL="https://github.com/KK-Konbannha/dotfiles.git"
-
-# 使い方
-usage() {
-    name=$(basename "$0")
-    cat <<EOF
-Usage:
-  $name [arguments] [command]
-Commands:
-  deploy  Deploy the dotfiles
-  init    Initialize (default if no command is provided)
-Arguments (optional):
-  -h      Print help (this message)
-EOF
-exit 1
-}
+DOT_DIR="${HOME}/dotfiles"
+XDG_CONFIG_DIR="${DOT_DIR}/.config"
+SCRIPTS_DIR="${DOT_DIR}/scripts"
 
 # コマンドの有無確認
 has() {
   type "$1" > /dev/null 2>&1
 }
 
-# オプション -hはヘルプ表示
-while getopts h opt; do
-    case ${opt} in
-        h)
-            usage
-            ;;
-    esac
-done
-shift $((OPTIND - 1))
-
-# 存在しない場合にdotfiles作成
-if [ ! -d ${DOT_DIRECTORY} ]; then
-    echo "Downloading dotfiles..."
-    rm -rf ${DOT_DIRECTORY}
-    if has "git"; then
-        git clone ${REMOTE_URL}
-    else
-        echo "git is required"
-    fi
-
-    echo $(tput setaf 2)Downloading dotfiles complete!. ✔︎$(tput sgr0)
-fi
-
-link_files() {
-    # dotfiles以下のファイルのリンクをホームに作成する。
-
-    # 作業ディレクトリを変更
-    cd ${DOT_DIRECTORY}
-
-    echo ""
-    echo -E "      _               _ "
-    echo -E "     | |             | | "
-    echo -E "   __| |  ___  _ __  | |  ___   _   _ "
-    echo -E "  / _\` | / _ \\| '_ \\ | | / _ \\ | | | | "
-    echo -E " | (_| ||  __/| |_) || || (_) || |_| | "
-    echo -E "  \\__,_| \\___|| .__/ |_| \\___/  \\__, | "
-    echo -E "              | |                __/ | "
-    echo -E "              |_|               |___/ "
-    echo ""
-
-    for f in .??*
-    do
-        [[ ${f} == ".git" ]] && continue
-        [[ ${f} == ".gitignore" ]] && continue
-
-        if [[ $f == ".config" ]]; then
-            for ff in ${DOT_DIRECTORY}/.config/*
-            do
-                ln -snfv ${ff} ${HOME}/.config/
-            done
-        else
-            ln -snfv ${DOT_DIRECTORY}/${f} ${HOME}/${f}
-        fi
-    done
-
-    echo $(tput setaf 2)Deploying complete!. ✔︎$(tput sgr0)
-
-
-    # 作業ディレクトリを戻す
-    cd ${HOME}
+git_clone() {
+  umask 022
+  echo -e "${green}[*] Cloning dotfiles.${no_color}"
+  git clone https://github.com/KK-Konbannha/dotfiles.git ${DOT_DIR}
 }
 
-initialize() {
-    # 作業ディレクトリを変更
-    cd ${HOME}
+create_dirs() {
+  echo -e "${green}[*] Creating directories.${no_color}"
 
-    echo ""
-    echo "      _         _     __  _  _ "
-    echo "     | |       | |   / _|(_)| | "
-    echo "   __| |  ___  | |_ | |_  _ | |  ___  ___ "
-    echo "  / _\` | / _ \\ | __||  _|| || | / _ \\/ __| "
-    echo " | (_| || (_) || |_ | |  | || ||  __/\\__ \\ "
-    echo "  \\__,_| \\___/  \\__||_|  |_||_| \\___||___/ "
-    echo ""
-    echo ""
-    echo ""
-    echo ""
+  mkdir -p "${HOME}/.config"
+  mkdir -p "${HOME}/.mpd/playlists"
+  mkdir -p "${HOME}/tmp"
+  mkdir -p "${HOME}/dev"
+  mkdir -p "${HOME}/Music"
+  mkdir -p "${HOME}/Wallpapers"
+  mkdir -p "${HOME}/Downloads"
+}
 
-    # 必要ディレクトリ作成
-    mkdir -p "${HOME}/.config"
-    mkdir -p "${HOME}/.mpd/playlists"
-    mkdir -p "${HOME}/tmp"
-    mkdir -p "${HOME}/dev"
-    mkdir -p "${HOME}/Music"
-    mkdir -p "${HOME}/Wallpapers"
-    mkdir -p "${HOME}/Downloads"
+install_aur_helper() {
+  echo -e "${green}[*] Select aur helper (enter number e.g. yay - 1).${no_color}"
+  echo -e "${green}[*] 1. paru${no_color}"
+  echo -e "${green}[*] 2. yay${no_color}"
+  read -p "[*] Your choice: " aur_helper
 
-    # vimのアンインストール
-    if has "vim" && ! has "nvim"; then
-        sudo pacman -R vim
-    fi
-    # paruのインストール
-    if ! has "paru"; then
+  if [ "${aur_helper}" -eq 1 ];then
+    echo -e "${green}[*] You selected: paru${no_color}"
+
+    if  has "paru"; then
+      echo -e "${green}[*] You have installed paru.${no_color}"
+
+    else
+        current_dir=$(pwd)
+
         cd /tmp
         sudo pacman -Syu --needed git base-devel
         git clone https://aur.archlinux.org/paru.git
         cd paru
         makepkg -si
-        cd ${HOME}
+
+        cd ${current_dir}
+
     fi
 
-    source ${HOME}/dotfiles/scripts/install_app.sh
+  elif [ "${aur_helper}" -eq 2 ]; then
+    echo -e "${green}[*] You selected: yay${no_color}"
 
-    # シェルをzshにする
-    [ ${SHELL} != "/bin/zsh"  ] && chsh -s /bin/zsh
-    echo "$(tput setaf 2)Initialize complete!. ✔︎$(tput sgr0)"
+    if  has "yay"; then
+      echo -e "${green}[*] You have installed yay.${no_color}"
 
-    link_files
+    else
+        current_dir=$(pwd)
 
-    cd ${HOME}
+        cd /tmp
+        sudo pacman -S --needed git base-devel
+        git clone https://aur.archlinux.org/yay.git
+        cd yay
+        makepkg -si
+
+        cd ${current_dir}
+
+    fi
+
+  else
+    echo -e "${red}[*] Error: invalid number or input.${no_color}"
+    exit
+  fi
+}
+
+link_files() {
+  echo -e "${green}[*] Deploying dotfiles.${no_color}"
+
+  shopt -s globstar dotglob
+
+  ls -d1 ${DOT_DIR}/.??* \
+    | sed -e '/git/d' -e '/config/d' \
+    | sed 's!^.*/!!' \
+    | xargs -I{} ln -snfv ${DOT_DIR}/{} ${HOME}/{}
+
+  if [ -d ${XDG_CONFIG_DIR} ] && [ -d ${HOME}/.config ]; then
+    ls -1 ${XDG_CONFIG_DIR} | xargs -I{} ln -snfv ${XDG_CONFIG_DIR}/{} ${HOME}/.config/{}
+  fi
+
+  shopt -u globstar dotglob
+}
+
+switch_shell() {
+  echo -e "${green}[*] Switching the default shell.${no_color}"
+
+  if ! has "zsh"; then
+    sudo pacman -S zsh
+  fi
+
+  [ ${SHELL} != "/bin/zsh"  ] && chsh -s /bin/zsh
+}
+
+replace_vim_with_nvim() {
+  if has "vim" && [ ! -L /usr/bin/vim ]; then
+      echo -e "${green}[*] Uninstalling Vim.${no_color}"
+      sudo pacman -Rs vim
+  fi
+
+  if ! has "nvim"; then
+      echo -e "${green}[*] Installing Neovim.${no_color}"
+    sudo pacman -S neovim python-pynvim
+  fi
+
+  echo -e "${green}[*] Linking Neovim as Vim.${no_color}"
+  sudo ln -sf $(which nvim) /usr/bin/vim
+
 }
 
 
-# 引数によって場合分け
-if [ $# = 0 ]; then
-    command=""
-else
-    command=$1
-fi
+while true; do
+    clear
+    echo -e "${green}Konbannha dotfiles${no_color}"
+    ! has "git" && echo -e "${red}You need git.${no_color}" && exit
 
-# 引数がなければヘルプ
-case $command in
-    deploy)
-        link_files
-        ;;
-    init*)
-        initialize
-        ;;
-    *)
-        usage
-        ;;
-esac
-
-exit 0
+    echo -e "${green}[*] Choose option.${no_color}"
+    echo -e "1. All of the below."
+    echo -e "2. Clone dotfiles from github.com."
+    echo -e "3. Create the necessary directories."
+    echo -e "4. Deploy dotfiles."
+    echo -e "5. Install aur helper."
+    echo -e "6. Install applications."
+    echo -e "7. Switch the default shell to zsh."
+    echo -e "8. Replace Vim with Neovim."
+    echo -e "9. Exit."
+    read -p "[*] Your choice: " x
+    case $x in
+        [1]* ) git_clone; create_dirs; link_files; install_aur_helper; source ${SCRIPTS_DIR}/install_apps.sh; switch_shell; replace_vim_with_nvim;  exit;;
+        [2]* ) git_clone; exit;;
+        [3]* ) create_dirs; exit;;
+        [4]* ) link_files; exit;;
+        [5]* ) install_aur_helper; exit;;
+        [6]* ) source ${SCRIPTS_DIR}/install_apps.sh; exit;;
+        [7]* ) switch_shell; exit;;
+        [8]* ) replace_vim_with_nvim; exit;;
+        [9]* ) exit;;
+        * )  echo -e "${red}[*] Error: invalid number or input.${no_color}";;
+    esac
+done

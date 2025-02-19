@@ -3,10 +3,12 @@ has() {
   type "$1" > /dev/null 2>&1
 }
 
-if ! has "paru";then
-  echo "paru is required"
+if ! has "paru" || ! has "yay";then
+  echo -e "${red}[*] Error: Aur helper is required.${no_color}"
 fi
-# インストールするパッケージリスト
+
+echo -e "${green}[*] Installing applications.${no_color}"
+
 PRE_REQUISITES=(
   archlinux-keyring
   networkmanager
@@ -55,11 +57,8 @@ PRE_REQUISITES=(
   xdg-utils
   pavucontrol
 )
-paru -S --noconfirm --needed ${PRE_REQUISITES[@]}
-
-sudo ln -sf $(which nvim) /usr/bin/vim
-
-echo $(tput setaf 2)Installing apps complete!. ✔︎$(tput sgr0)
-
-cd ${HOME}
-
+if has "paru"; then
+  paru -S --noconfirm --needed ${PRE_REQUISITES[@]}
+elif has "paru"; then
+  yay -S --noconfirm --needed ${PRE_REQUISITES[@]}
+fi
