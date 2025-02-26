@@ -84,16 +84,27 @@ install_aur_helper() {
 
 link_files() {
   echo -e "${green}[*] Deploying dotfiles.${no_color}"
+  echo -e "${red}[*] Existing config files will be deleted.${no_color}"
+  for i in {0..4}; do
+    echo -en "$(( 5 - $i )).."
+    sleep 1
+  done
+  echo -e ""
 
   shopt -s globstar dotglob
 
+  # .gitと.config以外の.からはじまるファイルのリンクを貼る
   ls -d1 ${DOT_DIR}/.??* \
     | sed -e '/git/d' -e '/config/d' \
     | sed 's!^.*/!!' \
-    | xargs -I{} ln -snfv ${DOT_DIR}/{} ${HOME}/{}
+    | xargs -I{} sh -c \
+    "rm -rf ${HOME}/{} && ln -snfv ${DOT_DIR}/{} ${HOME}/{}"
 
+  # .configの中の.からはじまるファイルのリンクを貼る
   if [ -d ${XDG_CONFIG_DIR} ] && [ -d ${HOME}/.config ]; then
-    ls -1 ${XDG_CONFIG_DIR} | xargs -I{} ln -snfv ${XDG_CONFIG_DIR}/{} ${HOME}/.config/{}
+    ls -1 ${XDG_CONFIG_DIR} \
+      | xargs -I{} sh -c \
+      "rm -rf ${HOME}/.config/{} && ln -snfv ${XDG_CONFIG_DIR}/{} ${HOME}/.config/{}"
   fi
 
   shopt -u globstar dotglob
