@@ -11,13 +11,18 @@ echo -e "${green}[*] Installing applications.${no_color}"
 
 PRE_REQUISITES=(
   archlinux-keyring
+  sudo
   networkmanager
   docker
   fzf
+  fd
   fastfetch
   lsd
+  less
   tree
   neovim
+  python-pynvim
+  tinyxxd
   man-db
   unzip
   git
@@ -27,14 +32,20 @@ PRE_REQUISITES=(
   which
   sheldon
   zsh
+  mpd
+  nnn
 
   deno
+  lua-language-server
+  pyright
 
   hyprland
+  hyprpaper
   polkit-kde-agent
   xdg-desktop-portal-hyprland
-  dunst
+  dunst # nofification daemon
   wl-clipboard
+  waybar
 
   pipewire
   pipewire-alsa
@@ -42,23 +53,32 @@ PRE_REQUISITES=(
   pipewire-jack
   wireplumber
 
+  sddm
   noto-fonts-cjk
   noto-fonts-emoji
+  ttf-ubuntu-font-family
   gimp
   discord
   rofi-wayland
-  fcitx5
+  fcitx5-git
   fcitx5-skk
   fcitx5-configtool
   firefox
+  google-chrome
   thunar
   wezterm-git
-  ristretto
+  neovide
+  ristretto # image viwer
   xdg-utils
   pavucontrol
+  obs-studio
+  parole # video player
+  wev # wayland xev
 )
 if has "paru"; then
   paru -S --noconfirm --needed ${PRE_REQUISITES[@]}
-elif has "paru"; then
+elif has "yay"; then
   yay -S --noconfirm --needed ${PRE_REQUISITES[@]}
+else
+  echo -e "${red}[*] Error: Aur helper is required.${no_color}"
 fi
