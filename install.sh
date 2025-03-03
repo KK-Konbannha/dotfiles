@@ -136,6 +136,11 @@ replace_vim_with_nvim() {
 
 }
 
+install_ranger_devicons() {
+  echo -e "${green}[*] Installing ranger devicons.${no_color}"
+  git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger/plugins/ranger_devicons
+}
+
 
 while true; do
     clear
@@ -151,7 +156,8 @@ while true; do
     echo -e "6. Install applications."
     echo -e "7. Switch the default shell to zsh."
     echo -e "8. Replace Vim with Neovim."
-    echo -e "9. Exit."
+    echo -e "9. Install ranger devicons."
+    echo -e "10. Exit."
     read -p "[*] Your choice: " x
     case $x in
         [1]* ) git_clone; create_dirs; link_files; install_aur_helper; source ${SCRIPTS_DIR}/install_apps.sh; switch_shell; replace_vim_with_nvim;  exit;;
@@ -162,7 +168,8 @@ while true; do
         [6]* ) source ${SCRIPTS_DIR}/install_apps.sh; exit;;
         [7]* ) switch_shell; exit;;
         [8]* ) replace_vim_with_nvim; exit;;
-        [9]* ) exit;;
+        [9]* ) install_ranger_devicons; exit;;
+        [10]* ) exit;;
         * )  echo -e "${red}[*] Error: invalid number or input.${no_color}";;
     esac
 done

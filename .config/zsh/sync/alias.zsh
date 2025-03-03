@@ -5,7 +5,7 @@ alias reload='source ~/dotfiles/.config/zsh/.zshrc; clear'
 alias zshconf='vim ~/dotfiles/.config/zsh/'
 
 #  ╭──────────────────────────────────────────────────────────╮
-#  │           init.vim(.vimrc)編集簡略化用エイリj            │
+#  │           init.vim(.vimrc)編集簡略化用エイリアス         │
 #  ╰──────────────────────────────────────────────────────────╯
 alias vimconf='vim ~/dotfiles/.config/nvim'
 
@@ -28,3 +28,5 @@ alias egrep='egrep --color=auto'
 
 alias e='emacs'
 alias c='code'
+
+alias rng='ranger'

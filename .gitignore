@@ -1,5 +1,7 @@
 /.git/
 
+/.config/ranger/plugins/
+
 /.config/nvim/lazy-lock.json
 /.config/nvim/plugin/packer_compiled.lua
 

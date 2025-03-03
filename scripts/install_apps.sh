@@ -16,6 +16,7 @@ PRE_REQUISITES=(
   docker
   fzf
   fd
+  ranger
   fastfetch
   lsd
   less
@@ -33,7 +34,6 @@ PRE_REQUISITES=(
   sheldon
   zsh
   mpd
-  nnn
 
   deno
   lua-language-server
