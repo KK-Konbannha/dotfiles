@@ -16,7 +16,11 @@ PRE_REQUISITES=(
   docker
   fzf
   fd
-  ranger
+  yazi-git
+  7zip
+  zoxide
+  jq
+  ripgrep
   fastfetch
   lsd
   less
@@ -34,6 +38,7 @@ PRE_REQUISITES=(
   sheldon
   zsh
   mpd
+  inetutils
 
   deno
   lua-language-server
