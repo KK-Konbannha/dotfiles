@@ -100,24 +100,6 @@ function lprompt-git-current-branch {
 #}}}
 
 #  ╭──────────────────────────────────────────────────────────╮
-#  │                 rangerの起動を制御したい                 │
-#  ╰──────────────────────────────────────────────────────────╯
-function ranger() {
-    if [ -z "$RANGER_LEVEL" ]; then
-        /usr/bin/ranger "$@"
-    else
-        exit
-    fi
-}
-
-function prompt-ranger-level() {
-    if [ -z "$RANGER_LEVEL" ]; then
-        echo ""
-    else
-        echo " "
-    fi
-}
-#  ╭──────────────────────────────────────────────────────────╮
 #  │         venvに入ったときにそのことが分かるように         │
 #  ╰──────────────────────────────────────────────────────────╯
 function lprompt-venv() {
@@ -152,7 +134,6 @@ function precmd() {
 #  │                   プロンプトで使う関数                   │
 #  ╰──────────────────────────────────────────────────────────╯
 LPROMPT_ICON='`lprompt-icon`'
-PROMPT_RNG='`prompt-ranger-level`'
 LPROMPT_GIT='`lprompt-git-current-branch`'
 LPROMPT_VENV='`lprompt-venv`'
 RPROMPT_GIT='`rprompt-git-current-branch`'
@@ -161,7 +142,7 @@ RPROMPT_GIT='`rprompt-git-current-branch`'
 #  │                  通常のプロンプトです。                  │
 #  ╰──────────────────────────────────────────────────────────╯
 # PROMPT="%F{050}%c %# %f%k"
-PROMPT="%F{241}╭─ %f${LPROMPT_ICON} ${LPROMPT_GIT} ${LPROMPT_VENV}%F{050} ${PROMPT_RNG}
+PROMPT="%F{241}╭─ %f${LPROMPT_ICON} ${LPROMPT_GIT} ${LPROMPT_VENV}%F{050}
 %F{241}╰─%f %f%k"
 #  ╭──────────────────────────────────────────────────────────╮
 #  │for や while 、複数行入力時等に表示されるプロンプトです。 │
