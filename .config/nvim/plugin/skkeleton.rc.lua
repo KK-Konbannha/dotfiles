@@ -8,6 +8,9 @@ vim.api.nvim_create_autocmd("User", {
         ["q"] = "katakana",
         ["w"] = "disable",
 
+        ["r"] = { "、" },
+        ["t"] = { "。" },
+
         ["g"] = { "ー" },
         ["~"] = { "〜" },
         ["z/"] = { "・" },
