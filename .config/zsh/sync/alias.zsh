@@ -26,7 +26,7 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
-alias e='emacs'
+alias e="emacsclient -c -a 'emacs'"
 alias c='code'
 
 #  ╭──────────────────────────────────────────────────────────╮
