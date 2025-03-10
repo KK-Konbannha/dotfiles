@@ -21,8 +21,7 @@
             "r": "insert-kana-、",
             "R": "insert-kana-＜",
             "t": "insert-kana-。",
-            "T": "insert-kana-＞",
-            "Zenkaku_Hankaku": "start-preedit-no-delete"
+            "T": "insert-kana-＞"
         }
     }
 }
