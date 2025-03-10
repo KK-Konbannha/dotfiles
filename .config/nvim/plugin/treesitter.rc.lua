@@ -34,6 +34,7 @@ treesitter.setup({
 		"dockerfile",
 		"go",
 		"rust",
+		"norg",
 	},
 	autotag = {
 		enable = true,

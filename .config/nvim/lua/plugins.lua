@@ -96,4 +96,21 @@ require("lazy").setup({
 		event = "VimEnter", -- Alternatively, BufReadPre if we don't care about the empty file when starting with 'nvim'
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
+
+	{
+		"nvim-orgmode/orgmode",
+		event = "VeryLazy",
+		ft = { "org" },
+	},
+	{
+		"akinsho/org-bullets.nvim",
+		event = "VeryLazy",
+		ft = { "org" },
+	},
+
+	{
+		"nvim-neorg/neorg",
+		lazy = false,
+		version = "*",
+	},
 })

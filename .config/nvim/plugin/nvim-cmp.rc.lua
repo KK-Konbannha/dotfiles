@@ -23,6 +23,8 @@ cmp.setup({
 		{ name = "buffer" },
 	}, {
 		{ name = "nvim_lsp_signature_help" },
+	}, {
+		{ name = "orgmode" },
 	}),
 	formatting = {
 		format = lspkind.cmp_format({ with_text = false, maxwidth = 50 }),
