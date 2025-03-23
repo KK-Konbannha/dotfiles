@@ -10,12 +10,18 @@ alias zshconf='vim ~/dotfiles/.config/zsh/'
 alias vimconf='vim ~/dotfiles/.config/nvim'
 
 #  ╭──────────────────────────────────────────────────────────╮
+#  │            hyprlandの設定編集簡略化用エイリアス          │
+#  ╰──────────────────────────────────────────────────────────╯
+alias hconf='vim ~/dotfiles/.config/hypr'
+
+#  ╭──────────────────────────────────────────────────────────╮
 #  │                 基本コマンドのエイリアス                 │
 #  ╰──────────────────────────────────────────────────────────╯
 if type "lsd" > /dev/null 2>&1; then 
   alias ls='lsd'
   alias ll='lsd -alF'
   alias la='lsd -A'
+  alias tree='ls --tree'
 else
   alias ls='ls --color=auto'
   alias ll='ls -alF'
