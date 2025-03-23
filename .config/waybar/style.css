@@ -1,8 +1,5 @@
 * {
   /* `otf-font-awesome` is required to be installed for icons */
-  font-family:
-    Ubuntu, apricotJapanesefontT, FontAwesome, Roboto, Helvetica, Arial,
-    sans-serif;
   font-size: 18px;
 }
 
@@ -13,6 +10,8 @@ window#waybar {
 }
 
 #workspaces {
+  font-family:
+   'apricotJapanesefontT';
   background-color: #f4f5e3;
   border-radius: 1em;
   padding: 0em 1em;
