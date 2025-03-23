@@ -37,9 +37,11 @@ vim.cmd([[let &t_Ce = '\e[4:0m']])
 
 vim.opt.cursorline = true
 vim.opt.termguicolors = true
-vim.opt.winblend = 20
+vim.opt.winblend = 0
 vim.opt.wildoptions = "pum"
-vim.opt.pumblend = 5
+vim.opt.pumblend = 0
 vim.opt.background = "dark"
+
+vim.opt.conceallevel = 3
 
 vim.opt.clipboard:append("unnamedplus")

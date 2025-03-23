@@ -16,3 +16,12 @@ vim.keymap.set("n", "<leader>gd", ":Copilot disable<CR>", { noremap = true, sile
 
 -- skkeleton
 vim.keymap.set("i", "<C-j>", "<Plug>(skkeleton-enable)")
+
+-- neorg
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "norg",
+	callback = function()
+		vim.keymap.set("i", "<Tab>", "<Plug>(neorg.promo.promote.nested)", { buffer = true })
+		vim.keymap.set("i", "<S-Tab>", "<Plug>(neorg.promo.demote.nested)", { buffer = true })
+	end,
+})

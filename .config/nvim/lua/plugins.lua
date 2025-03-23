@@ -68,7 +68,14 @@ require("lazy").setup({
 		dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
 	},
 
-	"nvim-tree/nvim-tree.lua",
+	{
+		"folke/noice.nvim",
+		event = "VeryLazy",
+		dependencies = {
+			"MunifTanjim/nui.nvim",
+			"rcarriga/nvim-notify",
+		},
+	},
 
 	"nvimtools/none-ls.nvim",
 	"neovim/nvim-lspconfig",

@@ -4,7 +4,7 @@ if not status then
 end
 
 local status2, orgmode_bullets = pcall(require, "org-bullets")
-if not status then
+if not status2 then
 	return
 end
 

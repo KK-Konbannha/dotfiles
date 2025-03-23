@@ -29,6 +29,12 @@ cmp.setup({
 	formatting = {
 		format = lspkind.cmp_format({ with_text = false, maxwidth = 50 }),
 	},
+	window = {
+		documentation = cmp.config.window.bordered(),
+		completion = cmp.config.window.bordered({
+			winhighlight = "Normal:CmpPmenu,CursorLine:PmenuSel,Search:None",
+		}),
+	},
 })
 
 vim.o.completeopt = "menu,menuone,noselect"
