@@ -1,8 +1,10 @@
 * Terminal
 ** Intel
    - intel-ucode
+
 ** AMD
    - amd-ucode
+
 ** Needed
    - archlinux-keyring
    - sudo
@@ -32,12 +34,9 @@
    - gotop             # A terminal based graphical activity monitor
    - sheldon           # Fast, configurable, shell plugin manager
    - bat               # A cat(1) clone with wings
+
 ** Wireless
    - wpa_supplicant
-** App
-   - fastfetch
-   - termshark
-
 
 ** Programming
    - deno
@@ -45,6 +44,10 @@
    - pyright
    - stylua
    - luarocks-git
+
+** App
+   - fastfetch
+   - termshark
    
 * GUI
 ** Window manager
