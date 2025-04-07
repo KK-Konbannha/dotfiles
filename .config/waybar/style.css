@@ -1,5 +1,4 @@
 * {
-  /* `otf-font-awesome` is required to be installed for icons */
   font-size: 18px;
 }
 
@@ -11,7 +10,7 @@ window#waybar {
 
 #workspaces {
   font-family:
-   'apricotJapanesefontT';
+   'apricotJapanesefontT', 'Hack Nerd Font';
   background-color: #f4f5e3;
   border-radius: 1em;
   padding: 0em 1em;
