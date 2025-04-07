@@ -1,10 +1,4 @@
-* Terminal
-** Intel
-   - intel-ucode
-
-** AMD
-   - amd-ucode
-
+* CUI
 ** Needed
    - archlinux-keyring
    - sudo
