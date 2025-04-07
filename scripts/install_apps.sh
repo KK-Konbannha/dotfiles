@@ -1,3 +1,29 @@
+#!/bin/bash
+
+red=$(tput setaf 1)
+green=$(tput setaf 2)
+no_color=$(tput sgr0)
+
+APP_LIST_FILE="app_list.norg"
+
+if [ ! -f "${APP_LIST_FILE}" ]; then
+  echo "Error: ${APP_LIST_FILE} not found."
+  exit 1
+fi
+
+CUI_START_LINE=$(sed -e '/^\* CUI/!d' -e '=' -e '/^\* /d' app_list.norg)
+GUI_START_LINE=$(sed -e '/^\* GUI/!d' -e '=' -e '/^\* /d' app_list.norg)
+
+if [ -z "${CUI_START_LINE}" ] || [ -z "${GUI_START_LINE}" ]; then
+  echo "${red}Error: Can't find CUI or GUI categories in ${APP_LIST_FILE}.${no_color}"
+  exit 1
+fi
+
+if [ $((CUI_START_LINE)) -gt $((GUI_START_LINE)) ]; then
+  echo "${red}Error: CUI category should be above GUI category in ${APP_LIST_FILE}.${no_color}"
+  exit 1
+fi
+
 # コマンドの有無確認
 has() {
   type "$1" > /dev/null 2>&1
@@ -22,96 +48,51 @@ echo -e "${green}[*] Select installing apps options.${no_color}"
 echo -e "${green}[*] 1. All${no_color}"
 echo -e "${green}[*] 2. For CUI${no_color}"
 echo -e "${green}[*] 3. For GUI${no_color}"
+echo -e ""
 read -p "[*] Your choice: " options
-
-CUI_APPS=(
-   archlinux-keyring
-   sudo
-   networkmanager
-   less
-   tree
-   man-db
-   neovim-nightly
-   python-pynvim
-   tinyxxd
-   unzip
-   git
-   openssh
-   wget
-   which
-   zsh
-   mpd
-   inetutils
-   fzf               # A command-line fuzzy finder
-   fd                # A simple, fast and user-friendly alternative to 'find'
-   yazi-git          # ⚡️ Blazing Fast Terminal File Manager
-   7zip
-   zoxide            # A smarter cd command
-   jq                # Command-line JSON processor
-   ripgrep           # A line-oriented search tool that recursively searches the current directory for a regex pattern
-   fastfetch
-   lsd               # The next gen ls command
-   gotop             # A terminal based graphical activity monitor
-   sheldon           # Fast, configurable, shell plugin manager
-   bat               # A cat(1) clone with wings
-
-   deno
-   lua-language-server
-   pyright
-   stylua
-   luarocks-git
-)
-
-GUI_APPS=(
-   hyprland
-   hyprpaper
-   polkit-kde-agent
-   xdg-desktop-portal-hyprland
-   dunst # nofification daemon
-   wl-clipboard
-   waybar
-   sddm
-   xdg-utils
-  
-   pipewire
-   pipewire-alsa
-   pipewire-pulse
-   pipewire-jack
-   wireplumber
-
-   noto-fonts
-   noto-fonts-cjk
-   noto-fonts-emoji
-   ttf-ubuntu-font-family
-   otf-font-awesome
-   pavucontrol
-
-   fcitx5-git
-   fcitx5-skk
-   fcitx5-configtool
-
-   gimp
-   discord
-   rofi-wayland
-   firefox
-   google-chrome
-   thunar
-   wezterm-git
-   neovide
-   ristretto # image viwer
-   obs-studio
-   parole # video player
-   wev # wayland xev
-)
+echo -e ""
 
 if [ "${options}" -eq 1 ]; then
-  install_app "${CUI_APPS[@]}" "${GUI_APPS[@]}"
+  # install_app "${CUI_APPS[@]}" "${GUI_APPS[@]}"
+  echo
 
 elif [ "${options}" -eq 2 ]; then
-  install_app "${CUI_APPS[@]}"
+  # # CUIアプリのカテゴリーを取得
+  # CUI_CATEGORY=$(sed -e "${CUI_START_LINE}d" \
+  #   -e "$(($CUI_START_LINE + 1)),$(($GUI_START_LINE -1)) {/^\*\* /!d}" \
+  #   -e "$(($CUI_START_LINE + 1)),$(($GUI_START_LINE -1)) {s/^\*\* //}" \
+  #   -e "$GUI_START_LINE,\$d" $APP_LIST_FILE |
+  #   awk '{ printf "[*] %d. %s\n", NR + 1, $0 }' )
 
+  # echo -e "${green}[*] Select Categories.(e.g. 1,3,4)${no_color}"
+  # echo -e "${green}[*] 1. all${no_color}"
+  # echo -e "${green}${CUI_CATEGORY}${no_color}"
+  # echo -e ""
+  # read -p "[*] Your choice: " selected_categories
+  # echo -e ""
+
+  # if [ -z "${selected_categories}" ]; then
+  #   echo -e "${red}[*] Error: No categories selected.${no_color}"
+  #   exit 1
+  # fi
+
+  # selected_categories=$(echo "${selected_categories}" | grep -oE '[0-9]+' )
+  # categories_num=$(echo "${selected_categories}" | wc -w)
+  # for selected_category in ${selected_categories}; do
+  #   if [ "${selected_category}" -gt "${categories_num}" ]; then
+  #     echo -e "${red}[*] Error: Invalid category number.${no_color}"
+  #     exit 1
+  #   fi
+
+  #   if [ "${selected_category}" -eq 1 ]; then
+  #   else
+  #   fi
+  # done
+
+  # install_app "${CUI_APPS[@]}"
 elif [ "${options}" -eq 3 ]; then
-  install_app "${GUI_APPS[@]}"
+  # install_app "${GUI_APPS[@]}"
+  echo
 
 fi
 

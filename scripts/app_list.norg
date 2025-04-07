@@ -1,4 +1,4 @@
-* Terminal
+* CUI
 ** Needed
    - archlinux-keyring
    - sudo
@@ -24,11 +24,13 @@
    - zoxide            # A smarter cd command
    - jq                # Command-line JSON processor
    - ripgrep           # A line-oriented search tool that recursively searches the current directory for a regex pattern
-   - fastfetch
    - lsd               # The next gen ls command
    - gotop             # A terminal based graphical activity monitor
    - sheldon           # Fast, configurable, shell plugin manager
    - bat               # A cat(1) clone with wings
+
+** Wireless
+   - wpa_supplicant
 
 ** Programming
    - deno
@@ -36,6 +38,10 @@
    - pyright
    - stylua
    - luarocks-git
+
+** App
+   - fastfetch
+   - termshark
    
 * GUI
 ** Window manager
@@ -70,15 +76,19 @@
   - fcitx5-configtool
 
 ** App
-   - gimp
+   - wezterm-git
    - discord
    - rofi-wayland
    - firefox
    - google-chrome
    - thunar
-   - wezterm-git
    - neovide
+   - gimp
    - ristretto # image viwer
    - obs-studio
    - parole # video player
    - wev # wayland xev
+   - evince # pdf viewer
+   - baobab # disk usage analyzer
+   - wireshark-qt # network protocol analyzer
+   - teams # Microsoft Teams
