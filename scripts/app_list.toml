@@ -1,0 +1,103 @@
+[CUI]
+Needed = [
+    "archlinux-keyring",
+    "sudo",
+    "networkmanager",
+    "less",
+    "tree",
+    "man-db",
+    "neovim-nightly",
+    "python-pynvim",
+    "tinyxxd",
+    "unzip",
+    "git",
+    "openssh",
+    "wget",
+    "which",
+    "zsh",
+    "mpd",
+    "inetutils",
+    "fzf",           # A command-line fuzzy finder
+    "fd",            # A simple, fast and user-friendly alternative to 'find'
+    "yazi-git",      # ⚡️ Blazing Fast Terminal File Manager
+    "7zip",
+    "zoxide",        # A smarter cd command
+    "jq",            # Command-line JSON processor
+    "ripgrep",       # A line-oriented search tool that recursively searches the current directory for a regex pattern
+    "lsd",           # The next gen ls command
+    "gotop",         # A terminal based graphical activity monitor
+    "sheldon",       # Fast, configurable, shell plugin manager
+    "bat",           # A cat(1) clone with wings
+]
+
+Wireless = [
+    "wpa_supplicant",
+]
+
+Programming = [
+    "deno",
+    "lua-language-server",
+    "pyright",
+    "stylua",
+    "luarocks-git",
+]
+
+App = [
+    "fastfetch",
+    "termshark",
+]
+ 
+[GUI]
+Window_manager = [
+    "hyprland",
+    "hyprpaper",
+    "polkit-kde-agent",
+    "xdg-desktop-portal-hyprland",
+    "dunst",           # nofification daemon
+    "wl-clipboard",
+    "waybar",
+    "sddm",
+    "xdg-utils",
+]
+  
+Sound = [
+    "pipewire",
+    "pipewire-alsa",
+    "pipewire-pulse",
+    "pipewire-jack",
+    "wireplumber",
+]
+
+Fonts = [
+    "noto-fonts",
+    "noto-fonts-cjk",
+    "noto-fonts-emoji",
+    "ttf-ubuntu-font-family",
+    "otf-font-awesome",
+    "pavucontrol",
+]
+
+Input = [
+    "fcitx5-git",
+    "fcitx5-skk",
+    "fcitx5-configtool",
+]
+
+App = [
+    "wezterm-git",
+    "discord",
+    "rofi-wayland",
+    "firefox",
+    "google-chrome",
+    "thunar",
+    "neovide",
+    "gimp",
+    "ristretto",         # image viwer
+    "obs-studio",
+    "parole",            # video player
+    "wev",               # wayland xev
+    "evince",            # pdf viewer
+    "baobab",            # disk usage analyzer
+    "wireshark-qt",      # network protocol analyzer
+    "teams",             # Microsoft Teams
+]

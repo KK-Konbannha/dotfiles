@@ -4,23 +4,10 @@ red=$(tput setaf 1)
 green=$(tput setaf 2)
 no_color=$(tput sgr0)
 
-APP_LIST_FILE="app_list.norg"
+APP_LIST_FILE="app_list.toml"
 
 if [ ! -f "${APP_LIST_FILE}" ]; then
   echo "Error: ${APP_LIST_FILE} not found."
-  exit 1
-fi
-
-CUI_START_LINE=$(sed -e '/^\* CUI/!d' -e '=' -e '/^\* /d' app_list.norg)
-GUI_START_LINE=$(sed -e '/^\* GUI/!d' -e '=' -e '/^\* /d' app_list.norg)
-
-if [ -z "${CUI_START_LINE}" ] || [ -z "${GUI_START_LINE}" ]; then
-  echo "${red}Error: Can't find CUI or GUI categories in ${APP_LIST_FILE}.${no_color}"
-  exit 1
-fi
-
-if [ $((CUI_START_LINE)) -gt $((GUI_START_LINE)) ]; then
-  echo "${red}Error: CUI category should be above GUI category in ${APP_LIST_FILE}.${no_color}"
   exit 1
 fi
 
@@ -53,46 +40,65 @@ read -p "[*] Your choice: " options
 echo -e ""
 
 if [ "${options}" -eq 1 ]; then
-  # install_app "${CUI_APPS[@]}" "${GUI_APPS[@]}"
-  echo
+  echo -e "${green}[*] Install all aplications."
 
-elif [ "${options}" -eq 2 ]; then
-  # # CUIアプリのカテゴリーを取得
-  # CUI_CATEGORY=$(sed -e "${CUI_START_LINE}d" \
-  #   -e "$(($CUI_START_LINE + 1)),$(($GUI_START_LINE -1)) {/^\*\* /!d}" \
-  #   -e "$(($CUI_START_LINE + 1)),$(($GUI_START_LINE -1)) {s/^\*\* //}" \
-  #   -e "$GUI_START_LINE,\$d" $APP_LIST_FILE |
-  #   awk '{ printf "[*] %d. %s\n", NR + 1, $0 }' )
+  apps=($(./toml_parser All))
 
-  # echo -e "${green}[*] Select Categories.(e.g. 1,3,4)${no_color}"
-  # echo -e "${green}[*] 1. all${no_color}"
-  # echo -e "${green}${CUI_CATEGORY}${no_color}"
-  # echo -e ""
-  # read -p "[*] Your choice: " selected_categories
-  # echo -e ""
+  install_app "${apps[@]}"
 
-  # if [ -z "${selected_categories}" ]; then
-  #   echo -e "${red}[*] Error: No categories selected.${no_color}"
-  #   exit 1
-  # fi
-
-  # selected_categories=$(echo "${selected_categories}" | grep -oE '[0-9]+' )
-  # categories_num=$(echo "${selected_categories}" | wc -w)
-  # for selected_category in ${selected_categories}; do
-  #   if [ "${selected_category}" -gt "${categories_num}" ]; then
-  #     echo -e "${red}[*] Error: Invalid category number.${no_color}"
-  #     exit 1
-  #   fi
-
-  #   if [ "${selected_category}" -eq 1 ]; then
-  #   else
-  #   fi
-  # done
-
-  # install_app "${CUI_APPS[@]}"
-elif [ "${options}" -eq 3 ]; then
-  # install_app "${GUI_APPS[@]}"
-  echo
-
+  exit 0
 fi
 
+if [ "${options}" -eq 2 ]; then
+  ui_kind="CUI"
+elif [ "${options}" -eq 3 ]; then
+  ui_kind="GUI"
+fi
+
+echo -e "${green}[*] Install ${ui_kind} aplications."
+
+# ui_kindのアプリのカテゴリーを取得
+categories=$(./toml_parser ${ui_kind} name |
+  awk '{ printf "[*] %d. %s\n", NR + 1, $0 }')
+
+  
+echo -e "${green}[*] Select Categories.(e.g. 1,3,4)${no_color}"
+echo -e "${green}[*] 1. all${no_color}"
+echo -e "${green}${categories}${no_color}"
+echo -e ""
+read -p "[*] Your choice: " selected_categories
+echo -e ""
+
+if [ -z "${selected_categories}" ]; then
+  echo -e "${red}[*] Error: No categories selected.${no_color}"
+  exit 1
+fi
+
+categories_num=$(echo "${categories}" | wc -l)
+selected_categories=$(echo "${selected_categories}" | grep -oE '[0-9]+' )
+
+selected_category_names=()
+for selected_category in ${selected_categories}; do
+  # 選択された番号かカテゴリーの総数より大きい場合
+  if [ $((${selected_category})) -gt $((${categories_num} + 1)) ]; then
+    echo -e "${red}[*] Error: Invalid category number.${no_color}"
+    exit 1
+  fi
+
+  if [ "${selected_category}" -eq 1 ]; then
+    selected_category_names=("All")
+    break
+  else
+    # 番号に該当するカテゴリーの名前をselected_category_nameに取り出す
+    selected_category_name=$(echo "${categories}" |
+      sed -e "/${selected_category}/!d" \
+      -e "s/\[\*\] .\. //")
+
+    selected_category_names+=($selected_category_name)
+  fi
+done
+apps=($(./toml_parser ${ui_kind} app $selected_category_names))
+
+install_app "${apps[@]}"
+
+exit 0
