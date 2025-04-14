@@ -7,10 +7,11 @@
             "q": "set-input-mode-katakana",
             "Q": "start-preedit",
             "w": "set-input-mode-latin",
+            "Muhenkan": "set-input-mode-latin",
             "W": "set-input-mode-wide-latin",
             "C-q": "set-input-mode-hankaku-katakana",
-            "Zenkaku_Hankaku": "start-preedit-no-delete",
-            "C-j": "commit"
+            "C-j": "commit",
+            "Henkan": "commit"
         }
     }
 }

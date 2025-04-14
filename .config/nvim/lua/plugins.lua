@@ -96,8 +96,6 @@ require("lazy").setup({
 	"github/copilot.vim",
 
 	"vim-denops/denops.vim",
-	"vim-skk/skkeleton",
-	"delphinus/skkeleton_indicator.nvim",
 	{
 		"ramilito/winbar.nvim",
 		event = "VimEnter", -- Alternatively, BufReadPre if we don't care about the empty file when starting with 'nvim'
