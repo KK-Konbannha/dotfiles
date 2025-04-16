@@ -12,60 +12,93 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-	{
-		"Mofiqul/dracula.nvim",
-		lazy = false,
-	},
 	"nvim-treesitter/nvim-treesitter",
-	"norcalli/nvim-colorizer.lua",
-	"m-demare/hlargs.nvim",
-	"lewis6991/gitsigns.nvim",
-	"nvim-tree/nvim-web-devicons",
-	{
-		"akinsho/bufferline.nvim",
-		version = "*",
-		dependencies = "nvim-tree/nvim-web-devicons",
-	},
-	{
-		"nvim-lualine/lualine.nvim",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
-	},
-
 	"nvim-treesitter/nvim-treesitter-textobjects",
+
 	{
 		"kylechui/nvim-surround",
 		version = "*",
 		event = "VeryLazy",
 	},
 
-	"windwp/nvim-ts-autotag",
+	{
+		"Mofiqul/dracula.nvim",
+		lazy = false,
+		cond = not vim.g.vscode,
+	},
+	{
+		"norcalli/nvim-colorizer.lua",
+		cond = not vim.g.vscode,
+	},
+	{
+		"m-demare/hlargs.nvim",
+		cond = not vim.g.vscode,
+	},
+	{
+		"lewis6991/gitsigns.nvim",
+		cond = not vim.g.vscode,
+	},
+	{
+		"nvim-tree/nvim-web-devicons",
+		cond = not vim.g.vscode,
+	},
+	{
+		"akinsho/bufferline.nvim",
+		version = "*",
+		dependencies = "nvim-tree/nvim-web-devicons",
+		cond = not vim.g.vscode,
+	},
+	{
+		"nvim-lualine/lualine.nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+		cond = not vim.g.vscode,
+	},
+
+	{
+		"windwp/nvim-ts-autotag",
+		cond = not vim.g.vscode,
+	},
 	{
 		"windwp/nvim-autopairs",
 		event = "InsertEnter",
+		cond = not vim.g.vscode,
 	},
 
-	"easymotion/vim-easymotion",
+	{
+		"easymotion/vim-easymotion",
+		cond = not vim.g.vscode,
+	},
 
 	{
 		"akinsho/toggleterm.nvim",
 		version = "*",
 		config = true,
+		cond = not vim.g.vscode,
 	},
 
-	"nvim-lua/popup.nvim",
-	"nvim-lua/plenary.nvim",
+	{
+		"nvim-lua/popup.nvim",
+		cond = not vim.g.vscode,
+	},
+	{
+		"nvim-lua/plenary.nvim",
+		cond = not vim.g.vscode,
+	},
 	{
 		"nvim-telescope/telescope.nvim",
 		branch = "0.1.x",
 		dependencies = { "nvim-lua/plenary.nvim" },
+		cond = not vim.g.vscode,
 	},
 	{
 		"nvim-telescope/telescope-media-files.nvim",
 		dependencies = { "nvim-lua/popup.nvim", "nvim-lua/plenary.nvim", "nvim-telescope/telescope.nvim" },
+		cond = not vim.g.vscode,
 	},
 	{
 		"nvim-telescope/telescope-file-browser.nvim",
 		dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+		cond = not vim.g.vscode,
 	},
 
 	{
@@ -75,47 +108,52 @@ require("lazy").setup({
 			"MunifTanjim/nui.nvim",
 			"rcarriga/nvim-notify",
 		},
+		cond = not vim.g.vscode,
 	},
 
-	"nvimtools/none-ls.nvim",
-	"neovim/nvim-lspconfig",
+	{ "nvimtools/none-ls.nvim", cond = not vim.g.vscode },
+	{ "neovim/nvim-lspconfig", cond = not vim.g.vscode },
 
-	"hrsh7th/cmp-nvim-lsp",
-	"hrsh7th/cmp-buffer",
-	"hrsh7th/cmp-path",
-	"hrsh7th/cmp-cmdline",
-	"hrsh7th/cmp-nvim-lsp-signature-help",
-	"hrsh7th/nvim-cmp",
+	{ "hrsh7th/cmp-nvim-lsp", cond = not vim.g.vscode },
+	{ "hrsh7th/cmp-buffer", cond = not vim.g.vscode },
+	{ "hrsh7th/cmp-path", cond = not vim.g.vscode },
+	{ "hrsh7th/cmp-cmdline", cond = not vim.g.vscode },
+	{ "hrsh7th/cmp-nvim-lsp-signature-help", cond = not vim.g.vscode },
+	{ "hrsh7th/nvim-cmp", cond = not vim.g.vscode },
 
-	"onsails/lspkind.nvim",
-	"nvimdev/lspsaga.nvim",
+	{ "onsails/lspkind.nvim", cond = not vim.g.vscode },
+	{ "nvimdev/lspsaga.nvim", cond = not vim.g.vscode },
 
-	"L3MON4D3/LuaSnip",
-	"saadparwaiz1/cmp_luasnip",
+	{ "L3MON4D3/LuaSnip", cond = not vim.g.vscode },
+	{ "saadparwaiz1/cmp_luasnip", cond = not vim.g.vscode },
 
-	"github/copilot.vim",
+	{ "github/copilot.vim", cond = not vim.g.vscode },
 
-	"vim-denops/denops.vim",
+	{ "vim-denops/denops.vim", cond = not vim.g.vscode },
 	{
 		"ramilito/winbar.nvim",
 		event = "VimEnter", -- Alternatively, BufReadPre if we don't care about the empty file when starting with 'nvim'
 		dependencies = { "nvim-tree/nvim-web-devicons" },
+		cond = not vim.g.vscode,
 	},
 
 	{
 		"nvim-orgmode/orgmode",
 		event = "VeryLazy",
 		ft = { "org" },
+		cond = not vim.g.vscode,
 	},
 	{
 		"akinsho/org-bullets.nvim",
 		event = "VeryLazy",
 		ft = { "org" },
+		cond = not vim.g.vscode,
 	},
 
 	{
 		"nvim-neorg/neorg",
 		lazy = false,
 		version = "*",
+		cond = not vim.g.vscode,
 	},
 })
