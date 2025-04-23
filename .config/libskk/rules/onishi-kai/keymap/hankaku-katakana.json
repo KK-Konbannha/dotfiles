@@ -7,6 +7,7 @@
             "q": "set-input-mode-hiragana",
             "Q": "start-preedit",
             "w": "set-input-mode-latin",
+            "Escape": "set-input-mode-latin",
             "W": "set-input-mode-wide-latin",
             "C-q": "set-input-mode-hiragana",
             "C-j": "commit"
