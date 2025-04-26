@@ -4,13 +4,6 @@ red=$(tput setaf 1)
 green=$(tput setaf 2)
 no_color=$(tput sgr0)
 
-APP_LIST_FILE="app_list.toml"
-
-if [ ! -f "${APP_LIST_FILE}" ]; then
-  echo "Error: ${APP_LIST_FILE} not found."
-  exit 1
-fi
-
 # コマンドの有無確認
 has() {
   type "$1" > /dev/null 2>&1
@@ -42,7 +35,7 @@ echo -e ""
 if [ "${options}" -eq 1 ]; then
   echo -e "${green}[*] Install all aplications."
 
-  apps=($(./toml_parser All))
+  apps=($($HOME/dotfiles/scripts/toml_parser All))
 
   install_app "${apps[@]}"
 
@@ -58,7 +51,7 @@ fi
 echo -e "${green}[*] Install ${ui_kind} aplications."
 
 # ui_kindのアプリのカテゴリーを取得
-categories=$(./toml_parser ${ui_kind} name |
+categories=$($HOME/dotfiles/scripts/toml_parser ${ui_kind} name |
   awk '{ printf "[*] %d. %s\n", NR + 1, $0 }')
 
   
@@ -97,7 +90,7 @@ for selected_category in ${selected_categories}; do
     selected_category_names+=($selected_category_name)
   fi
 done
-apps=($(./toml_parser ${ui_kind} app $selected_category_names))
+apps=($($HOME/dotfiles/scripts/toml_parser ${ui_kind} app $selected_category_names))
 
 install_app "${apps[@]}"
 
