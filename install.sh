@@ -24,10 +24,8 @@ create_dirs() {
   echo -e "${green}[*] Creating directories.${no_color}"
 
   mkdir -p "${HOME}/.config"
-  mkdir -p "${HOME}/.mpd/playlists"
   mkdir -p "${HOME}/tmp"
   mkdir -p "${HOME}/dev"
-  mkdir -p "${HOME}/Music"
   mkdir -p "${HOME}/Wallpapers"
   mkdir -p "${HOME}/Downloads"
 }
