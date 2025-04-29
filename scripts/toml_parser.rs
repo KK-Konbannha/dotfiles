@@ -3,6 +3,7 @@ use std::env;
 use std::fmt;
 use std::fs::File;
 use std::io::Read;
+use std::path::PathBuf;
 
 const APP_LIST_FILE_NAME: &str = "app_list.toml";
 
@@ -143,7 +144,13 @@ fn main() -> std::io::Result<()> {
         return Ok(());
     }
 
-    let mut file = File::open(APP_LIST_FILE_NAME)?;
+    let home_dir = env::var("HOME").expect("環境変数$HOMEが見つかりません。");
+    let app_list_file = PathBuf::from(home_dir)
+        .join("dotfiles")
+        .join("scripts")
+        .join(APP_LIST_FILE_NAME);
+
+    let mut file = File::open(app_list_file)?;
     let mut contents = String::new();
     file.read_to_string(&mut contents)?;
 

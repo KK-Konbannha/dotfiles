@@ -51,13 +51,14 @@ App = [
 Window_manager = [
     "hyprland",
     "hyprpaper",
-    "polkit-kde-agent",
+    "hyprpolkitagent",
     "xdg-desktop-portal-hyprland",
     "dunst",           # nofification daemon
     "wl-clipboard",
     "waybar",
     "sddm",
     "xdg-utils",
+    "uwsm",
 ]
   
 Sound = [
