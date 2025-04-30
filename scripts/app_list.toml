@@ -6,7 +6,7 @@ Needed = [
     "less",
     "tree",
     "man-db",
-    "neovim-nightly",
+    "neovim",
     "python-pynvim",
     "tinyxxd",
     "unzip",
@@ -79,7 +79,7 @@ Fonts = [
 ]
 
 Input = [
-    "fcitx5-git",
+    "fcitx5",
     "fcitx5-skk",
     "fcitx5-configtool",
 ]
@@ -91,8 +91,8 @@ App = [
     "firefox",
     "google-chrome",
     "thunar",
-    "neovide",
     "gimp",
+    "visual-studio-code-bin",
     "ristretto",         # image viwer
     "obs-studio",
     "parole",            # video player
