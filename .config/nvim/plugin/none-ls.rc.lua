@@ -31,7 +31,3 @@ null_ls.setup({
 		end
 	end,
 })
-
-vim.keymap.set("n", "<leader>nm", function()
-	vim.lsp.buf.format({ async = true })
-end)

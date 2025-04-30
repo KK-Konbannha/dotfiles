@@ -8,6 +8,10 @@ if not vim.g.vscode then
 	vim.keymap.set("n", "<Tab>", ":BufferLineCycleNext<CR>", { noremap = true, silent = true })
 	vim.keymap.set("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", { noremap = true, silent = true })
 
+	vim.keymap.set("n", "<leader>nm", function()
+		vim.lsp.buf.format({ async = true })
+	end)
+
 	-- neorg
 	vim.api.nvim_create_autocmd("FileType", {
 		pattern = "norg",

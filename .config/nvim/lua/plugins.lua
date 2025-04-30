@@ -111,7 +111,7 @@ require("lazy").setup({
 		cond = not vim.g.vscode,
 	},
 
-	{ "nvimtools/none-ls.nvim", cond = not vim.g.vscode },
+	{ "stevearc/conform.nvim", cond = not vim.g.vscode },
 	{ "neovim/nvim-lspconfig", cond = not vim.g.vscode },
 
 	{ "hrsh7th/cmp-nvim-lsp", cond = not vim.g.vscode },
@@ -134,19 +134,6 @@ require("lazy").setup({
 		"ramilito/winbar.nvim",
 		event = "VimEnter", -- Alternatively, BufReadPre if we don't care about the empty file when starting with 'nvim'
 		dependencies = { "nvim-tree/nvim-web-devicons" },
-		cond = not vim.g.vscode,
-	},
-
-	{
-		"nvim-orgmode/orgmode",
-		event = "VeryLazy",
-		ft = { "org" },
-		cond = not vim.g.vscode,
-	},
-	{
-		"akinsho/org-bullets.nvim",
-		event = "VeryLazy",
-		ft = { "org" },
 		cond = not vim.g.vscode,
 	},
 
